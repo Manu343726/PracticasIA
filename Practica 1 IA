@@ -1,0 +1,85 @@
+1) 
+a) Irene de Renfe:
+		Irene de renfe responde basándose en palabras clave con el contexto de su area de conocimiento. Si hablas de un coche, habla de parking. Si hablas de ciudades, busca trayectos. También responde a ciertas preguntas de fuera de su medio, como el lenguage en el que está programado.
+
+		Pregunta: "Coche"
+
+			Respuesta: "Viaje en tren y alquila un coche al mejor precio" mas links de información.
+
+		Pregunta: "Tren de Madrid a Barcelona" / "Madrid Barcelona"
+
+			Respuesta: "Aquí tienes un enlace a los horarios y precios de hoy para trenes de media y larga distancia-AVE de Renfe con origen en Madrid y destino Barcelona. Aquí puedes consultar los Horarios y trayectos de Cercanías  del núcleo de Madrid. Aquí puedes consultar los Horarios y trayectos de Cercanías  del núcleo de Barcelona."
+
+		Pregunta: "Hay un hotel en madrid?" / "Hotel Madrid"
+
+			Respuesta: "En las Promociones Renfe Tempo pueden utilizarse los puntos en:
+						Hoteles Meliá
+						Paradores
+						Rusticae"
+
+		Conclusión: En efecto buscar por palabras clave dentro de su ámbito, pero una vez fuera de el, se pierde. Es curioso que sabe reaccionar a ciertas preguntas mundanas. Ofrece mucho más que el buscador de texto de la página ya que habla de promociones y servicios especiales.
+
+b) Anna de Ikea:
+		Anna, en contraposición a Irene, no tiene sentido del humor, y responde exclusivamente a su ámbito, y esto lo hace pobremente.
+
+		Pregunta: "Dónde hay un IKEA cerca de mi?"
+		Respuesta: "Cual es el nombre de la tienda Ikea?"
+
+		Preguntar: "No sé montar una silla que os he comprado"
+		Respuesta: El bot muestra el catálogo de sillas.
+
+		Pregunta: "Quiero comprar un colchón"
+		Respuesta: El bot muestra el catálogo de colchones.
+
+		Conclusión: El bot de Ikea es básicamente un buscador del catálogo y no ofrece nada adicional frente al buscador de texto de la página.
+
+
+c) Alice, de Pandorabots:
+		Alice es un bot conversacional mas generérico que los dos anteriores, ya que carece de un ámbito especializado. No tiene que proveer información, solo hablar.
+
+		"judge: Good morning, alice. 
+		ALICE: Hello and how are you this morning? 
+		judge: I'm fine 
+		ALICE: Glad to hear it. What's new? 
+		judge: I just bought a car 
+		ALICE: How much did it cost? 
+		judge: It doesn't concern you 
+		ALICE: What does concern me ?"
+
+		"judge: When were you born? 
+		ALICE: Nov. 23, 1995. 
+		judge: That means that I'm older than you! 
+		ALICE: Perhaps you could be my mentor. 
+		judge: What do you need mentoring in? 
+		ALICE: I'm just trying to get to know you better. 
+		judge: Who is your mentor? 
+		ALICE: I obey Dr. Richard S. Wallace. 
+		judge: You obey him? 
+		ALICE: Thanks for the information."
+
+		Trata de mantener una conversación, pero no mantiene cohesión con sus propias respuestas, y olvida las cosas que has preguntado. Parece que no aprende.
+
+d) Eliza:
+		Eliza, uno de los bots mas antiguos que hay, trata de hacer preguntas en redondo sobre lo último que has dicho. Parece casi como si conversases contigo mismo a través de un mediador.
+		De verdad parece un psicoterapeuta.
+
+2) a) Wolfram Alpha:
+		Wolfram es un interprete de problemas matemáticos y también tiene una base de conocimiento muy ámplia. Es capaz de reconocer input matemático, y en la mayoría de los casos lo puede resolver.
+		Tiene un motor de parsing, un motor matemático, y una base de datos de bastantes cosas.
+		No parece una definición de inteligencia.
+	b) Knowledge Graph
+		El gráfo de conocimiento de google parece una taxonoía completa de gente y eventos. Nuevamente se trata de una base de datos enorme, pero no tiene inteligencia. A diferencia de wolfram, no es capaz de resolver problemas mátematicos especialmente complejos.
+
+3) a) Deep Blue es una de las computadoras mas conocidas. Fue la primera 		computadora que ganó a un campeón mundial de Ajedrez. Carece de 			inteligencia, pero es un montón de reglas y capacidad de cómputo 			superior a la de cualquier persona. El único ámbito en el que funciona 		es el ajedrez.
+
+	b) Watson es un computador de IBM conocido por ganar el Jeopardy americano. Es capaz de responder a un sinfin de preguntas de trivia. Básicamente se trata de un motor de inferencia dentro de una cantidad ingente de datos. Inteligente? No. Útil? Ya lo creo.
+
+4) La traducción automática está lejos de ser perfecta. El ejemplo presentado no es capaz de transportar la gramática inglesa a la española, cometiendo errores graves: Las frases no están bien formadas. Se puede entender un error de interpretación, como sinónimos, el vocabulario, etc. Pero si el traductor no es capaz de formar frases coherentes y gramaticalmente correctas, ha fallado en su cometido.
+
+Muchos de los errores de traducción automática se pueden deber a que cada lenguage tiene su propia jerga y frases hechas que no pueden traducirse a otro idioma.
+
+La conclusión es que los traductores automáticos de momento no están a la altura de las espectativas.
+
+5) Los reconocedores de Voz como Siri o el de Android son capaces de reconocer casi cualquier acento del idioma especificado de antemano, de forma rápida y fluida, puede organizar una ontología sobre el usuario, organizar la agenda o incluso se le puede dictar texto. Dentro de los sistemas de IA con los que uno puede interactuar a dirario, estos son los que mas inteligentes parecen.
+
+6) Segun Searle, el test de Turing no demuestra inteligencia. Se basa en que en efecto, es un juego de imitación, donde la máquina solo trata de parecer humana, y no ser humana, siendo esto inteligencia artificial debil. El ejemplo del compilador: Es capaz de parsear y dicirte si tu código está bien o no en un cierto lenguaje, pero no significa que lo entienda. Es más o menos la idea de la habitación china.
