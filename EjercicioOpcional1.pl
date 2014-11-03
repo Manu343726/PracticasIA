@@ -51,6 +51,52 @@ movimiento(estado(P,M,Ho,Ha,1,1,1),estado(P,M,Ho,Ha,0,0,0)).
 %Tampoco crea un estado de peligro.
 movimiento(estado(P,M,Ho,Ha,0,0,0),estado(P,M,Ho,Ha,1,1,1)).
 
+%Mueve al padre de izquierda a derecha
+movimiento(estado(P,M,Ho,Ha,Pol,Lad,1),estado(NP,M,Ho,Ha,Pol,Lad,0)):-P>0,NP is P-1,not(peligro(NP,M,Ho,Ha,Pol,Lad,0)).
 
+%Mueve al padre de derecha a izquierda
+movimiento(estado(P,M,Ho,Ha,Pol,Lad,0),estado(NP,M,Ho,Ha,Pol,Lad,1)):-P<1,NP is P+1,not(peligro(NP,M,Ho,Ha,Pol,Lad,1)).
 
+%Mueve a la madre de izquierda a derecha
+movimiento(estado(P,M,Ho,Ha,Pol,Lad,1),estado(P,NM,Ho,Ha,Pol,Lad,0)):-M>0,NM is M-1,not(peligro(P,NM,Ho,Ha,Pol,Lad,0)).
 
+%Mueve a la madre de derecha a izquierda
+movimiento(estado(P,M,Ho,Ha,Pol,Lad,0),estado(P,NM,Ho,Ha,Pol,Lad,1)):-M<1,NM is M+1,not(peligro(P,NM,Ho,Ha,Pol,Lad,1)).
+
+%Mueve al padre y a un hijo de izquierda a derecha
+movimiento(estado(P,M,Ho,Ha,Pol,Lad,1),estado(NP,M,NHo,Ha,Pol,Lad,0)):-P>0,Ho>0,NP is P-1,NHo is Ho-1,not(peligro(NP,M,NHo,Ha,Pol,Lad,0)).
+
+%Mueve al padre y a un hijo de derecha a izquierda
+movimiento(estado(P,M,Ho,Ha,Pol,Lad,0),estado(NP,M,NHo,Ha,Pol,Lad,1)):-P<1,Ho<2,NP is P+1,NHo is Ho+1,not(peligro(NP,M,NHo,Ha,Pol,Lad,1)).
+
+%Mueve a la madre y a una hija de izquierda a derecha
+movimiento(estado(P,M,Ho,Ha,Pol,Lad,1),estado(P,NM,Ho,NHa,Pol,Lad,0)):-M>0,Ha>0,NM is M-1,NHa is Ha-1,not(peligro(P,NM,Ho,NHa,Pol,Lad,0)).
+
+%Mueve a la madre y a una hija de derecha a izquierda
+movimiento(estado(P,M,Ho,Ha,Pol,Lad,0),estado(P,NM,Ho,NHa,Pol,Lad,1)):-M<1,Ha<2,NM is M+1,NHa is Ha+1,not(peligro(P,NM,Ho,NHa,Pol,Lad,1)).
+
+%Mueve al padre y a la madre de izquierda a derecha
+movimiento(estado(P,M,Ho,Ha,Pol,Lad,1),estado(NP,NM,Ho,Ha,Pol,Lad,0)):-P>0,M>0,NP is P-1, NM is M-1,not(peligro(NP,NM,Ho,Ha,Pol,Lad,0)).
+
+%Mueve al padre y a la madre de derecha a izquierda
+movimiento(estado(P,M,Ho,Ha,Pol,Lad,0)),estado(NP,NM,Ho,Ha,Pol,Lad,1)):-P<1,M<1,NP is P+1,NM is M+1,not(peligro(NP,NM,Ho,Ha,Pol,Lad,1)).
+
+%Búsqueda recursiva
+camino(estado(P1,M1,Ho1,Ha1,Pol1,Lad1,B1),estado(P2,M2,Ho2,Ha2,Pol2,Lad2,B2),Explorados,ListaMovimientos):-
+	%Prueba el movimiento
+	movimiento(estado(P1,M1,Ho1,Ha1,Pol1,Lad1,B1),estado(P3,M3,Ho3,Ha3,Pol3,Lad3,B3)),
+	%que no pertenezca a los estados Explorados
+	not(member(estado(P3,M3,Ho3,Ha3,Pol3,Lad3,B3),Explorados)),
+	%%llamada recursiva
+	camino(estado(P3,M3,Ho3,Ha3,Pol3,Lad3,B3),estado(P2,M2,Ho2,Ha2,Pol2,Lad2,B2),[estado(P3,M3,Ho3,Ha3,Pol3,Lad3,B3)|Explorados],[[estado(P3,M3,Ho3,Ha3,Pol3,Lad3,B3),estado(P1,M1,Ho1,Ha1,Pol1,Lad1,B1)]|ListaMovimientos]).
+
+%Encuentra solucion
+camino(estado(NP,NM,NHo,Nha,NPol,NLad,B),estado(NP,NM,NHo,Nha,NPol,NLad,B),_,ListaMovimientos):-
+	output(ListaMovimientos).
+	%Muestra por pantalla
+	output([]) :- nl.
+	output([[A,B]|ListaMovimientos]) :- 
+	output(ListaMovimientos), 
+   	write(B), write(' -> '), write(A), nl.
+
+soluciona:-camino(inicial,final,inicial,_).
