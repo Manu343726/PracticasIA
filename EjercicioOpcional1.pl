@@ -45,29 +45,29 @@ peligro(estado(_,_,_,Ha,Pol,L,_)):-Ha<2,Pol>0,L<1.
 %-----------------------MOVIMIENTOS-----------------------------------
 %Mueve al ladrón y al policía del lado izquierdo al derecho.
 %Esto en ningún caso crea un estado de peligro.
-movimiento(estado(P,M,Ho,Ha,1,1,1),estado(P,M,Ho,Ha,0,0,0)).
+movimiento(estado(P,M,Ho,Ha,Pol,Lad,1),estado(P,M,Ho,Ha,NPol,NLad,0)):-Pol>0,Lad>0,NPol is Pol-1,NLad is Lad-1,not(peligro(estado(P,M,Ho,Ha,NPol,NLad,0))).
 
 %Mueve al ladrón y al policia del lado derecho al izquierdo.
 %Tampoco crea un estado de peligro.
-movimiento(estado(P,M,Ho,Ha,0,0,0),estado(P,M,Ho,Ha,1,1,1)).
+movimiento(estado(P,M,Ho,Ha,Pol,Lad,0),estado(P,M,Ho,Ha,NPol,NLad,1)):-Pol<1,Lad<1,NPol is Pol+1,NLad is Lad+1,not(peligro(estado(P,M,Ho,Ha,NPol,NLad,1))).
 
 %Mueve al policia del lado izquierdo al derecho.
-movimineto(estado(P,M,Ho,Ha,Pol,Lad,1),estado(P,M,Ho,Ha,NPol,Lad,0)):-Pol>0,NPol is Pol-1,not(peligro(estado(P,M,Ho,Ha,NPol,Lad,0))).
+movimiento(estado(P,M,Ho,Ha,Pol,Lad,1),estado(P,M,Ho,Ha,NPol,Lad,0)):-Pol>0,NPol is Pol-1,not(peligro(estado(P,M,Ho,Ha,NPol,Lad,0))).
 
 %Mueve al policia del lado derecho al izquierdo.
-movimento(estado(P,M,Ho,Ha,Pol,Lad,0),estado(P,M,Ho,Ha,NPol,Lad,1)):-Pol<1,NPol is Pol+1,not(peligro(estado(P,M,Ho,Ha,NPol,Lad,0))).
+movimiento(estado(P,M,Ho,Ha,Pol,Lad,0),estado(P,M,Ho,Ha,NPol,Lad,1)):-Pol<1,NPol is Pol+1,not(peligro(estado(P,M,Ho,Ha,NPol,Lad,1))).
 
 %Mueve al policia y a un niño de izquierda a derecha
 movimiento(estado(P,M,Ho,Ha,Pol,Lad,1),estado(P,M,NHo,Ha,NPol,Lad,0)):-Pol>0,Ho>0,NPol is Pol-1,NHo is Ho-1,not(peligro(estado(P,M,NHo,Ha,NPol,Lad,0))).
 
 %Mueve al policia y a un niño de derecha a izquierda 
-movimiento(estado(P,M,Ho,Ha,Pol,Lad,0),estado(P,M,NHo,Ha,NPol,Lad,1)):-Pol<1,Ho<2,NPol is Pol+1,NHo is Ho+1,not(peligro(estado(P,M,NHo,Ha,NPol,Lad,1))).
+movimiento(estado(P,M,Ho,Ha,Pol,Lad,0),estado(P,M,NHo,Ha,NPol,Lad,1)):-Pol<1,Ho<2,NNPol is Pol+1,NHo is Ho+1,not(peligro(estado(P,M,NHo,Ha,Pol,Lad,1))).
 
 %Mueve al policia y a una niña de izquierda a derecha
 movimiento(estado(P,M,Ho,Ha,Pol,Lad,1),estado(P,M,Ho,NHa,NPol,Lad,0)):-Pol>0,Ha>0,NPol is Pol-1,NHa is Ha-1,not(peligro(estado(P,M,Ho,NHa,NPol,Lad,0))).
 
 %mueve al policia y a una niña de derecha a izquierda
-movimiento(estado(P,M,Ho,Ha,Pol,Lad,0),estado(P,M,Ho,NHa,NPol,Lad,1)):-Pol<1,Ha<2,NPol is Pol+1,NHa is Ho+1,not(peligro(estado(P,M,Ho,NHa,Npol,Lad,1))).
+movimiento(estado(P,M,Ho,Ha,Pol,Lad,0),estado(P,M,Ho,NHa,NPol,Lad,1)):-Pol<1,Ha<2,NPol is Pol+1,NHa is Ha+1,not(peligro(estado(P,M,Ho,NHa,NPol,Lad,1))).
 
 %Mueve al padre de izquierda a derecha
 movimiento(estado(P,M,Ho,Ha,Pol,Lad,1),estado(NP,M,Ho,Ha,Pol,Lad,0)):-P>0,NP is P-1,not(peligro(estado(NP,M,Ho,Ha,Pol,Lad,0))).
@@ -117,4 +117,5 @@ camino(estado(NP,NM,NHo,Nha,NPol,NLad,B),estado(NP,NM,NHo,Nha,NPol,NLad,B),_,Lis
 	output(ListaMovimientos), 
    	write(B), write(' -> '), write(A), nl.
 
-soluciona:-camino(estado(1,1,2,2,1,1,1),estado(0,0,0,0,0,0,_),estado(1,1,2,2,1,1,1),_).
+%soluciona:-camino(estado(1,1,2,2,1,1,1),estado(0,0,0,0,0,0,_),estado(1,1,2,2,1,1,1),_).
+soluciona:-camino(estado(1,1,2,2,1,0,1),estado(1,1,2,2,0,0,0),estado(1,1,2,2,1,0,1),_).
