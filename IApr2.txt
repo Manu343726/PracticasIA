@@ -1,0 +1,117 @@
+Pablo Mac-Veigh García-Lastra 507662233N
+Manuel Sánchez Pérez 51114920L
+
+
+Puzzle de 8
+
+Búsqueda en anchura:
+	Busqueda en anchura garantiza encontrar la solución óptima, pero a costa de expandir el espacio de estados completo.
+
+	Detalles de Ejecución: 
+				Coste de la solución: 30
+				Nodos expandidos: 181058
+				Tamaño de cola: 365
+				Tamaño máximo de cola: 24048
+
+Búsqueda voraz:
+	Heurística De la ficha mal colocada.
+		La búsqueda voraz hace una búsqueda únicamente basada en la heurístca; en este caso, el número de fichas mal colocadas. En nuestras ejecuciónes siempre ha llegado al objetivo, pero no ha sido un resultado óptimo. La búsqueda voraz intenta expandir el menor número de nodos posibles a costa de la calidad de la solución. De este modo los recursos utilizados para encontrar la solución son mucho menores que en la búsqueda en anchura.
+
+	Detalles de Ejecucíon:
+				Coste de la solución: 116
+					Como habíamos mencionado, la solución no es óptima (notese la diferencia entre este resultado y la búsqueda en anchura).
+				Nodos expandidos: 800
+					Se trata de un número de varios ordenes de magnitud inferior a la búsqueda en anchura.
+				Tamaño máximo de cola: 526
+					Una vez mas, se ve claramente que el coste es mucho menor.
+
+	Heruística Manhattan:
+		El mismo algoritmo pero con una heurística diferente produce prácticamente los mismos resultados.
+	Detalles de Ejecución:
+				Coste de la solucion: 116
+				Nodos expandidos: 803
+				Tamaño máximo de cola 526
+
+A*:
+	Herística de la ficha mal colocada.
+		El algoritmo de A* garantiza una solución óptima con un coste menor que la búsqueda en anchura si la herística es lo suficientemente buena.
+			Detalles de ejecución:
+				Coste de la solución: 30
+					Como vemos la solución es óptima.
+				Nodos expandidos: 95920
+					Del orden de la mitad de nodos que la búsqueda en anchura.
+				Tamaño de cola: 23489
+				Tamaño máximo de cola: 23530
+
+	Heurística Manhattan.
+		Manhattan produce la solución óptima con un coste mucho menor. Como habíamos dicho, el rendimiento del algoritmo depende de la heurística.
+			Detalles de ejecución:
+				Coste de la solución: 30
+				Nodos expandidos: 10349
+					Una novena parte de los de la otra heurística.
+				Tamaño de cola: 5101
+				Tamaño máximo de cola: 5102
+
+Mapa de rumanía.
+
+	Búsqueda en profundidad:
+		No abre muchos nodos, encuentra una solución con un coste no necesariamente óptimo. Abre el primer nodo encontrado, y nos da un resultado 'aceptable' debido a que el medio no es muy complicado.
+		Detalles de ejecución:
+			Coste: 733
+			Tamaño de cola máximo: 3
+			Tamaño de cola: 1
+			Nodos expandidos: 10
+
+	Búsqueda en anchura:
+		Encuentra la solucion óptima, como es de esperar, pero a un coste mayor. En este ejemplo, el mapa es tan pequeño que no se nota la diferencia.
+		Detalles de ejecución
+			Coste: 450
+			Tamaño de cola máximo: 5
+			Tamaño de cola: 3
+			Nodos expandidos: 5
+
+
+	A*:
+		Como en el problema anterior, A* encuentra solución óptima con un coste mucho mejor que en anchura.
+		Detalles de ejecución:
+			Coste: 418
+			Tamaño máximo de cola: 6
+			Tamaño de cola: 5
+			Nodos expandidos: 5
+
+	La búsqueda en anchura no encuentra la solución óptima porque la solución óptima se encuentra en un nivel menos profundo en que la solución óptima. Además, la búsqueda en anchura devuelve el primer resultado.
+
+OsmAgentApp.
+	Búsqueda en profundidad:
+		Seamos francos. Buscar en una mapa en profundidad es una locura. Encuentra una ruta, en efecto, de unos 1256 km.
+		Esto no es ni de lejos una solución óptima, basta con mirar el mapa, parece que un niño lo ha coloreado de rojo.
+		Detalles de ejecución:
+			Coste: 286.24
+			Cola Máxima: 7080
+			Cola: 1222
+			Nodos: 111568
+	Búsqueda en anchura:
+		Esto encuentra una solución bastante mas elegante, y además los recuros utilizados son menores.
+			Coste: 23.4
+			Cola Máxima: 613
+			Cola: 365
+			Nodos: 66245
+	Coste uniforme:
+		Encuentra una solución incluso más óptima que la búsqueda en anchura con un coste similar.
+			Coste: 19.37
+			Cola Máxima: 344
+			Cola: 235
+			Nodos expandidos: 71572
+	A*
+		Ha encontrado el mismo camino que el coste uniforme, pero con un coste significativamente menor.
+			Coste: 19.37
+			Cola Máxima: 218
+			Cola: 205
+			Nodos expandidos: 8113.
+
+
+El código de el puzle de 8 viene definido en le paquete aima.core.environment.eightpuzzle: Define por un lado el tablero, la funciones, un objetivo, y las heurísticas.
+La heurística del numero de fichas mal colocadas va definida en: aima.core.environment.eightpuzzle.MisplacedTileHeuristicFunction.java
+
+El código del mapa de rumanía viene definido en aima.core.environment.map.SimplifiedRoadMapofPartOfRumania.java. En ese archivo va definido el grafo con las propiedades de las aristas.
+Luego, en MoveToAction.java se traducen estas aristas a acciones en el grafo.
