@@ -13,6 +13,15 @@ public class JarsJar {
 		_vol = 0; // The jar starts empty.
 	}
 	
+	/** Volume constructor of Jar
+	 * @param maxVolume How much the Jar can hold
+	 * @param volume How much is in the Jar
+	 */
+	public JarsJar(int maxVolume, int volume){
+		_maxVol = maxVolume;
+		_vol = volume;
+	}
+	
 	/** Fuction fills v litters into the jar, up to _maxVol
 	 * @param v
 	 * @return How much volume overflowed.

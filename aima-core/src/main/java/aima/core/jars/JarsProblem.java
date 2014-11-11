@@ -24,6 +24,12 @@ public class JarsProblem {
 		_state[1] = new JarsJar(3);
 	}
 	
+	public JarsProblem(JarsJar left, JarsJar right){
+		_state = new JarsJar[2];
+		_state[0] = left;
+		_state[1] = right;
+	}
+	
 	/**
 	 * @return The actual state of the problem
 	 */
@@ -101,6 +107,45 @@ public class JarsProblem {
 				_state[1].fill(-maxPour);
 			}
 		}
+	}
+	
+	/**
+	 * @return The left jar.
+	 */
+	private JarsJar getLeftJar(){
+		return _state[0];
+	}
+	
+	/**
+	 * @return The right jar.
+	 */
+	private JarsJar getRightJar(){
+		return _state[1];
+	}
+	
+	public boolean equals(Object o){
+		if (this == o){
+			return true;
+		}
+		if ((o == null) || (this.getClass() != o.getClass())) {
+			return false;
+		}
+		
+		JarsProblem aJarsProblem = (JarsProblem) o;
+		if (_state[0].getVolume()!=aJarsProblem.getLeftJar().getVolume()||_state[0].getMax()!=aJarsProblem.getLeftJar().getMax()){
+			return false;
+		}
+		if (_state[1].getVolume()!=aJarsProblem.getRightJar().getVolume()||_state[1].getMax()!=aJarsProblem.getRightJar().getMax()){
+			return false;
+		}
+		return true;		
+	}
+	
+	public int hashCode(){
+		int hash = 17;
+		hash = _state[0].getMax() * hash + _state[0].getVolume();
+		hash = _state[1].getMax() * hash + _state[1].getVolume();
+		return hash;
 	}
 	
 }

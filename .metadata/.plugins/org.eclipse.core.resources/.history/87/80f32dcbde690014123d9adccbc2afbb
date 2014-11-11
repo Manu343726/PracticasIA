@@ -1,0 +1,13 @@
+package aima.core.jars;
+
+import aima.core.search.framework.GoalTest;
+
+public class JarsProblemGoalTest implements GoalTest{
+
+	@Override
+	public boolean isGoalState(Object state) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}
