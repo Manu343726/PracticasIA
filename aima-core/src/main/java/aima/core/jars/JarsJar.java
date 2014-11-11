@@ -5,8 +5,11 @@ public class JarsJar {
 	private int _vol;
 	private final int _maxVol;
 	
+	/** Default constructor of Jar
+	 * @param maxVolume How much the Jar can hold
+	 */
 	public JarsJar(int maxVolume){
-		_maxVol = maxVolume; // Defines how much a jar can hold.
+		_maxVol = maxVolume;
 		_vol = 0; // The jar starts empty.
 	}
 	
@@ -20,10 +23,19 @@ public class JarsJar {
 			int overflow = _maxVol - _vol; //Overflow calculation
 			_vol = _maxVol;
 			return overflow; 
+		}else if (_vol<0){ //We can't have a bottle with a negative volume, can we?
+			_vol = 0;
 		}
 		return 0;
 	}
 	
+	public int getVolume(){
+		return _vol;
+	}
+	
+	public int getMax(){
+		return _maxVol;
+	}
 	
 
 }
