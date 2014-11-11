@@ -1,0 +1,12 @@
+package aima.core.jars;
+
+public class JarsJar {
+	
+	private int _vol;
+	private final int _maxVol;
+	
+	public JarsJar(int maxVolume){
+		_maxVol = maxVolume;
+	}
+
+}
