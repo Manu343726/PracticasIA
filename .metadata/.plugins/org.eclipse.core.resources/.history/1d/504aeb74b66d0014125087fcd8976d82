@@ -1,0 +1,24 @@
+package aima.gui.demo.search;
+
+import aima.core.jars.JarsJar;
+import aima.core.jars.JarsProblem;
+
+public class JarsProblemDemo {
+	
+	static JarsProblem jarsSolution = new JarsProblem(new JarsJar(4,2),new JarsJar(3,0));
+	
+	public static void main(String[] args) {
+		JarsProblem();
+	}
+	
+		private static void JarsProblem(){
+			System.out.println("Jars problem solution ->");
+			try{
+				Problem problem = new Problem(jarsSolution,);
+				
+			}catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+}

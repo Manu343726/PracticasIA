@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="aima.core.search.framework.GoalTest"/>
+<fullyQualifiedTypeName name="aima.core.jars.JarsProblem"/>
+<fullyQualifiedTypeName name="aima.core.jars.JarsJar"/>
+<fullyQualifiedTypeName name="aima.core.jars.JarsProblemGoalTest"/>
+<fullyQualifiedTypeName name="aima.core.jars.JarsProblemFunctionFactory"/>
+<fullyQualifiedTypeName name="aima.core.search.framework.Problem"/>
 </qualifiedTypeNameHistroy>
