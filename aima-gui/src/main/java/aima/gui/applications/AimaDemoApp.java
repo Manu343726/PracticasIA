@@ -1,6 +1,6 @@
 package aima.gui.applications;
 
-import aima.core.jars.JarsProblem;
+import aima.core.environment.jars.JarsProblem;
 import aima.gui.applications.search.csp.MapColoringApp;
 import aima.gui.applications.search.games.ConnectFourApp;
 import aima.gui.applications.search.games.EightPuzzleApp;
@@ -42,13 +42,12 @@ public class AimaDemoApp {
 
 		frame.addDemo(TrivialVacuumDemo.class);
 		
-		frame.addDemo(JarsProblem.class);
-		
 		frame.addDemo(EightPuzzleDemo.class);
 		frame.addDemo(TicTacToeDemo.class);
 		frame.addDemo(NQueensDemo.class);
 		frame.addDemo(MapColoringCSPDemo.class);
 		frame.addDemo(NondeterministicVacuumEnvironmentDemo.class);
+		frame.addDemo(JarsProblem.class);
 
 		frame.addDemo(TTEntailsDemo.class);
 		frame.addDemo(PLFCEntailsDemo.class);

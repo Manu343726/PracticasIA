@@ -5,14 +5,15 @@ import java.util.List;
 import java.util.Properties;
 
 import aima.core.agent.Action;
-import aima.core.jars.JarsJar;
-import aima.core.jars.JarsProblem;
-import aima.core.jars.JarsProblemFunctionFactory;
-import aima.core.jars.JarsProblemGoalTest;
+import aima.core.environment.jars.JarsJar;
+import aima.core.environment.jars.JarsProblem;
+import aima.core.environment.jars.JarsProblemFunctionFactory;
+import aima.core.environment.jars.JarsProblemGoalTest;
 import aima.core.search.framework.Problem;
 import aima.core.search.framework.Search;
 import aima.core.search.framework.SearchAgent;
 import aima.core.search.uninformed.DepthLimitedSearch;
+import aima.core.search.uninformed.IterativeDeepeningSearch;
 
 public class JarsProblemDemo {
 	
@@ -23,13 +24,29 @@ public class JarsProblemDemo {
 	 */
 	public static void main(String[] args) {
 		JarsProblemDLS();
+		JarsProblemIDLS();
 	}
 	
+	private static void JarsProblemIDLS() {
+		System.out.println("Iterative Depth Limited Search: ->");
+		try{
+			Problem problem = new Problem(jarsSolution,JarsProblemFunctionFactory.getActionsFuction(),
+					JarsProblemFunctionFactory.getResultFunction(),new JarsProblemGoalTest());
+			Search search = new IterativeDeepeningSearch();
+			SearchAgent agent = new SearchAgent(problem, search);
+			printActions(agent.getActions());
+			printInstrumentation(agent.getInstrumentation());
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 	/**
 	 * Problem is defined as a depth limited search.
 	 */
 	private static void JarsProblemDLS(){
-		System.out.println("Jars problem solution ->");
+		System.out.println("Depth Limited Search: ->");
 		try{
 			Problem problem = new Problem(jarsSolution,JarsProblemFunctionFactory.getActionsFuction(),
 					JarsProblemFunctionFactory.getResultFunction(),new JarsProblemGoalTest());
