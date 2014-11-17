@@ -1,0 +1,42 @@
+package aima.core.environment.jars;
+
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+import aima.core.agent.Action;
+import aima.core.search.framework.ActionsFunction;
+import aima.core.search.framework.ResultFunction;
+
+public class JarsProblemFunctionFactory {
+	private static ActionsFunction _actionsFunction = null;
+	private static ResultFunction _resultFunction = null;
+
+	public static ActionsFunction getActionsFuction() {
+		if (null == _actionsFunction) {
+			_actionsFunction = new EPActionsFunction();
+		}
+		return _actionsFunction;
+	}
+	
+	public static ResultFunction getResultFunction() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	private static class EPActionsFunction implements ActionsFunction {
+		public Set<Action> actions(Object state) {
+
+			Set<Action> actions = new LinkedHashSet<Action>();
+			actions.add(JarsProblem.FILLLEFT);
+			actions.add(JarsProblem.FILLRIGHT);
+			actions.add(JarsProblem.DUMPLEFT);
+			actions.add(JarsProblem.DUMPRIGHT);
+			actions.add(JarsProblem.POURLEFT);
+			actions.add(JarsProblem.POURRIGHT);
+			
+			return null;
+		}
+		
+	}
+
+}
