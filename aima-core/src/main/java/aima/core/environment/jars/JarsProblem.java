@@ -30,6 +30,12 @@ public class JarsProblem {
 		_state[1] = right;
 	}
 	
+	public JarsProblem(JarsProblem jars){
+		_state = new JarsJar[2];
+		_state[0] = jars.getLeftJar();
+		_state[1] = jars.getRightJar();
+	}
+	
 	/**
 	 * @return The actual state of the problem
 	 */
@@ -121,6 +127,31 @@ public class JarsProblem {
 	 */
 	private JarsJar getRightJar(){
 		return _state[1];
+	}
+	
+	public boolean canJar(Action what){
+		if (what.equals(DUMPLEFT)){
+			return getLeftJar().getVolume() > 0;
+		}
+		if (what.equals(DUMPRIGHT)){
+			return getRightJar().getVolume() > 0;
+		}
+		if (what.equals(FILLLEFT)){
+			return getLeftJar().getVolume() < getLeftJar().getMax();
+		}
+		if (what.equals(FILLRIGHT)){
+			return getRightJar().getVolume() < getRightJar().getMax();
+		}
+		if (what.equals(POURLEFT)){
+			return getLeftJar().getVolume() > 0 &&
+				   getLeftJar().getVolume() <= (getRightJar().getMax() - getRightJar().getVolume());
+		}
+		if (what.equals(POURRIGHT)){
+			return getRightJar().getVolume() > 0 &&
+				   getRightJar().getVolume() <= (getLeftJar().getMax() - getLeftJar().getVolume());
+		}
+		/* if action is NoOP, returns false*/
+		return false;
 	}
 	
 	public boolean equals(Object o){

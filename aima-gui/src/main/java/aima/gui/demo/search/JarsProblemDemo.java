@@ -17,20 +17,19 @@ import aima.core.search.uninformed.IterativeDeepeningSearch;
 
 public class JarsProblemDemo {
 	
-	static JarsProblem jarsSolution = new JarsProblem(new JarsJar(4,2),new JarsJar(3,0)); //Solution to our problem
+	static JarsProblem jarsExample = new JarsProblem(new JarsJar(4,0),new JarsJar(3,0)); //Solution to our problem
 	
 	/** The main method invokes the different searches for the problem
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		JarsProblemDLS();
-		JarsProblemIDLS();
 	}
 	
 	private static void JarsProblemIDLS() {
 		System.out.println("Iterative Depth Limited Search: ->");
 		try{
-			Problem problem = new Problem(jarsSolution,JarsProblemFunctionFactory.getActionsFuction(),
+			Problem problem = new Problem(jarsExample,JarsProblemFunctionFactory.getActionsFuction(),
 					JarsProblemFunctionFactory.getResultFunction(),new JarsProblemGoalTest());
 			Search search = new IterativeDeepeningSearch();
 			SearchAgent agent = new SearchAgent(problem, search);
@@ -48,7 +47,7 @@ public class JarsProblemDemo {
 	private static void JarsProblemDLS(){
 		System.out.println("Depth Limited Search: ->");
 		try{
-			Problem problem = new Problem(jarsSolution,JarsProblemFunctionFactory.getActionsFuction(),
+			Problem problem = new Problem(jarsExample,JarsProblemFunctionFactory.getActionsFuction(),
 					JarsProblemFunctionFactory.getResultFunction(),new JarsProblemGoalTest());
 			Search search = new DepthLimitedSearch(9);
 			SearchAgent agent = new SearchAgent(problem, search);

@@ -1,0 +1,26 @@
+package aima.core.environment.jars;
+
+import aima.core.search.framework.ActionsFunction;
+import aima.core.search.framework.ResultFunction;
+
+public class JarsProblemFunctionFactory {
+	private static ActionsFunction _actionsFunction = null;
+	private static ResultFunction _resultFunction = null;
+
+	public static ActionsFunction getActionsFuction() {
+		if (null == _actionsFunction) {
+			_actionsFunction = new EPActionsFunction();
+		}
+		return _actionsFunction;
+	}
+	
+	public static ResultFunction getResultFunction() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	private static class EPActionsFunction implements ActionsFunction {
+		
+	}
+
+}
