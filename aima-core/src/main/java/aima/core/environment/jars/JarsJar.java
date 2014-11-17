@@ -29,7 +29,7 @@ public class JarsJar {
 	public int fill(int v){
 		_vol = _vol+v;
 		if (_vol > _maxVol){
-			int overflow = _maxVol - _vol; //Overflow calculation
+			int overflow = _vol - _maxVol; //Overflow calculation
 			_vol = _maxVol;
 			return overflow; 
 		}else if (_vol<0){ //We can't have a bottle with a negative volume, can we?

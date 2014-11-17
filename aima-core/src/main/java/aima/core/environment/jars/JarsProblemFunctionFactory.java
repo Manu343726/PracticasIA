@@ -31,6 +31,12 @@ public class JarsProblemFunctionFactory {
 
 			Set<Action> actions = new LinkedHashSet<Action>();
 			
+			if (problem.canJar(JarsProblem.POURLEFT)){
+				actions.add(JarsProblem.POURLEFT);
+			}
+			if (problem.canJar(JarsProblem.POURRIGHT)){
+				actions.add(JarsProblem.POURRIGHT);
+			}			
 			if (problem.canJar(JarsProblem.FILLLEFT)){
 				actions.add(JarsProblem.FILLLEFT);
 			}
@@ -43,12 +49,6 @@ public class JarsProblemFunctionFactory {
 			if (problem.canJar(JarsProblem.DUMPRIGHT)){
 				actions.add(JarsProblem.DUMPRIGHT);
 			}
-			if (problem.canJar(JarsProblem.POURLEFT)){
-				actions.add(JarsProblem.POURLEFT);
-			}
-			if (problem.canJar(JarsProblem.POURRIGHT)){
-				actions.add(JarsProblem.POURRIGHT);
-			}
 			
 			return actions;
 		}
@@ -59,15 +59,15 @@ public class JarsProblemFunctionFactory {
 		public Object result(Object s, Action a) {
 			JarsProblem board = (JarsProblem) s;
 			
-			if (JarsProblem.FILLLEFT.equals(a)
-					&& board.canJar(JarsProblem.FILLLEFT)){
+			if (JarsProblem.POURLEFT.equals(a)
+					&& board.canJar(JarsProblem.POURLEFT)){
 				JarsProblem newBoard = new JarsProblem(board);
-				newBoard.fillLeft();
+				newBoard.pourLeft();
 				return newBoard;
-			}else if (JarsProblem.FILLRIGHT.equals(a)
-					&& board.canJar(JarsProblem.FILLRIGHT)){
+			}else if (JarsProblem.POURRIGHT.equals(a)
+					&& board.canJar(JarsProblem.POURRIGHT)){
 				JarsProblem newBoard = new JarsProblem(board);
-				newBoard.fillRight();
+				newBoard.pourRight();
 				return newBoard;
 			}else if (JarsProblem.DUMPLEFT.equals(a)
 					&& board.canJar(JarsProblem.DUMPLEFT)){
@@ -79,15 +79,15 @@ public class JarsProblemFunctionFactory {
 				JarsProblem newBoard = new JarsProblem(board);
 				newBoard.dumpRight();
 				return newBoard;
-			}else if (JarsProblem.POURLEFT.equals(a)
-					&& board.canJar(JarsProblem.POURLEFT)){
+			}else if (JarsProblem.FILLLEFT.equals(a)
+					&& board.canJar(JarsProblem.FILLLEFT)){
 				JarsProblem newBoard = new JarsProblem(board);
-				newBoard.pourLeft();
+				newBoard.fillLeft();
 				return newBoard;
-			}else if (JarsProblem.POURRIGHT.equals(a)
-					&& board.canJar(JarsProblem.POURRIGHT)){
+			}else if (JarsProblem.FILLRIGHT.equals(a)
+					&& board.canJar(JarsProblem.FILLRIGHT)){
 				JarsProblem newBoard = new JarsProblem(board);
-				newBoard.pourRight();
+				newBoard.fillRight();
 				return newBoard;
 			}
 			return s;

@@ -1,9 +1,0 @@
-package aima.gui.demo.search;
-
-import aima.core.jars.JarsProblem;
-
-public class JarsProblemDemo {
-	
-	static JarsProblem jarsSolution = new JarsProblem();
-
-}

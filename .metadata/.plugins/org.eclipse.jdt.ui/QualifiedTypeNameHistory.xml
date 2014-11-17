@@ -8,4 +8,8 @@
 <fullyQualifiedTypeName name="aima.core.search.framework.Problem"/>
 <fullyQualifiedTypeName name="aima.core.search.uninformed.IterativeDeepeningSearch"/>
 <fullyQualifiedTypeName name="aima.gui.demo.search.JarsProblemDemo"/>
+<fullyQualifiedTypeName name="aima.core.search.informed.AStarSearch"/>
+<fullyQualifiedTypeName name="aima.core.search.framework.GraphSearch"/>
+<fullyQualifiedTypeName name="aima.core.environment.jars.SimpleHeuristic"/>
+<fullyQualifiedTypeName name="aima.core.search.uninformed.BreadthFirstSearch"/>
 </qualifiedTypeNameHistroy>
