@@ -7,6 +7,5 @@
 	<classpathentry kind="src" path="src/test/resource"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/aima-core"/>
-	<classpathentry exported="true" kind="lib" path="D:/Stuff/Desktop/Clase/IA/AimaStuff/release/aima-gui.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

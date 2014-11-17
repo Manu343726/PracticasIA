@@ -7,6 +7,9 @@
 	<classpathentry kind="src" path="src/test/resource"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="lib/junit/junit-4.7.jar"/>
-	<classpathentry exported="true" kind="lib" path="D:/Stuff/Desktop/Clase/IA/AimaStuff/release/aima-core.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/Pabs/Documents/GitHub/PracticasIA/release/aima-core.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/Pabs/Documents/GitHub/PracticasIA/release/aima-gui.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/Pabs/Documents/GitHub/PracticasIA/release/aimax-osm.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/Pabs/Documents/GitHub/PracticasIA/release/commons-compress-1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
