@@ -172,10 +172,6 @@ public class JarsProblem {
 		return true;		
 	}
 	
-	public String toString(){
-		return "pepito";
-	}
-	
 	public int hashCode(){
 		int hash = 17;
 		hash = _state[0].getMax() * hash + _state[0].getVolume();

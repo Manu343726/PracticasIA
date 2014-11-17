@@ -24,7 +24,7 @@ public class JarsProblemDemo {
 	 */
 	public static void main(String[] args) {
 		JarsProblemDLS();
-		//JarsProblemIDLS();
+		JarsProblemIDLS();
 	}
 	
 	private static void JarsProblemIDLS() {
