@@ -1,5 +1,6 @@
 package aima.gui.applications;
 
+import aima.core.environment.jars.JarsProblem;
 import aima.gui.applications.search.csp.MapColoringApp;
 import aima.gui.applications.search.games.ConnectFourApp;
 import aima.gui.applications.search.games.EightPuzzleApp;

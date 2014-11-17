@@ -1,5 +1,6 @@
 package aima.gui.applications;
 
+import aima.core.environment.jars.JarsProblem;
 import aima.gui.applications.search.csp.MapColoringApp;
 import aima.gui.applications.search.games.ConnectFourApp;
 import aima.gui.applications.search.games.EightPuzzleApp;
@@ -17,7 +18,6 @@ import aima.gui.demo.logic.TTEntailsDemo;
 import aima.gui.demo.logic.WalkSatDemo;
 import aima.gui.demo.probability.ProbabilityDemo;
 import aima.gui.demo.search.EightPuzzleDemo;
-import aima.gui.demo.search.JarsProblemDemo;
 import aima.gui.demo.search.MapColoringCSPDemo;
 import aima.gui.demo.search.NQueensDemo;
 import aima.gui.demo.search.NondeterministicVacuumEnvironmentDemo;

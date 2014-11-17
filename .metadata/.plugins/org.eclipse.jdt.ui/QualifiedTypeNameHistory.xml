@@ -7,4 +7,5 @@
 <fullyQualifiedTypeName name="aima.core.jars.JarsProblemFunctionFactory"/>
 <fullyQualifiedTypeName name="aima.core.search.framework.Problem"/>
 <fullyQualifiedTypeName name="aima.core.search.uninformed.IterativeDeepeningSearch"/>
+<fullyQualifiedTypeName name="aima.gui.demo.search.JarsProblemDemo"/>
 </qualifiedTypeNameHistroy>
