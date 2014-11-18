@@ -28,7 +28,7 @@ public class JarsProblemDemo {
 	 */
 	public static void main(String[] args) {
 		JarsBreadthFirstSearch();
-		JarsProblemDLS();
+		//JarsProblemDLS();
 		//JarsProblemIDLS();
 		JarsProblemAStar();
 	}

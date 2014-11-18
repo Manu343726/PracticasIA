@@ -32,8 +32,8 @@ public class JarsProblem {
 	
 	public JarsProblem(JarsProblem jars){
 		_state = new JarsJar[2];
-		_state[0] = new JarsJar(jars.getLeftJar().getMax(), jars.getLeftJar().getVolume());
-		_state[1] = new JarsJar(jars.getRightJar().getMax(), jars.getRightJar().getVolume());
+		_state[0] = jars.getLeftJar();
+		_state[1] = jars.getRightJar();
 	}
 	
 	/**
@@ -141,11 +141,11 @@ public class JarsProblem {
 		}else
 		if (what.equals(FILLLEFT)){
 			retval = getLeftJar().getVolume() < getLeftJar().getMax();
-			//retval = false;
+			retval = false;
 		}else
 		if (what.equals(FILLRIGHT)){
 			retval = getRightJar().getVolume() < getRightJar().getMax();
-			//retval = false;
+			retval = false;
 		}else
 		if (what.equals(POURLEFT)){
 			retval = getLeftJar().getVolume() > 0 && (getRightJar().getVolume() < getRightJar().getMax());

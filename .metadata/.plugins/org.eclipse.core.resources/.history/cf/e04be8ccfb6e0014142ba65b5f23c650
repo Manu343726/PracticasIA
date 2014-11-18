@@ -32,8 +32,8 @@ public class JarsProblem {
 	
 	public JarsProblem(JarsProblem jars){
 		_state = new JarsJar[2];
-		_state[0] = new JarsJar(jars.getLeftJar().getMax(), jars.getLeftJar().getVolume());
-		_state[1] = new JarsJar(jars.getRightJar().getMax(), jars.getRightJar().getVolume());
+		_state[0] = jars.getLeftJar();
+		_state[1] = jars.getRightJar();
 	}
 	
 	/**
@@ -132,11 +132,11 @@ public class JarsProblem {
 	public boolean canJar(Action what){
 		boolean retval = false;
 		if (what.equals(DUMPLEFT)){
-			retval = getLeftJar().getVolume() > 0;
+			retval = getLeftJar().getVolume() > 0 && (getRightJar().getVolume() < getRightJar().getMax());
 			//retval=false;
 		}else
 		if (what.equals(DUMPRIGHT)){
-			retval = getRightJar().getVolume() > 0;
+			retval = getRightJar().getVolume() > 0 && (getLeftJar().getVolume() < getLeftJar().getMax());
 			//retval = false;
 		}else
 		if (what.equals(FILLLEFT)){
@@ -148,11 +148,11 @@ public class JarsProblem {
 			//retval = false;
 		}else
 		if (what.equals(POURLEFT)){
-			retval = getLeftJar().getVolume() > 0 && (getRightJar().getVolume() < getRightJar().getMax());
+			retval = getLeftJar().getVolume() > 0;
 			//retval = false;
 		}else
 		if (what.equals(POURRIGHT)){
-			retval = getRightJar().getVolume() > 0 && (getRightJar().getVolume() < getRightJar().getMax());
+			retval = getRightJar().getVolume() > 0 ;
 			//retval = false;
 		}
 		return retval;
@@ -178,7 +178,7 @@ public class JarsProblem {
 	}
 	
 	public String toString(){
-		return "Izquierda: " + getLeftJar() + " Derecha: " + getRightJar();
+		return "Izquierda: " + _state[0] + " Derecha: " + _state[1];
 	}
 	
 	public int hashCode(){

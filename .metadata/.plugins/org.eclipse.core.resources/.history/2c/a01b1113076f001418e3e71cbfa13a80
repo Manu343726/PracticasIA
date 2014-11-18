@@ -21,7 +21,7 @@ import aima.core.search.uninformed.IterativeDeepeningSearch;
 
 public class JarsProblemDemo {
 	
-	static JarsProblem jarsExample = new JarsProblem(new JarsJar(4,0),new JarsJar(3,0)); //Solution to our problem
+	static JarsProblem jarsExample = new JarsProblem(new JarsJar(4,0),new JarsJar(3,2)); //Solution to our problem
 	
 	/** The main method invokes the different searches for the problem
 	 * @param args

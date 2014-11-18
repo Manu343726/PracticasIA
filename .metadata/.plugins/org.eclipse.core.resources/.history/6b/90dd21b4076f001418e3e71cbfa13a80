@@ -141,11 +141,11 @@ public class JarsProblem {
 		}else
 		if (what.equals(FILLLEFT)){
 			retval = getLeftJar().getVolume() < getLeftJar().getMax();
-			//retval = false;
+			retval = false;
 		}else
 		if (what.equals(FILLRIGHT)){
 			retval = getRightJar().getVolume() < getRightJar().getMax();
-			//retval = false;
+			retval = false;
 		}else
 		if (what.equals(POURLEFT)){
 			retval = getLeftJar().getVolume() > 0 && (getRightJar().getVolume() < getRightJar().getMax());

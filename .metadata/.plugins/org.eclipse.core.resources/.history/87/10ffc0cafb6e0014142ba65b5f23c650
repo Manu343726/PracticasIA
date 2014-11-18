@@ -46,9 +46,5 @@ public class JarsJar {
 		return _maxVol;
 	}
 	
-	public String toString(){
-		return _maxVol + " " + _vol;
-	}
-	
 
 }
