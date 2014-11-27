@@ -1,0 +1,28 @@
+package aima.core.environment.spainmap;
+
+public class Map {
+
+	private City _actualCity;
+	
+	public Map(){
+		_actualCity = new City();
+	}
+	
+	public Map(City city){
+		_actualCity = city;
+	}
+	
+	public Map(Map map){
+		City city = map.getActualCity();
+		_actualCity = new City(city.getName(),city.getXCoordinate(),city.getYCoordinate());
+	}
+	
+	public City getActualCity(){
+		return _actualCity;
+	}
+	
+	public Void moveToCity(City city){
+		_actualCity = city;
+	}
+	
+}

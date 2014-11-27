@@ -1,0 +1,23 @@
+package aima.core.environment.spainmap;
+
+public class Map {
+
+	private City _actualCity;
+	
+	public Map(){
+		_actualCity = new City();
+	}
+	
+	public Map(City city){
+		_actualCity = city;
+	}
+	
+	public Map(Map map){
+		
+	}
+	
+	public City getActualCity(){
+		return _actualCity;
+	}
+	
+}

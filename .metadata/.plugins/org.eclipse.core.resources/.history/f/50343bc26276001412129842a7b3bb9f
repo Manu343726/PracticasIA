@@ -1,0 +1,37 @@
+package aima.core.environment.spainmap;
+
+public class Map {
+
+	private City _actualCity;
+	
+	public Map(){
+		_actualCity = new City();
+	}
+	
+	public Map(City city){
+		_actualCity = city;
+	}
+	
+	public Map(Map map){
+		City city = map.getActualCity();
+		_actualCity = new City(city.getName(),city.getXCoordinate(),city.getYCoordinate());
+	}
+	
+	public City getActualCity(){
+		return _actualCity;
+	}
+	
+	/** Never to be invoked without previously doing canMove( actualCity, nextCity
+	 * @param city the city that will be next.
+	 */
+	public void moveToCity(City nextCity){
+		_actualCity = nextCity;
+	}
+	
+	public boolean canMove(City first, City second){
+		//TODO
+		//Checks the bidirectional links, and if there is indeed a link between both cities, returns true.
+		return true;
+	}
+	
+}

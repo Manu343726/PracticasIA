@@ -1,7 +1,0 @@
-package aima.core.jars;
-
-import aima.core.search.framework.GoalTest;
-
-public class JarsProblemGoalTest implements GoalTest{
-
-}

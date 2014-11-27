@@ -1,0 +1,13 @@
+package aima.core.environment.spainmap;
+
+import aima.core.search.framework.GoalTest;
+
+public class MapGoalTest implements GoalTest{
+
+	@Override
+	public boolean isGoalState(Object state) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

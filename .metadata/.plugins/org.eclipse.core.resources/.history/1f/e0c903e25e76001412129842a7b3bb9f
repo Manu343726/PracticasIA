@@ -1,0 +1,46 @@
+package aima.core.environment.spainmap;
+
+public class City {
+
+	private String _name;
+	private double _xCoord,_yCoord;
+	/**
+	 * Default constructor, shouldn't be used.
+	 */
+	public City(){
+		_name = "";
+		_xCoord = 0;
+		_yCoord = 0;
+	}
+	
+	/** Parameter constructor.
+	 * @param name Name of the city
+	 * @param xCoord X Coordenate (offset from madrid)
+	 * @param yCoord Y Coordenate (offset from madrid)
+	 */
+	public City(String name, int xCoord, int yCoord){
+		_name = name;
+		_xCoord = xCoord;
+		_yCoord = yCoord;
+	}
+	
+	/** 
+	 * @return Coordenate X of the city
+	 */
+	public double getXCoordinate(){
+		return _xCoord;
+	}
+	
+	public double getYCoordinate(){
+		return _yCoord;
+	}
+	
+	/** Calculates the distance in a straight line from the object city to the parameter city.
+	 * @param city The one we want to calculate
+	 * @return (double) Distance
+	 */
+	public double straightLineDistance(City city){		
+		return  java.lang.Math.sqrt(( (getYCoordinate()-city.getYCoordinate())^2) + (getYCoordinate()-city.getYCoordinate())^2);
+	}
+	
+}

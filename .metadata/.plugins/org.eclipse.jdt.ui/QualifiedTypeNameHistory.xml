@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="aima.core.search.framework.GoalTest"/>
 <fullyQualifiedTypeName name="aima.core.jars.JarsProblem"/>
 <fullyQualifiedTypeName name="aima.core.jars.JarsJar"/>
 <fullyQualifiedTypeName name="aima.core.jars.JarsProblemGoalTest"/>
@@ -12,4 +11,7 @@
 <fullyQualifiedTypeName name="aima.core.search.framework.GraphSearch"/>
 <fullyQualifiedTypeName name="aima.core.environment.jars.SimpleHeuristic"/>
 <fullyQualifiedTypeName name="aima.core.search.uninformed.BreadthFirstSearch"/>
+<fullyQualifiedTypeName name="aima.core.util.datastructure.XYLocation"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
+<fullyQualifiedTypeName name="aima.core.search.framework.GoalTest"/>
 </qualifiedTypeNameHistroy>

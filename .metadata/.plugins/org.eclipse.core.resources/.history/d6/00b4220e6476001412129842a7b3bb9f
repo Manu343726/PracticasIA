@@ -1,0 +1,78 @@
+package aima.core.environment.spainmap;
+
+public class Map {
+
+	private City _actualCity;
+	
+	/**
+	 * Default constructor, should not be called.
+	 */
+	public Map(){
+		_actualCity = new City();
+	}
+	
+	/** Parameter constructor
+	 * @param city the actual city.
+	 */
+	public Map(City city){
+		_actualCity = city;
+	}
+	
+	/** Parameter constructor.
+	 * @param map Wich should be copied.
+	 */
+	public Map(Map map){
+		City city = map.getActualCity();
+		_actualCity = new City(city.getName(),city.getXCoordinate(),city.getYCoordinate());
+	}
+	
+	/**
+	 * @return The actual city.
+	 */
+	public City getActualCity(){
+		return _actualCity;
+	}
+	
+	/** Never to be invoked without previously doing canMove( actualCity, nextCity
+	 * @param city the city that will be next.
+	 */
+	public void moveToCity(City nextCity){
+		_actualCity = nextCity;
+	}
+	
+	/** Checks if there is a link between both cities.
+	 * @param first The first city to be checked.
+	 * @param second The second city to be checked.
+	 * @return True if there is a link betweeen both, False if there isn't, or both cities are the same.
+	 */
+	public boolean canMove(City first, City second){
+		//TODO
+		//Checks the bidirectional links, and if there is indeed a link between both cities, returns true.
+		return true;
+	}
+	
+	public boolean equals(Object o){
+		if (this == o){
+		return true;
+		}		
+		if ((o == null) || (this.getClass() != o.getClass())) {
+			return false;
+		}
+		
+		Map aMap = (Map) o;
+		if (getActualCity()!=aMap.getActualCity()){
+			return false;
+		}
+		
+		return true;
+	}
+	
+	public int hashCode(){
+		return getActualCity().getXCoordinate()*1051 + getActualCity().getYCoordinate();
+	}
+	
+	public String toString(){
+		return ("Ciudad: " + getActualCity().getName());
+	}
+	
+}

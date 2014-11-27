@@ -1,18 +1,16 @@
 package aima.core.environment.spainmap;
 
-import aima.core.util.datastructure.XYLocation;
-
 public class City {
 
 	private String _name;
-	private XYLocation _xy;
-	
+	private int _xCoord,_yCoord;
 	/**
 	 * Default constructor, shouldn't be used.
 	 */
 	public City(){
 		_name = "";
-		_xy = new XYLocation(0,0);
+		_xCoord = 0;
+		_yCoord = 0;
 	}
 	
 	/** Parameter constructor.
@@ -22,14 +20,29 @@ public class City {
 	 */
 	public City(String name, int xCoord, int yCoord){
 		_name = name;
-		_xy = new XYLocation(xCoord,yCoord);
+		_xCoord = xCoord;
+		_yCoord = yCoord;
 	}
 	
-	/** Location getter
-	 * @return location
+	/** 
+	 * @return Coordenate X of the city
 	 */
-	public XYLocation getLocation(){
-		return _xy;
+	public int getXCoordinate(){
+		return _xCoord;
+	}
+	
+	/**
+	 * @return Coordenate Y of the city
+	 */
+	public int getYCoordinate(){
+		return _yCoord;
+	}
+	
+	/**
+	 * @return Name of the City
+	 */
+	public String getName(){
+		return _name;
 	}
 	
 	/** Calculates the distance in a straight line from the object city to the parameter city.
@@ -37,7 +50,7 @@ public class City {
 	 * @return (double) Distance
 	 */
 	public double straightLineDistance(City city){		
-		return  java.lang.Math.sqrt(( (_xy.getXCoOrdinate()-city.getLocation().getXCoOrdinate())^2) + (_xy.getYCoOrdinate()-city.getLocation().getYCoOrdinate())^2);
+		return  java.lang.Math.sqrt(( (getXCoordinate()-city.getXCoordinate())^2) + (getYCoordinate()-city.getYCoordinate())^2);
 	}
 	
 }

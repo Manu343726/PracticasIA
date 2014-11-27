@@ -1,0 +1,5 @@
+package aima.core.environment.spainmap;
+
+public class MapGoalTest {
+
+}
