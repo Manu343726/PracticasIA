@@ -9,5 +9,9 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/aima-gui"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/aima-core"/>
 	<classpathentry exported="true" kind="lib" path="lib/commons-compress-1.1.jar"/>
+	<classpathentry kind="lib" path="E:/Pabs/Desktop/Clase/IA/Practicas/PracticasIA/release/aima-core.jar"/>
+	<classpathentry kind="lib" path="E:/Pabs/Desktop/Clase/IA/Practicas/PracticasIA/release/aima-gui.jar"/>
+	<classpathentry kind="lib" path="E:/Pabs/Desktop/Clase/IA/Practicas/PracticasIA/release/aimax-osm.jar"/>
+	<classpathentry kind="lib" path="E:/Pabs/Desktop/Clase/IA/Practicas/PracticasIA/release/commons-compress-1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
