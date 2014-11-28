@@ -33,12 +33,4 @@ public class MapFuctionFactory {
 			
 		}
 	}
-	
-	private static class EPResultFunction implements ResultFunction {
-		public Object result(Object s, Action a) {
-			
-			
-			return null;
-		}
-	}
 }

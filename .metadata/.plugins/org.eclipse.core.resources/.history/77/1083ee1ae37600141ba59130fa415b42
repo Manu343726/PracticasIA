@@ -4,11 +4,6 @@ public class City {
 
 	private String _name;
 	private int _xCoord,_yCoord;
-	
-	//To be discussed. Something better than arrays?
-	private City[] _cities;
-	private BidirectionalLink[] _links;
-	
 	/**
 	 * Default constructor, shouldn't be used.
 	 */

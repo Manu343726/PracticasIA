@@ -27,18 +27,11 @@ public class MapFuctionFactory {
 	
 	private static class EPActionsFunction implements ActionsFunction {
 		public Set<Action> actions(Object state) {
+			
 			Map board = (Map) state;
 			
-			return null;
+			Set<Action> actions = new LinkedHashSet<Action>();
 			
-		}
-	}
-	
-	private static class EPResultFunction implements ResultFunction {
-		public Object result(Object s, Action a) {
-			
-			
-			return null;
 		}
 	}
 }

@@ -1,6 +1,5 @@
 package aima.core.environment.spainmap;
 
-import java.util.LinkedHashSet;
 import java.util.Set;
 
 import aima.core.agent.Action;
@@ -27,18 +26,7 @@ public class MapFuctionFactory {
 	
 	private static class EPActionsFunction implements ActionsFunction {
 		public Set<Action> actions(Object state) {
-			Map board = (Map) state;
 			
-			return null;
-			
-		}
-	}
-	
-	private static class EPResultFunction implements ResultFunction {
-		public Object result(Object s, Action a) {
-			
-			
-			return null;
 		}
 	}
 }

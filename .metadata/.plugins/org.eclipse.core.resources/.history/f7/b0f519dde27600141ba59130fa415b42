@@ -25,10 +25,6 @@ public class BidirectionalLink {
 		_roadDistance = distance;
 	}
 	
-	/** Checks the other side of the link.
-	 * @param city the known city
-	 * @return the city at the other end.
-	 */
 	public City getLinkedCity(City city){
 		if (getFirstCity().equals(city)){
 			return getSecondCity();
@@ -38,23 +34,14 @@ public class BidirectionalLink {
 		return new City();
 	}
 	
-	/** City getter
-	 * @return One of the cities on the link.
-	 */
 	public City getFirstCity (){
 		return _firstCity;
 	}
 	
-	/** Citty getter
-	 * @return The other city on the link.
-	 */
 	public City getSecondCity(){
 		return _secondCity;
 	}
 	
-	/** Distance getter
-	 * @return Gets the real distance between two cities (not in a straight line, but the road length)
-	 */
 	public int getRoadDistance(){
 		return _roadDistance;
 	}
