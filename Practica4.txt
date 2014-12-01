@@ -25,7 +25,7 @@ Madrid:
 Se considera Madrid como la coordenada (0,0). Entonces la tabla anterior se representa como:
 
 Castilla-Leon:
-	Ávila:(-82.418, 117.751)
+	Ávila:(-82.418, 28.751)
 	Burgos:(2.304, 213.951)
 	León:(-150.894, 245.196)
 	Palencia:(-66.886, 177.728)
