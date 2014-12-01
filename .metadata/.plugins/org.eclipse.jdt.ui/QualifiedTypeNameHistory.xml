@@ -14,4 +14,20 @@
 <fullyQualifiedTypeName name="aima.core.util.datastructure.XYLocation"/>
 <fullyQualifiedTypeName name="java.lang.Math"/>
 <fullyQualifiedTypeName name="aima.core.search.framework.GoalTest"/>
+<fullyQualifiedTypeName name="aima.gui.framework.SimpleAgentApp"/>
+<fullyQualifiedTypeName name="aima.gui.framework.AgentAppEnvironmentView"/>
+<fullyQualifiedTypeName name="aima.gui.applications.search.map.ExtendedMapAgentView"/>
+<fullyQualifiedTypeName name="aima.gui.framework.AgentAppFrame"/>
+<fullyQualifiedTypeName name="aima.gui.framework.AgentAppController"/>
+<fullyQualifiedTypeName name="aima.gui.applications.search.map.MapAgentFrame"/>
+<fullyQualifiedTypeName name="aima.gui.applications.search.map.SearchFactory"/>
+<fullyQualifiedTypeName name="aima.gui.applications.search.map.AbstractMapAgentController"/>
+<fullyQualifiedTypeName name="aima.core.environment.map.ExtendableMap"/>
+<fullyQualifiedTypeName name="aima.core.environment.map.MapEnvironment"/>
+<fullyQualifiedTypeName name="aima.core.environment.map.Scenario"/>
+<fullyQualifiedTypeName name="aima.core.environment.map.AdaptableHeuristicFunction"/>
+<fullyQualifiedTypeName name="aima.gui.framework.MessageLogger"/>
+<fullyQualifiedTypeName name="aima.core.environment.map.MapAgent"/>
+<fullyQualifiedTypeName name="aima.core.util.datastructure.Point2D"/>
+<fullyQualifiedTypeName name="aima.gui.applications.search.map.RouteFindingAgentApp"/>
 </qualifiedTypeNameHistroy>

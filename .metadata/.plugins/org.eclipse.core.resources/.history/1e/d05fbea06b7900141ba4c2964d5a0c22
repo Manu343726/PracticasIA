@@ -1,0 +1,30 @@
+package main;
+
+import aima.core.environment.map.ExtendableMap;
+
+public class SimplifiedRoadOfSpain extends ExtendableMap{
+
+	public SimplifiedRoadOfSpain(){
+		initMap(this);
+	}
+	
+	//Locations ---------------------------------------------
+	//Castilla-Leon -----------------------------------------
+	public static final String AVILA = "Ávila";
+	public static final String BURGOS = "Burgos";
+	public static final String LEON= "León";
+	public static final String PALENCIA = "Palencia";
+	public static final String SALAMANCA = "Salamanca";
+	public static final String SEGOVIA = "Segovia";
+	public static final String SORIA = "Soria";
+	public static final String VALLADOLID = "Valladolid";
+	public static final String ZAMORA = "Zamora";
+	//Castilla-La Mancha ------------------------------------
+	public static final String ALBACETE = "Albacete";
+	public static final String CIUDADREAL = "Ciudad Real";
+	public static final String CUENCA = "Cuenca";
+	public static final String GUADALAJARA = "Guadalajara";
+	public static final String TOLEDO = "Toledo";
+	//Madrid ------------------------------------------------
+	public static final String MADRID = "Madrid";
+}
