@@ -1,7 +1,0 @@
-package main;
-
-import aima.gui.framework.SimpleAgentApp;
-
-public class SpainMapDemo extends SimpleAgentApp{
-
-}

@@ -1,7 +1,0 @@
-package main;
-
-import aima.core.environment.map.ExtendableMap;
-
-public class SimplifiedRoadOfSpain extends ExtendableMap{
-
-}
