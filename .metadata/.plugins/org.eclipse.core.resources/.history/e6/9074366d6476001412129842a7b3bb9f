@@ -1,7 +1,0 @@
-package aima.core.environment.spainmap;
-
-import aima.core.search.framework.GoalTest;
-
-public class MapGoalTest implements GoalTest{
-
-}
