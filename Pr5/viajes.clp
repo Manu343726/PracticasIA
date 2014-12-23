@@ -22,6 +22,12 @@
     (slot description(type STRING)); Descripción del viaje     
 )
 
+;Definicion del template recomendación
+(deftemplate recommendation
+    (slot name(type STRING))
+    (slot description(type STRING))
+)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Enumeraciones
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -35,6 +41,30 @@
 ;; 2: otoño     (90 días 264 - 354)
 ;; 3: invierno  (91 días 355 - 81)
 
-;; hobby 
+;; hobby / theme
 ;;
+;; 0: Deportes
+;; 1: Aventura
+;; 2: Cultura
+;; 3: Turismo
+;; 4: Gastronomía
+
+;; companion 
 ;;
+;; 0: solo
+;; 1: familia
+;; 2: amigos
+
+;; languages
+;;
+;; 0: Español
+;; 1: Inglés
+;; 2: Francés
+;; 3: Chino
+;; 4: Alemán
+;; 5: Indio
+;; 6: Portugués
+
+(reset)
+(run)
+(facts)
