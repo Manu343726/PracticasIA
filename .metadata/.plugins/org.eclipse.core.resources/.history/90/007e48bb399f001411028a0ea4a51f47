@@ -91,7 +91,7 @@
 
 ;AsertaciÃ³n de hechos: Usuario de prueba
 (deffacts usr
-    (user (season 1) (budget 5000) (hobby 2) (age 26) (companion 0) (exotic 1) (languages 3))
+    (user (season 0) (budget 5000) (hobby 2) (age 26) (companion 0) (exotic 1) (languages 3))
     )
 
 ;AsertaciÃ³n de hechos: Viajes
@@ -117,10 +117,10 @@
     "Devuelve verdadero si la temporada que ha elegido el usuario corresponde con la del viaje"
     ;No sé si las OR y las and pueden ser ternarias o cuaterarias ( con binarias funcionan )
     (return (or 
-            	(and (eq ?userSeason 0)(>= ?beginDate 82)(<= ?endDate 172)(<= ?beginDate 172)(>= ?endDate 82));Primavera del 82 al 172
-            	(and (eq ?userSeason 1)(>= ?beginDate 173)(<= ?endDate 263)(<= ?beginDate 263)(>= ?endDate 82));Verano del 173 al 263
-          	    (and (eq ?userSeason 2)(>= ?beginDate 264)(<= ?endDate 354)(<= ?beginDate 354)(>= ?endDate 82));Otoño del 264 al 354
-            	(and (eq ?userSeason 3)(>= ?beginDate 355)(<= ?endDate 81));Invierno del 355 al 81
+            	(and (eq ?userSeason 0)(>= ?beginDate 82)(<= ?endDate 172));Primavera del 82 al 172
+            	(and (eq ?userSeason 1)(>= ?beginDate 173)(<= ?endDate 263));Verano del 173 al 263
+          	    (and (eq ?userSeason 2)(>= ?beginDate 264)(<= ?endDate 354));Otoño del 264 al 354
+            	(and (eq ?userSeason 1)(>= ?beginDate 355)(<= ?endDate 81));Invierno del 355 al 81
             )
         )
     )
