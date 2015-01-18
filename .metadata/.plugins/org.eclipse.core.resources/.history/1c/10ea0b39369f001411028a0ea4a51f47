@@ -137,8 +137,8 @@
 
 (defrule recommend
     "Aserta las recomendaciones si estas se ajustan"
-    (travel (name ?tn) (begins ?tb) (ends ?te) (theme ?tt) (language ?tl) (company ?tc) (continent ?tct)(description ?td)) ;Todos los viajes
-    (user (season ?us) (budget ?ub) (hobby ?uh) (age ?ua) (companion ?uc) (exotic ?ue) (continent ?uct) (languages ?ul)) ;Todos los usuarios
+    (travel (name ?tn) (begins ?tb) (ends ?te) (theme ?tt) (language ?tl) (company ?tc) (continent ?uct)(description ?td)) ;Todos los viajes
+    (user (season ?us) (budget ?ub) (hobby ?uh) (age ?ua) (companion ?uc) (exotic ?ue) (languages ?ul)) ;Todos los usuarios
     ;Los hechos sobre Travel empiezan las variables con t y los hechos sobre usuarios empiezan con u.
     
     ;llamadas tipo (test (funcion parametros)))
