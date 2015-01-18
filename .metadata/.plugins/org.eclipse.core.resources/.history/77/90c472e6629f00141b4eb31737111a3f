@@ -89,7 +89,7 @@
 
 ;Asertaci�n de hechos: Usuario de prueba
 (deffacts usr
-    (user (season 1) (budget 5000) (hobby 1) (age 26) (companion 0) (exotic 1) (languages 0))
+    (user (season 1) (budget 5000) (hobby 2) (age 26) (companion 0) (exotic 1) (languages 0))
     )
 
 ;Asertaci�n de hechos: Viajes
@@ -148,16 +148,6 @@
             )
         )
     )
-
-(deffunction hobbies (?userHobby ?travelTheme)
-    "Intenta convalidar los hobbies con la tematica y no enviar a alguien que quiere gastronomía a escalar el everest."
-	(return (or
-	            (and (>= ?userHobby 2)(>= ?travelTheme 2)) ; Si el viajante quiere cultura turismo o gastronomía se le puede asignar cualquiera de las tres
-            	(and (< ?userHobby 2)(< ?travelTheme 2)) ; Si el viajante quiere aventura o deportes se le asignará cualquiera de los dos.
-            )
-        )
-    )
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; RECOMMENDATION MODULE ;This module handles the recomendations
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -183,7 +173,6 @@
     (test (company ?tt ?uh ?uc))
     (test (>= ?ub ?tc)) ;el viaje está en presupuesto
     (test (age ?ua ?tt ?ue ?tc ?uc))
-    (test (hobbies ?uh ?tt))
     => ;;Si todas las condiciones timpo test se cumplen
     (assert (recommendation (name ?tn) (description ?td))) ;Aserta una recomendaci�n
     )

@@ -89,7 +89,7 @@
 
 ;Asertaci�n de hechos: Usuario de prueba
 (deffacts usr
-    (user (season 1) (budget 5000) (hobby 1) (age 26) (companion 0) (exotic 1) (languages 0))
+    (user (season 1) (budget 5000) (hobby 2) (age 26) (companion 0) (exotic 1) (languages 0))
     )
 
 ;Asertaci�n de hechos: Viajes
@@ -183,7 +183,6 @@
     (test (company ?tt ?uh ?uc))
     (test (>= ?ub ?tc)) ;el viaje está en presupuesto
     (test (age ?ua ?tt ?ue ?tc ?uc))
-    (test (hobbies ?uh ?tt))
     => ;;Si todas las condiciones timpo test se cumplen
     (assert (recommendation (name ?tn) (description ?td))) ;Aserta una recomendaci�n
     )
