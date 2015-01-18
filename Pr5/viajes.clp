@@ -1,9 +1,9 @@
 ;Práctica 6 - Inteligencia Artificial
 ;Manuel Sanchez, Pablo Mac-Veigh
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Enumeraciones
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Enumerations
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Season
 ;;
@@ -38,6 +38,13 @@
 ;; 5: Indio
 ;; 6: PortuguÃ©s
 
+(defglobal ?*crlf* = "
+")
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; TEMPLATES DEFINITION
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;Definition del template del usuario
 (deftemplate user
     (slot season(type number)); Ã‰poca del aÃ±o en la que el usuario quiere viajar (ENUMERADO)
@@ -69,6 +76,10 @@
     (slot description(type STRING))
 )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; FACTS DEFINITIONS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;Asertación de hechos: Usuario de prueba
 (deffacts usr
     (user (season 0) (budget 5000) (hobby 2) (age 26) (companion 0) (exotic 1) (languages 3))
@@ -82,17 +93,68 @@
     )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; RECOMMENDATION MODULE
+;; SELECTION MODULE ;This module contains all the functions used by the recommendation module
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(defmodule travelRecommendation)
+(defmodule selection)
 
-;Posible regla sobre un viaje exótico:
-;Si el usuario ha seleccionado un viaje exótico - y no habla el idioma del sitio se considera exótico?
-;Solo es una idea y ejemplo.
+(deffunction fitsSeason (?beginDate ?endDate ?userSeason)
+    "Devuelve verdadero si la temporada que ha elegido el usuario corresponde con la del viaje"
+    ;No s� si las OR y las and pueden ser ternarias o cuaterarias ( con binarias funcionan )
+    (return (or 
+            	(and (eq ?userSeason 0)(>= ?beginDate 82)(<= ?endDate 172));Primavera del 82 al 172
+            	(and (eq ?userSeason 1)(>= ?beginDate 173)(<= ?endDate 263));Verano del 173 al 263
+          	    (and (eq ?userSeason 2)(>= ?beginDate 264)(<= ?endDate 354));Oto�o del 264 al 354
+            	(and (eq ?userSeason 1)(>= ?beginDate 355)(<= ?endDate 81));Invierno del 355 al 81
+            )
+        )
+    )
+
 (deffunction possibleExoticRule (?travelLanguage ?userExotic ?userLangage)
     (return (and (eq ?userExotic 1) (neq ?travelLangage ?userLangage)))
     )
 
-(reset)
-(run)
-(facts)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; RECOMMENDATION MODULE ;This module handles the recomendations
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defmodule travelRecommendation)
+
+(defrule combine-recommendations 
+    "Combiena recomendaciones iguales que puedan salir varias veces"
+    ?r1 <- (recommendation (name ?n) (description ?d1))
+    ?r2 <- (recommendation (name ?n) (description ?d2&:(neq ?d1 ?d2)))
+    =>
+    (retract ?r2)
+    (modify ?r1 (description (str-cat ?d1 ?*crlf* ?d2))))
+
+(defrule recommend
+    "Aserta las recomendaciones si estas se ajustan"
+    (travel (name ?tn) (begins ?tb) (ends ?te) (theme ?tt) (language ?tl) (company ?tc) (description ?td)) ;Todos los viajes
+    (user (season ?us) (budget ?ub) (hobby ?uh) (age ?ua) (companion ?uc) (exotic ?ue) (languages ?ul)) ;Todos los usuarios
+    ;Los hechos sobre Travel empiezan las variables con t y los hechos sobre usuarios empiezan con u.
+    
+    ;llamadas tipo (test (funcion parametros)))
+    (test (fitsSeason ?tb ?te ?us))
+    => ;;Si todas las condiciones timpo test se cumplen
+    (assert (recommendation (name ?tn) (description ?td))) ;Aserta una recomendaci�n
+    )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; REPORT MODULE; This module handles showing the information on screen
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defmodule report)
+
+(defrule sort-and-print
+  ?r1 <- (recommendation (name ?n1) (description ?d1))
+  (not (recommendation (name ?n2&:(< (str-compare ?n2 ?n1) 0))))
+  =>
+  (printout t "You should consider the following trip: " ?n1 crlf)
+  (printout t "Description: "  ?d1 crlf crlf)
+  (retract ?r1))
+
+(deffunction run-system ()
+    "Equivalent to main function"
+  (reset);resets all facts
+  (focus selection travelRecommendation report) ;order in wich modules will be 'executed'
+  (run))
+
+(run-system)
