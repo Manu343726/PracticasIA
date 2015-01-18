@@ -1,4 +1,4 @@
-;PrÃ¡ctica 6 - Inteligencia Artificial
+;Práctica 6 - Inteligencia Artificial
 ;Manuel Sanchez, Pablo Mac-Veigh
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -9,10 +9,10 @@
 ;;
 ;; Rangos estacionales basados en http://www.almanac.com/content/first-day-seasons
 ;;
-;; 0: primavera (90 dÃƒÂ­as 82 - 172)
-;; 1: verano    (90 dÃƒÂ­as 173 - 263)
-;; 2: otoÃƒÂ±o     (90 dÃƒÂ­as 264 - 354)
-;; 3: invierno  (91 dÃƒÂ­as 355 - 81)
+;; 0: primavera (90 días 82 - 172)
+;; 1: verano    (90 días 173 - 263)
+;; 2: otoño     (90 días 264 - 354)
+;; 3: invierno  (91 días 355 - 81)
 
 ;; hobby / theme
 ;;
@@ -20,7 +20,7 @@
 ;; 1: Aventura
 ;; 2: Cultura
 ;; 3: Turismo
-;; 4: GastronomÃƒÂ­a
+;; 4: Gastronomía
 
 ;; companion 
 ;;
@@ -30,21 +30,21 @@
 
 ;; languages
 ;;
-;; 0: EspaÃƒÂ±ol
-;; 1: InglÃƒÂ©s
-;; 2: FrancÃƒÂ©s
+;; 0: Español
+;; 1: Inglés
+;; 2: Francés
 ;; 3: Chino
-;; 4: AlemÃƒÂ¡n
+;; 4: Alemán
 ;; 5: Indio
-;; 6: PortuguÃƒÂ©s
+;; 6: Portugués
 
 ;; Continentes
 ;;
 ;; 0: Europa
 ;; 1: Asia
 ;; 2: Australia
-;; 3: América del Norte
-;; 4: América del Sur
+;; 3: Améica del Norte
+;; 4: Améica del Sur
 
 (defglobal ?*crlf* = "
 ")
@@ -55,31 +55,30 @@
 
 ;Definition del template del usuario
 (deftemplate user
-    (slot season(type number)); Ãƒâ€°poca del aÃƒÂ±o en la que el usuario quiere viajar (ENUMERADO)
+    (slot season(type number)); Época del año en la que el usuario quiere viajar (ENUMERADO)
     (slot budget(type number)); Presupuesto
-    (slot hobby(type number)); AficiÃƒÂ³n (ENUMERADO). TODO: multislot varias aficiones
+    (slot hobby(type number)); Afición (ENUMERADO). TODO: multislot varias aficiones
     (slot age(type number)); Edad
-    (slot companion(type number)); AcompaÃƒÂ±antes (ENUMERADO)
-    (slot exotic(type number)); Busca un viaje exÃƒÂ³tico? (TRUE:1, FALSE:0)
+    (slot companion(type number)); Acompañantes (ENUMERADO)
+    (slot exotic(type number)); Busca un viaje exótico? (TRUE:1, FALSE:0)
     (slot continent(type number))
     (slot languages(type number)); Idioma (ENUMERADO)
 )
 
-;DeficiciÃƒÂ³n template viaje
+;Deficiciï¾ƒÎ´ï½³n template viaje
 (deftemplate travel
-	(slot begins(type number)); DÃƒÂ­a que empieza el viaje (Ãƒï¿½ndice 0-364 representando un dÃƒÂ­a del aÃƒÂ±o)
-    (slot ends(type number)); DÃƒÂ­a que termina el viaje (Ãƒï¿½ndice 0-364 representando un dÃƒÂ­a del aÃƒÂ±o)
-    (slot theme(type number)); TemÃƒÂ¡tica del viaje (Deporte, turismo, aventura, etc) (ENUMERADO)
+	(slot begins(type number)); Día que empieza el viaje (índice 0-364 representando un día del año)
+    (slot ends(type number)); Día que termina el viaje (índice 0-364 representando un día del año)
+    (slot theme(type number)); Temática del viaje (Deporte, turismo, aventura, etc) (ENUMERADO)
     ;TODO ofertas especiales
     (slot language(type number)); Idioma del sitio de destino (Ver languages en user) TODO: multislot varios idiomas
-    (slot company(type STRING)); CompaÃƒÂ±ÃƒÂ­a
-    (slot name(type STRING)); TÃƒÂ­tulo
+    (slot company(type STRING)); Compañia
+    (slot name(type STRING)); Título
     (slot continent (type number));Continente del desitno
-    (slot description(type STRING)); DescripciÃƒÂ³n del viaje     
-    ;AÃ±adir 'dureza' del viaje? (en familia o no)
+    (slot description(type STRING)); Descripción del viaje     
 )
 
-;Definicion del template recomendaciÃƒÂ³n
+;Definicion del template recomendación
 (deftemplate recommendation
     (slot name(type STRING))
     (slot description(type STRING))
@@ -89,23 +88,23 @@
 ;; FACTS DEFINITIONS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;AsertaciÃ³n de hechos: Usuario de prueba
+;Asertación de hechos: Usuario de prueba
 (deffacts usr
     (user (season 1) (budget 5000) (hobby 2) (age 26) (companion 0) (exotic 1) (languages 3))
     )
 
-;AsertaciÃ³n de hechos: Viajes
+;Asertación de hechos: Viajes
 (deffacts trvl
     ;(travel (begins) (ends) (theme) (language) (company) (name) (description))
-	(travel (begins 180)(ends 201)(theme 1)(language 3)(company "China Tourism") (name "Viaje al Tíbet") (continent 1) (description "Un viaje de 21 dias por el Tíbet, una experiencia para los mas aventureros"))
-	(travel (begins 90)(ends 97)(theme 4)(language 3)(company "China Tourism") (name "Gastronomía Pekinesa") (continent 1) (description "Siete días de ensueño en los que pasará por los mejores restaurantes de China, coincidiendo con el mercado de Primavera."))
+	(travel (begins 180)(ends 201)(theme 1)(language 3)(company "China Tourism") (name "Viaje al Tíbett") (continent 1) (description "Un viaje de 21 dias por el Tíbet, una experiencia para los mas aventureros"))
+	(travel (begins 90)(ends 97)(theme 4)(language 3)(company "China Tourism") (name "Gastronomía Pekinesa") (continent 1) (description "Siete días de ensueño en los que pasaría por los mejores restaurantes de China, coincidiendo con el mercado de Primavera."))
 	(travel (begins 356)(ends 10)(theme 1)(language 0)(company "Turismo de Argentina") (name "La patagonia") (continent 4) (description "La patagonia no es un sitio para cualquiera. Verano es la mejor época para visitar a los enormes glaciares que se desprenderán ante tus ojos."))
-	(travel (begins 360)(ends 4)(theme 2)(language 4)(company "Deutche Tourism") (name "El Berlín de los museos") (continent 0) (description "Berlin tiene una cantidad de museos impresionantes, podrá visitarlos todos"))
+	(travel (begins 360)(ends 4)(theme 2)(language 4)(company "Deutche Tourism") (name "El Berlín de los museos") (continent 0) (description "Berlin tiene una cantidad de museos impresionantes, podrías visitarlos todos"))
 	(travel (begins 360)(ends 4)(theme 3)(language 4)(company "Italian Toursim") (name "Roma") (continent 0) (description "Roma es el destino ideal para turistas"))
 	(travel (begins 266)(ends 286)(theme 0)(language 1)(company "US Dep. of Toursim") (name "Estados unidos en bicicleta") (continent 3) (description "Recorra de costa este a oeste los estados unidos en bicicleta; un viaje duro para los mas osados"))
 	(travel (begins 88)(ends 98)(theme 3)(language 2)(company "Quebec Company of Tourism") (name "Quebeq, la Francia ovlidada") (continent 3) (description "Un viaje por la zona franco-parlante de Canada."))
 	(travel (begins 174)(ends 190)(theme 1)(language 1)(company "Australia Tourism") (name "Australia: La tierra del peligro") (continent 2) (description "Australia en verano es un sitio inhóspito, perfecto para la gente que busca aventuras"))
-	(travel (begins 130)(ends 145)(theme 2)(language 5)(company "India Tourism") (name "La India y la Religión") (continent 1) (description "Un viaje cultural por la India, donde nació el buddhismo."))
+	(travel (begins 130)(ends 145)(theme 2)(language 5)(company "India Tourism") (name "La India y la Religiî‰¢") (continent 1) (description "Un viaje cultural por la India, donde nació el buddhismo."))
     )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -115,7 +114,6 @@
 
 (deffunction fitsSeason (?beginDate ?endDate ?userSeason)
     "Devuelve verdadero si la temporada que ha elegido el usuario corresponde con la del viaje"
-    ;No sé si las OR y las and pueden ser ternarias o cuaterarias ( con binarias funcionan )
     (return (or 
             	(and (eq ?userSeason 0)(>= ?beginDate 82)(<= ?endDate 172)(<= ?beginDate 172)(>= ?endDate 82));Primavera del 82 al 172
             	(and (eq ?userSeason 1)(>= ?beginDate 173)(<= ?endDate 263)(<= ?beginDate 263)(>= ?endDate 82));Verano del 173 al 263
@@ -125,10 +123,13 @@
         )
     )
 
-(deffunction possibleExoticRule (?travelLanguage ?userExotic ?userLangage)
-    (return (and (eq ?userExotic 1) (neq ?travelLangage ?userLangage)))
+(deffunction exotic (?travelLanguage ?travelContinent ?userLanguage ?userContinent ?userExotic)
+    (return (or
+            	(and (neq ?travelLanguage ?userLanguage)(neq ?travelContinent ?userContinent) )
+            	(eq ?userExotic 0)
+            )
     )
-
+)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; RECOMMENDATION MODULE ;This module handles the recomendations
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -150,6 +151,7 @@
     
     ;llamadas tipo (test (funcion parametros)))
     (test (fitsSeason ?tb ?te ?us))
+    (test (exotic ?tl ?tct ?ul ?uct ?ue))
     => ;;Si todas las condiciones timpo test se cumplen
     (assert (recommendation (name ?tn) (description ?td))) ;Aserta una recomendación
     )
