@@ -1,3 +1,6 @@
+/*Pablo Mac-Veigh
+Manuel Sánchez*/
+
 dd(juan, maria, rosa, m).
 dd(juan, maria, luis, h).
 dd(jose, laura, pilar, m).
@@ -12,9 +15,9 @@ hijo(X, Y):- dd(_, Y, X, h).
 hija(X, Y):- dd(Y, _, X, m).
 hija(X, Y):- dd(_, Y, X, m).
 hermano(X,Y):- hijo(X,Z),hija(Y,Z).
-hermano(X,Y):- hijo(X,Z),hijo(Y,Z), X is not Y.
+hermano(X,Y):- hijo(X,Z),hijo(Y,Z), X\=Y.
 hermana(X,Y):- hija(X,Z),hijo(Y,Z).
-hermana(X,Y):- hija(X,Z),hija(Y,Z), X is not Y.
+hermana(X,Y):- hija(X,Z),hija(Y,Z), X\=Y.
 progenitor(X,Y):- padre(X,Y);madre(X,Y).
 abuelo(X,Y):- padre(X,Z),padre(Z,Y).
 abuelo(X,Y):- padre(X,Z),madre(Z,Y).
