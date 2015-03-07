@@ -62,7 +62,9 @@ public class JessToJava {
 		inst = new JessToJava();
 		treatInput(_rete);
 		reset();
-		_rete.setFocus("travelRecommendation");
+		_rete.setFocus("");
+		run();
+		_rete.setFocus("");
 		run();
 		factList();
 		halt();

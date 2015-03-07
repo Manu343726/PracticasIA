@@ -62,7 +62,9 @@ public class JessToJava {
 		inst = new JessToJava();
 		treatInput(_rete);
 		reset();
-		_rete.setFocus("travelRecommendation");
+		_rete.setFocus("");
+		run();
+		_rete.setFocus("");
 		run();
 		factList();
 		halt();
@@ -120,36 +122,13 @@ public class JessToJava {
 	
 	public static void factList(){
 		//TODO
-		@SuppressWarnings("rawtypes")
 		java.util.Iterator iterator;
-		iterator = _rete.listFacts();
+		iterador = _rete.listFacts();
 		Fact fetch = null;
 		Fact[] fetchedTravels = new Fact[30];
 		int travelCounter = 0;
-		while (iterator.hasNext()){
-			fetch = (Fact) iterator.next();
-			if (fetch.getName().equals("MAIN::travelRecommendation")){
-				if (!fetch.equals(null)){
-					fetchedTravels[travelCounter]=fetch;
-					travelCounter++;
-				}
-			}
-		}
-		try{
-			System.out.println("Las recomendaciones de viajes son: ");
-			for (int i = 0; i<3; i++){
-				Value name = fetchedTravels[i].getSlotValue("name");
-				Value begins = fetchedTravels[i].getSlotValue("begins");
-				Value ends = fetchedTravels[i].getSlotValue("ends");
-				Value cost = fetchedTravels[i].getSlotValue("cost");
-				System.out.println("Viaje: " + name.stringValue(null));
-				System.out.println("Comienza el: " + begins.stringValue(null));
-				System.out.println("Acaba el: " + ends.stringValue(null));
-				System.out.println("Precio: " + cost.stringValue(null));
-			}
-		}catch (JessException e3){
-			System.err.println("Something went awefully wrong?!");
-			e3.printStackTrace();
+		while (iterador.hasNext()){
+			
 		}
 	}
 	
