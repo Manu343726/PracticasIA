@@ -88,9 +88,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;Asertaci�n de hechos: Usuario de prueba
-(deffacts usr
-    (user (season 1) (budget 5000) (hobby 2) (age 26) (companion 0) (exotic 1) (languages 3))
-    )
+/*(deffacts usr
+    (user (season 3) (budget 8000) (hobby 2) (age 26) (companion 0) (exotic 0) (languages 2))
+    )*/
 ;Asertaci�n de hechos: Viajes
 (deffacts trvl
     ;(travel (begins) (ends) (theme) (language) (company) (name) (description))

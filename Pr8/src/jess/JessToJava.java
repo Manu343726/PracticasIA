@@ -1,5 +1,7 @@
 package jess;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import jess.Deffacts;
@@ -58,13 +60,14 @@ public class JessToJava {
 	}
 	
 	public static void main(String[] args) throws JessException {
+		System.out.println(args[0]);
 		JessToJava inst;
 		inst = new JessToJava();
 		treatInput(_rete);
 		reset();
 		_rete.setFocus("travelRecommendation");
 		run();
-		factList();
+		factList(Integer.parseInt(args[0]));
 		halt();
 	}
 	
@@ -118,35 +121,40 @@ public class JessToJava {
 		
 	}
 	
-	public static void factList(){
+	public static List<Fact> filter(String template)
+	{
+		ArrayList<Fact> out = new ArrayList<Fact>();
+		java.util.Iterator it = _rete.listFacts();
+		
+		while(it.hasNext())
+		{
+			Fact f = (Fact)it.next();
+			
+			if(f.getName().equalsIgnoreCase(template))
+				out.add(f);
+		}
+		
+		return out;
+	}
+	
+	public static void factList(int maxResults){
 		//TODO
 		@SuppressWarnings("rawtypes")
-		java.util.Iterator iterator;
-		iterator = _rete.listFacts();
-		Fact fetch = null;
-		Fact[] fetchedTravels = new Fact[30];
-		int travelCounter = 0;
-		while (iterator.hasNext()){
-			fetch = (Fact) iterator.next();
-			if (fetch.getName().equals("MAIN::travelRecommendation")){
-				if (!fetch.equals(null)){
-					fetchedTravels[travelCounter]=fetch;
-					travelCounter++;
-				}
-			}
-		}
+		
+		List<Fact> fetchedTravels = filter("MAIN::recommendation");
+		
 		try{
 			System.out.println("Las recomendaciones de viajes son: ");
-			for (int i = 0; i<3; i++){
-				Value name = fetchedTravels[i].getSlotValue("name");
-				Value begins = fetchedTravels[i].getSlotValue("begins");
-				Value ends = fetchedTravels[i].getSlotValue("ends");
-				Value cost = fetchedTravels[i].getSlotValue("cost");
+			for (int i = 0; i< Math.min(maxResults,fetchedTravels.size()); i++){
+				Value name = fetchedTravels.get(i).getSlotValue("name");
+				Value description = fetchedTravels.get(i).getSlotValue("description");
 				System.out.println("Viaje: " + name.stringValue(null));
-				System.out.println("Comienza el: " + begins.stringValue(null));
-				System.out.println("Acaba el: " + ends.stringValue(null));
-				System.out.println("Precio: " + cost.stringValue(null));
+				System.out.println("Descripción: " + description.stringValue(null));
 			}
+			
+			if(fetchedTravels.isEmpty())
+				System.out.println("Lo sentimos, ningun viaje de nuestra base de datos se ajusta a sus necesidades");
+			
 		}catch (JessException e3){
 			System.err.println("Something went awefully wrong?!");
 			e3.printStackTrace();
