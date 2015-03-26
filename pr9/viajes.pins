@@ -1,0 +1,172 @@
+; Thu Mar 26 16:26:20 CET 2015
+; 
+;+ (version "3.5")
+;+ (build "Build 663")
+
+([KB_866725_Class30] of  Area
+
+	(contiene_a [KB_866725_Class39])
+	(internacional FALSE)
+	(nombre "Andalucia"))
+
+([KB_866725_Class31] of  Area
+
+	(contiene_a [KB_866725_Class37])
+	(internacional FALSE)
+	(nombre "Madrid"))
+
+([KB_866725_Class32] of  Area
+
+	(contiene_a [KB_866725_Class38])
+	(internacional FALSE)
+	(nombre "Cantabria"))
+
+([KB_866725_Class33] of  Area
+
+	(contiene_a [KB_866725_Class40])
+	(internacional TRUE)
+	(nombre "Francia"))
+
+([KB_866725_Class34] of  Area
+
+	(contiene_a
+		[KB_866725_Class42]
+		[KB_866725_Class43])
+	(internacional TRUE)
+	(nombre "USA"))
+
+([KB_866725_Class35] of  Area
+
+	(contiene_a [KB_866725_Class41])
+	(internacional TRUE)
+	(nombre "Italia"))
+
+([KB_866725_Class37] of  Ciudad
+
+	(nombre "Madrid")
+	(pertenece_a [KB_866725_Class31]))
+
+([KB_866725_Class38] of  Ciudad
+
+	(nombre "Santander")
+	(pertenece_a [KB_866725_Class32]))
+
+([KB_866725_Class39] of  Ciudad
+
+	(nombre "Sevilla")
+	(pertenece_a [KB_866725_Class30]))
+
+([KB_866725_Class40] of  Ciudad
+
+	(nombre "Paris")
+	(pertenece_a [KB_866725_Class33]))
+
+([KB_866725_Class41] of  Ciudad
+
+	(nombre "Roma")
+	(pertenece_a [KB_866725_Class35]))
+
+([KB_866725_Class42] of  Ciudad
+
+	(nombre "Washington D.C.")
+	(pertenece_a [KB_866725_Class34]))
+
+([KB_866725_Class43] of  Ciudad
+
+	(nombre "Boston")
+	(pertenece_a [KB_866725_Class34]))
+
+([KB_866725_Class45] of  Transporte
+
+	(calidad 2)
+	(precio 100.0)
+	(tipo "avion"))
+
+([KB_866725_Class46] of  Transporte
+
+	(calidad 1)
+	(precio 10.0)
+	(tipo "avion"))
+
+([KB_866725_Class47] of  Transporte
+
+	(calidad 5)
+	(precio 1000.0)
+	(tipo "avion"))
+
+([KB_866725_Class48] of  Transporte
+
+	(calidad 1)
+	(precio 100.0)
+	(tipo "barco"))
+
+([KB_866725_Class49] of  Transporte
+
+	(calidad 3)
+	(precio 200.0)
+	(tipo "barco"))
+
+([KB_866725_Class50] of  Transporte
+
+	(calidad 4)
+	(precio 300.0)
+	(tipo "barco"))
+
+([KB_866725_Class52] of  Alojamiento
+
+	(calidad 1)
+	(pertenece_a_cadena [KB_866725_Class57])
+	(precio 20.0))
+
+([KB_866725_Class53] of  CadenaHotelera
+
+	(nombre "Melia")
+	(ofrece_alojamientos [KB_866725_Class58]))
+
+([KB_866725_Class54] of  CadenaHotelera
+
+	(nombre "HotelesPepito"))
+
+([KB_866725_Class55] of  CadenaHotelera
+
+	(nombre "HotelesJaimito"))
+
+([KB_866725_Class56] of  CadenaHotelera
+
+	(nombre "HotelesJorjito"))
+
+([KB_866725_Class57] of  CadenaHotelera
+
+	(nombre "HotelesYoDeberiaEstarProgramandoEnPythonOdioJava")
+	(ofrece_alojamientos [KB_866725_Class52]))
+
+([KB_866725_Class58] of  Alojamiento
+
+	(calidad 5)
+	(pertenece_a_cadena [KB_866725_Class53])
+	(precio 1000.0))
+
+([KB_866725_Class59] of  Viaje
+
+	(alojamiento [KB_866725_Class52])
+	(calidad 5)
+	(destino [KB_866725_Class40])
+	(precio 10000.0)
+	(transporte [KB_866725_Class47])
+	(viaje_ofrecido_por [KB_866725_Class60]))
+
+([KB_866725_Class60] of  AgenciaViajes
+
+	(nombre "TravelPlan")
+	(ofrece_viajes
+		[KB_866725_Class59]
+		[KB_866725_Class61]))
+
+([KB_866725_Class61] of  Viaje
+
+	(alojamiento [KB_866725_Class58])
+	(calidad 2)
+	(destino [KB_866725_Class39])
+	(precio 100.0)
+	(transporte [KB_866725_Class47])
+	(viaje_ofrecido_por [KB_866725_Class60]))

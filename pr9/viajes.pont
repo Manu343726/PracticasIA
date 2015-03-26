@@ -1,0 +1,210 @@
+; Thu Mar 26 16:26:20 CET 2015
+; 
+;+ (version "3.5")
+;+ (build "Build 663")
+
+
+(defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
+	(is-a USER)
+	(role abstract)
+	(single-slot internacional
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot pertenece_a_cadena
+		(type INSTANCE)
+;+		(allowed-classes CadenaHotelera)
+;+		(cardinality 1 1)
+;+		(inverse-slot ofrece_alojamientos)
+		(create-accessor read-write))
+	(single-slot origin
+		(type INSTANCE)
+;+		(allowed-classes Ciudad)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tipo
+		(type STRING)
+		(default "avion")
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot ofrece_alojamientos
+		(type INSTANCE)
+;+		(allowed-classes Alojamiento)
+;+		(inverse-slot pertenece_a_cadena)
+		(create-accessor read-write))
+	(single-slot precio
+;+		(comment "Precio del producto")
+		(type FLOAT)
+		(range 0.0 %3FVARIABLE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot alojamiento
+		(type INSTANCE)
+;+		(allowed-classes Alojamiento)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot transporte
+		(type INSTANCE)
+;+		(allowed-classes Transporte)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot KB_866725_Class6
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot contiene_a
+		(type INSTANCE)
+;+		(allowed-classes Ciudad)
+;+		(inverse-slot pertenece_a)
+		(create-accessor read-write))
+	(single-slot destino
+		(type INSTANCE)
+;+		(allowed-classes Ciudad)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot vip
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+		(default FALSE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot calidad
+		(type INTEGER)
+		(range 0 5)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot viaje_ofrecido_por
+		(type INSTANCE)
+;+		(allowed-classes AgenciaViajes)
+;+		(cardinality 1 1)
+;+		(inverse-slot ofrece_viajes)
+		(create-accessor read-write))
+	(single-slot nombre
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot ofrece_viajes
+		(type INSTANCE)
+;+		(allowed-classes Viaje)
+		(cardinality 1 ?VARIABLE)
+;+		(inverse-slot viaje_ofrecido_por)
+		(create-accessor read-write))
+	(single-slot pertenece_a
+		(type INSTANCE)
+;+		(allowed-classes Area)
+;+		(cardinality 1 1)
+;+		(inverse-slot contiene_a)
+		(create-accessor read-write)))
+
+(defclass Ciudad
+	(is-a USER)
+	(role concrete)
+	(single-slot nombre
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot pertenece_a
+		(type INSTANCE)
+;+		(allowed-classes Area)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Producto
+	(is-a USER)
+	(role abstract)
+	(single-slot precio
+;+		(comment "Precio del producto")
+		(type FLOAT)
+		(range 0.0 %3FVARIABLE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot calidad
+		(type INTEGER)
+		(range 0 5)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Transporte "Calidad es un valor entero entre 0 y 5. Entendemos que 5 (5 estrellas) quiere decir VIP"
+	(is-a Producto)
+	(role concrete)
+	(single-slot tipo
+		(type STRING)
+		(default "avion")
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Alojamiento
+	(is-a Producto)
+	(role concrete)
+	(single-slot pertenece_a_cadena
+		(type INSTANCE)
+;+		(allowed-classes CadenaHotelera)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Viaje "Idealmente el slot \"precio\" heredado de Producto sería la suma de los dos Productos (Transporte, Alojamiento) que lo forman. Bien es cierto que la agencia de viajes podría elegir subir el precio dependiendo del destino."
+	(is-a Producto)
+	(role concrete)
+	(single-slot alojamiento
+		(type INSTANCE)
+;+		(allowed-classes Alojamiento)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot transporte
+		(type INSTANCE)
+;+		(allowed-classes Transporte)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot viaje_ofrecido_por
+		(type INSTANCE)
+;+		(allowed-classes AgenciaViajes)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot destino
+		(type INSTANCE)
+;+		(allowed-classes Ciudad)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Area
+	(is-a USER)
+	(role concrete)
+	(single-slot internacional
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot contiene_a
+		(type INSTANCE)
+;+		(allowed-classes Ciudad)
+		(create-accessor read-write))
+	(single-slot nombre
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass CadenaHotelera
+	(is-a USER)
+	(role concrete)
+	(single-slot nombre
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot ofrece_alojamientos
+		(type INSTANCE)
+;+		(allowed-classes Alojamiento)
+		(create-accessor read-write)))
+
+(defclass AgenciaViajes
+	(is-a USER)
+	(role concrete)
+	(single-slot nombre
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot ofrece_viajes
+		(type INSTANCE)
+;+		(allowed-classes Viaje)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write)))
