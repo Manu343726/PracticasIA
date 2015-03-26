@@ -1,8 +1,0 @@
-INDEX VERSION 1.126+D:\Stuff\Desktop\Clase\IA\Practicas\PracticasIA\.metadata\.plugins\org.eclipse.jdt.core
-1678416942.index
-2656002299.index
-2154710053.index
-434025391.index
-2274991841.index
-1099750721.index
-45594173.index
