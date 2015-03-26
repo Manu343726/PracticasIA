@@ -1,4 +1,4 @@
-; Thu Mar 26 18:18:34 CET 2015
+; Thu Mar 26 21:24:41 CET 2015
 ; 
 ;+ (version "3.4.8")
 ;+ (build "Build 629")
@@ -86,32 +86,38 @@
 ([KB_866725_Class45] of  Transporte
 
 	(calidad 2)
-	(tipo "avion"))
+	(precio 120.0)
+	(tipo "avion preferente"))
 
 ([KB_866725_Class46] of  Transporte
 
 	(calidad 1)
-	(tipo "avion"))
+	(precio 100.0)
+	(tipo "avion turista"))
 
 ([KB_866725_Class47] of  Transporte
 
 	(calidad 5)
-	(tipo "avion"))
+	(precio 2000.0)
+	(tipo "avion business"))
 
 ([KB_866725_Class48] of  Transporte
 
 	(calidad 1)
-	(tipo "barco"))
+	(precio 20.0)
+	(tipo "barco ferry"))
 
 ([KB_866725_Class49] of  Transporte
 
 	(calidad 3)
-	(tipo "barco"))
+	(precio 500.0)
+	(tipo "barco básico"))
 
 ([KB_866725_Class50] of  Transporte
 
 	(calidad 4)
-	(tipo "barco"))
+	(precio 4000.0)
+	(tipo "barco crucero"))
 
 ([KB_866725_Class52] of  Alojamiento
 
@@ -232,10 +238,6 @@
 	(travel [viajes_Class10007])
 	(viaje_ofrecido_por [viajes_Class0]))
 
-([viajes_Class10008] of  Ciudad
-
-	(isla FALSE))
-
 ([viajes_Class10009] of  Viaje
 
 	(alojamiento [KB_866725_Class58])
@@ -246,10 +248,6 @@
 	(transporte [KB_866725_Class45])
 	(travel [viajes_Class10009])
 	(viaje_ofrecido_por [viajes_Class10003]))
-
-([viajes_Class10010] of  Transporte
-
-	(tipo "avion"))
 
 ([viajes_Class11] of  Alojamiento
 
@@ -271,6 +269,7 @@
 ([viajes_Class14] of  Transporte
 
 	(calidad 1)
+	(precio 25.0)
 	(tipo "autobus"))
 
 ([viajes_Class15] of  %3APAL-CONSTRAINT
@@ -300,6 +299,35 @@
 	(contiene_a [viajes_Class7])
 	(internacional TRUE)
 	(nombre "Inglaterra"))
+
+([viajes_Class20001] of  Viaje
+
+	(alojamiento [KB_866725_Class58])
+	(calidad 4)
+	(destino [KB_866725_Class38])
+	(duracion 8)
+	(precio 1200.0)
+	(transporte [KB_866725_Class47])
+	(travel [viajes_Class20001])
+	(viaje_ofrecido_por [viajes_Class20002]))
+
+([viajes_Class20002] of  AgenciaViajes
+
+	(nombre "Panavision")
+	(ofrece_viajes
+		[viajes_Class20001]
+		[viajes_Class20003]))
+
+([viajes_Class20003] of  Viaje
+
+	(alojamiento [KB_866725_Class58])
+	(calidad 5)
+	(destino [KB_866725_Class42])
+	(duracion 6)
+	(precio 2500.0)
+	(transporte [KB_866725_Class47])
+	(travel [viajes_Class20003])
+	(viaje_ofrecido_por [viajes_Class20002]))
 
 ([viajes_Class3] of  Area
 

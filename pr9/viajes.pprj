@@ -1,4 +1,4 @@
-; Thu Mar 26 18:18:34 CET 2015
+; Thu Mar 26 21:24:41 CET 2015
 ; 
 ;+ (version "3.4.8")
 ;+ (build "Build 629")
@@ -20,16 +20,16 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[viajes_ProjectKB_Class10237]
-		[viajes_ProjectKB_Class10238]
-		[viajes_ProjectKB_Class10239]
-		[viajes_ProjectKB_Class10240]
-		[viajes_ProjectKB_Class10241]
-		[viajes_ProjectKB_Class10242]
-		[viajes_ProjectKB_Class10243]
-		[viajes_ProjectKB_Class10244]
-		[viajes_ProjectKB_Class10245]
-		[viajes_ProjectKB_Class10246]))
+		[viajes_ProjectKB_Class10150]
+		[viajes_ProjectKB_Class10151]
+		[viajes_ProjectKB_Class10152]
+		[viajes_ProjectKB_Class10153]
+		[viajes_ProjectKB_Class10154]
+		[viajes_ProjectKB_Class10155]
+		[viajes_ProjectKB_Class10156]
+		[viajes_ProjectKB_Class10157]
+		[viajes_ProjectKB_Class10158]
+		[viajes_ProjectKB_Class10159]))
 
 ([CLSES_TAB] of  Widget
 
@@ -69,9 +69,6 @@
 ([INSTANCES_TAB] of  Widget
 
 	(widget_class_name "edu.stanford.smi.protege.widget.InstancesTab"))
-
-([KB_226446_Class0] of  Map
-)
 
 ([KB_328552_Class0] of  String
 
@@ -173,6 +170,9 @@
 
 	(properties [viajes_ProjectKB_Class184]))
 
+([KB_632072_Class0] of  Map
+)
+
 ([LAYOUT_PROPERTIES] of  Property_List
 
 	(name "layout properties")
@@ -260,9 +260,9 @@
 
 	(browser_slot_names [BROWSER_SLOT_NAMES])
 	(customized_instance_widgets
+		[INSTANCE_ANNOTATION_FORM_WIDGET]
 		[STANDARD_CLASS_FORM_WIDGET]
 		[STANDARD_SLOT_FORM_WIDGET]
-		[INSTANCE_ANNOTATION_FORM_WIDGET]
 		[STANDARD_FACET_FORM_WIDGET]
 		[PAL_FORM_WIDGET]
 		[viajes_ProjectKB_Class88])
@@ -629,70 +629,55 @@
 	(x 0)
 	(y 300))
 
-([viajes_ProjectKB_Class10175] of  String
+([viajes_ProjectKB_Class10150] of  String
 
-	(name "tooltip_text"))
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
 
-([viajes_ProjectKB_Class10176] of  Boolean
+([viajes_ProjectKB_Class10151] of  String
 
-	(boolean_value FALSE)
-	(name "readOnly_configured"))
+	(name "Ciudad")
+	(string_value "nombre"))
 
-([viajes_ProjectKB_Class10177] of  Widget
+([viajes_ProjectKB_Class10152] of  String
 
-	(height 60)
-	(is_hidden FALSE)
-	(name "precio")
-	(property_list [viajes_ProjectKB_Class10178])
-	(widget_class_name "edu.stanford.smi.protege.widget.ClsFieldWidget")
-	(width 200)
-	(x 0)
-	(y 60))
+	(name "CadenaHotelera")
+	(string_value "nombre"))
 
-([viajes_ProjectKB_Class10178] of  Property_List
-)
+([viajes_ProjectKB_Class10153] of  String
 
-([viajes_ProjectKB_Class10179] of  Widget
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
 
-	(height 60)
-	(is_hidden FALSE)
-	(name "precio")
-	(property_list [viajes_ProjectKB_Class10180])
-	(widget_class_name "edu.stanford.smi.protege.widget.ClsFieldWidget")
-	(width 200)
-	(x 0)
-	(y 240))
+([viajes_ProjectKB_Class10154] of  String
 
-([viajes_ProjectKB_Class10180] of  Property_List
-)
+	(name "Area")
+	(string_value "nombre"))
 
-([viajes_ProjectKB_Class10181] of  Widget
+([viajes_ProjectKB_Class10155] of  String
 
-	(height 60)
-	(is_hidden FALSE)
-	(name "precio")
-	(property_list [viajes_ProjectKB_Class10182])
-	(widget_class_name "edu.stanford.smi.protege.widget.ClsFieldWidget")
-	(width 200)
-	(x 0)
-	(y 120))
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
 
-([viajes_ProjectKB_Class10182] of  Property_List
-)
+([viajes_ProjectKB_Class10156] of  String
 
-([viajes_ProjectKB_Class10183] of  Widget
+	(name "Transporte")
+	(string_value "tipo"))
 
-	(height 60)
-	(is_hidden FALSE)
-	(name "precio")
-	(property_list [viajes_ProjectKB_Class10184])
-	(widget_class_name "edu.stanford.smi.protege.widget.ClsFieldWidget")
-	(width 200)
-	(x 0)
-	(y 120))
+([viajes_ProjectKB_Class10157] of  String
 
-([viajes_ProjectKB_Class10184] of  Property_List
-)
+	(name "AgenciaViajes")
+	(string_value "nombre"))
+
+([viajes_ProjectKB_Class10158] of  String
+
+	(name "Alojamiento")
+	(string_value "pertenece_a_cadena"))
+
+([viajes_ProjectKB_Class10159] of  String
+
+	(name "Viaje")
+	(string_value "destino"))
 
 ([viajes_ProjectKB_Class10187] of  Widget
 
@@ -723,70 +708,6 @@
 	(properties
 		[viajes_ProjectKB_Class10193]
 		[viajes_ProjectKB_Class10194]))
-
-([viajes_ProjectKB_Class10215] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "Isla")
-	(property_list [viajes_ProjectKB_Class10216])
-	(widget_class_name "edu.stanford.smi.protege.widget.CheckBoxWidget")
-	(width 200)
-	(x 0)
-	(y 120))
-
-([viajes_ProjectKB_Class10216] of  Property_List
-)
-
-([viajes_ProjectKB_Class10237] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([viajes_ProjectKB_Class10238] of  String
-
-	(name "Ciudad")
-	(string_value "nombre"))
-
-([viajes_ProjectKB_Class10239] of  String
-
-	(name "CadenaHotelera")
-	(string_value "nombre"))
-
-([viajes_ProjectKB_Class10240] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([viajes_ProjectKB_Class10241] of  String
-
-	(name "Area")
-	(string_value "nombre"))
-
-([viajes_ProjectKB_Class10242] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
-
-([viajes_ProjectKB_Class10243] of  String
-
-	(name "Transporte")
-	(string_value "tipo"))
-
-([viajes_ProjectKB_Class10244] of  String
-
-	(name "AgenciaViajes")
-	(string_value "nombre"))
-
-([viajes_ProjectKB_Class10245] of  String
-
-	(name "Alojamiento")
-	(string_value "pertenece_a_cadena"))
-
-([viajes_ProjectKB_Class10246] of  String
-
-	(name "Viaje")
-	(string_value "destino"))
 
 ([viajes_ProjectKB_Class105] of  Widget
 
@@ -857,63 +778,7 @@
 	(boolean_value FALSE)
 	(name "readOnly_configured"))
 
-([viajes_ProjectKB_Class117] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "viajes_Class10000")
-	(property_list [viajes_ProjectKB_Class118])
-	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
-	(width 200)
-	(x 0)
-	(y 60))
-
-([viajes_ProjectKB_Class118] of  Property_List
-)
-
-([viajes_ProjectKB_Class119] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "viajes_Class10000")
-	(property_list [viajes_ProjectKB_Class120])
-	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
-	(width 200)
-	(x 0)
-	(y 180))
-
 ([viajes_ProjectKB_Class12] of  Property_List
-)
-
-([viajes_ProjectKB_Class120] of  Property_List
-)
-
-([viajes_ProjectKB_Class121] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "travel")
-	(property_list [viajes_ProjectKB_Class122])
-	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
-	(width 200)
-	(x 0)
-	(y 180))
-
-([viajes_ProjectKB_Class122] of  Property_List
-)
-
-([viajes_ProjectKB_Class123] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "travel")
-	(property_list [viajes_ProjectKB_Class124])
-	(widget_class_name "edu.stanford.smi.protege.widget.ClsFieldWidget")
-	(width 200)
-	(x 0)
-	(y 180))
-
-([viajes_ProjectKB_Class124] of  Property_List
 )
 
 ([viajes_ProjectKB_Class125] of  Widget
@@ -952,20 +817,6 @@
 ([viajes_ProjectKB_Class14] of  Property_List
 )
 
-([viajes_ProjectKB_Class146] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "precio")
-	(property_list [viajes_ProjectKB_Class147])
-	(widget_class_name "edu.stanford.smi.protege.widget.FloatFieldWidget")
-	(width 100)
-	(x 100)
-	(y 0))
-
-([viajes_ProjectKB_Class147] of  Property_List
-)
-
 ([viajes_ProjectKB_Class15] of  Widget
 
 	(is_hidden TRUE)
@@ -991,20 +842,6 @@
 
 	(name "vertical_stretcher")
 	(string_value "<<none>>"))
-
-([viajes_ProjectKB_Class157] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "precio")
-	(property_list [viajes_ProjectKB_Class158])
-	(widget_class_name "edu.stanford.smi.protege.widget.FloatFieldWidget")
-	(width 100)
-	(x 100)
-	(y 60))
-
-([viajes_ProjectKB_Class158] of  Property_List
-)
 
 ([viajes_ProjectKB_Class16] of  Property_List
 )
@@ -1037,7 +874,7 @@
 ([viajes_ProjectKB_Class184] of  String
 
 	(name "SearchTab_Query")
-	(string_value "Query Name: CiudadesAndalucia\nMatch All:true\nLength: 1\nCiudad	pertenece_a	contains	Instance:KB_866725_Class30|Andalucia	1	\n\nQuery Name: ViajesAndaluciaMenos200\nMatch All:true\nLength: 2\nViaje	precio	is less than	Other:200	1	\nViaje	destino	contains	Query:CiudadesAndalucia|CiudadesAndalucia	1	\n\nQuery Name: Alojamiento4Estrellas\nMatch All:true\nLength: 1\nAlojamiento	calidad	is	Other:4	1	\n\nQuery Name: TransporteNoAvion\nMatch All:true\nLength: 1\nTransporte	tipo	is not	Other:avion	1	\n\nQuery Name: ViajeAlojamiento4EstrellasNoAvion\nMatch All:true\nLength: 2\nViaje	transporte	contains	Query:TransporteNoAvion|TransporteNoAvion	1	\nViaje	alojamiento	contains	Query:Alojamiento4Estrellas|Alojamiento4Estrellas	1	\n\nQuery Name: AreaInternacional\nMatch All:true\nLength: 1\nArea	internacional	is	Other:true	1	\n\nQuery Name: CiudadInternacional\nMatch All:true\nLength: 1\nCiudad	pertenece_a	contains	Query:AreaInternacional|AreaInternacional	1	\n\nQuery Name: CiudadNoInternacional\nMatch All:true\nLength: 1\nCiudad	pertenece_a	does not contain	Query:AreaInternacional|AreaInternacional	1	\n\nQuery Name: Viaje1000InternacionalMenosDe7\nMatch All:true\nLength: 3\nViaje	precio	is greater than	Other:1000	1	\nViaje	destino	contains	Query:CiudadInternacional|CiudadInternacional	1	\nViaje	duracion	is less than	Other:7	1	\n\nQuery Name: Viaje1000NacionalMasDe7\nMatch All:true\nLength: 3\nViaje	precio	is greater than	Other:1000	1	\nViaje	destino	contains	Query:CiudadNoInternacional|CiudadNoInternacional	1	\nViaje	duracion	is greater than	Other:7	1	\n\nQuery Name: ViajeCoste1000yOInternacionalOMenosDe7Dias\nMatch All:false\nLength: 2\nViaje	travel	contains	Query:Viaje1000InternacionalMenosDe7|Viaje1000InternacionalMenosDe7	1	\nViaje	travel	contains	Query:Viaje1000NacionalMasDe7|Viaje1000NacionalMasDe7	1	\n\nQuery Name: AvionDeLujo\nMatch All:true\nLength: 2\nTransporte	calidad	is greater than	Other:4	1	\nTransporte	tipo	is	Other:avion	1	\n\nQuery Name: Hotel4EstrellasOMas\nMatch All:true\nLength: 1\nAlojamiento	calidad	is greater than	Other:3	1	\n\nQuery Name: ViajeHotel4EstrllasMasAvionBusiness\nMatch All:true\nLength: 2\nViaje	transporte	contains	Query:AvionDeLujo|AvionDeLujo	1	\nViaje	alojamiento	contains	Query:Hotel4EstrellasOMas|Hotel4EstrellasOMas	1	\n\nQuery Name: TravelPlanEntre700y1000\nMatch All:true\nLength: 3\nViaje	viaje_ofrecido_por	contains	Instance:KB_866725_Class60|TravelPlan	1	\nViaje	precio	is greater than	Other:700	1	\nViaje	precio	is less than	Other:1000	1	\n\nQuery Name: EsIsla\nMatch All:true\nLength: 1\nCiudad	isla	is	Other:true	1	\n\nQuery Name: ViajeEnBarco\nMatch All:true\nLength: 1\nTransporte	tipo	is	Other:barco	1	\n\nQuery Name: ViajeAIslaSinCrucero\nMatch All:true\nLength: 2\nViaje	destino	contains	Query:EsIsla|EsIsla	1	\nViaje	transporte	does not contain	Query:ViajeEnBarco|ViajeEnBarco	1	\n\n"))
+	(string_value "Query Name: CiudadesAndalucia\nMatch All:true\nLength: 1\nCiudad	pertenece_a	contains	Instance:KB_866725_Class30|Andalucia	1	\n\nQuery Name: Alojamiento4Estrellas\nMatch All:true\nLength: 1\nAlojamiento	calidad	is	Other:4	1	\n\nQuery Name: TransporteNoAvion\nMatch All:true\nLength: 1\nTransporte	tipo	does not contain	Other:avion	1	\n\nQuery Name: AreaInternacional\nMatch All:true\nLength: 1\nArea	internacional	is	Other:true	1	\n\nQuery Name: CiudadInternacional\nMatch All:true\nLength: 1\nCiudad	pertenece_a	contains	Query:AreaInternacional|AreaInternacional	1	\n\nQuery Name: CiudadNoInternacional\nMatch All:true\nLength: 1\nCiudad	pertenece_a	does not contain	Query:AreaInternacional|AreaInternacional	1	\n\nQuery Name: Viaje1000InternacionalMenosDe7\nMatch All:true\nLength: 3\nViaje	precio	is greater than	Other:1000	1	\nViaje	destino	contains	Query:CiudadInternacional|CiudadInternacional	1	\nViaje	duracion	is less than	Other:7	1	\n\nQuery Name: Viaje1000NacionalMasDe7\nMatch All:true\nLength: 3\nViaje	precio	is greater than	Other:1000	1	\nViaje	destino	contains	Query:CiudadNoInternacional|CiudadNoInternacional	1	\nViaje	duracion	is greater than	Other:7	1	\n\nQuery Name: AvionDeLujo\nMatch All:true\nLength: 2\nTransporte	calidad	is greater than	Other:3	1	\nTransporte	tipo	contains	Other:avion	1	\n\nQuery Name: Hotel4EstrellasOMas\nMatch All:true\nLength: 1\nAlojamiento	calidad	is greater than	Other:3	1	\n\nQuery Name: EsIsla\nMatch All:true\nLength: 1\nCiudad	isla	is	Other:true	1	\n\nQuery Name: ViajeAIslaSinCrucero\nMatch All:true\nLength: 2\nViaje	destino	contains	Query:EsIsla|EsIsla	1	\nViaje	transporte	does not contain	Query:ViajeEnBarcoNoCrucero|ViajeEnBarcoNoCrucero	1	\n\nQuery Name: HotelMelia\nMatch All:true\nLength: 1\nCadenaHotelera	nombre	is	Other:Melia	1	\n\nQuery Name: AgenciaPolitours\nMatch All:true\nLength: 1\nAgenciaViajes	nombre	contains	Other:Politours	1	\n\nQuery Name: AlojamientoMelia\nMatch All:true\nLength: 1\nAlojamiento	pertenece_a_cadena	contains	Query:HotelMelia|HotelMelia	1	\n\nQuery Name: ViajeEnBarcoNoCrucero\nMatch All:true\nLength: 2\nTransporte	tipo	contains	Other:barco	1	\nTransporte	tipo	is not	Other:barco crucero	1	\n\nQuery Name: AgenciaPanavision\nMatch All:true\nLength: 1\nAgenciaViajes	nombre	is	Other:Panavision	1	\n\nQuery Name: Viajes por Panavision\nMatch All:true\nLength: 1\nViaje	viaje_ofrecido_por	contains	Query:AgenciaPanavision|AgenciaPanavision	1	\n\nQuery Name: 1)Viajes a Andalucia por menos de 200\nMatch All:true\nLength: 2\nViaje	precio	is less than	Other:200	1	\nViaje	destino	contains	Query:CiudadesAndalucia|CiudadesAndalucia	1	\n\nQuery Name: 2) Viajes con hotel de 4 estrellas y transporte que no es avion\nMatch All:true\nLength: 2\nViaje	transporte	contains	Query:TransporteNoAvion|TransporteNoAvion	1	\nViaje	alojamiento	contains	Query:Alojamiento4Estrellas|Alojamiento4Estrellas	1	\n\nQuery Name: 3) Viajes de mas de 1000 euros de menos de 7 dias o internacionales\nMatch All:false\nLength: 2\nViaje	travel	contains	Query:Viaje1000InternacionalMenosDe7|Viaje1000InternacionalMenosDe7	1	\nViaje	travel	contains	Query:Viaje1000NacionalMasDe7|Viaje1000NacionalMasDe7	1	\n\nQuery Name: 4) Viajes con alojamiento de lujo y transporte VIP en avión\nMatch All:true\nLength: 2\nViaje	transporte	contains	Query:AvionDeLujo|AvionDeLujo	1	\nViaje	alojamiento	contains	Query:Hotel4EstrellasOMas|Hotel4EstrellasOMas	1	\n\nQuery Name: 5) Destinos ofertados por Travelplan entre 700 y 1000 euros\nMatch All:true\nLength: 3\nViaje	viaje_ofrecido_por	contains	Instance:KB_866725_Class60|TravelPlan	1	\nViaje	precio	is greater than	Other:700	1	\nViaje	precio	is less than	Other:1000	1	\n\nQuery Name: 6) Mayoristas que ofrecen viajes a islas y no es un crucero\nMatch All:true\nLength: 1\nAgenciaViajes	ofrece_viajes	contains	Query:ViajeAIslaSinCrucero|ViajeAIslaSinCrucero	1	\n\nQuery Name: 7) Hoteles de la cadena Melia disponibles por Politours\nMatch All:true\nLength: 2\nViaje	viaje_ofrecido_por	contains	Query:AgenciaPolitours|AgenciaPolitours	1	\nViaje	alojamiento	contains	Query:AlojamientoMelia|AlojamientoMelia	1	\n\n"))
 
 ([viajes_ProjectKB_Class19] of  Widget
 
@@ -1348,20 +1185,6 @@
 ([viajes_ProjectKB_Class80] of  Property_List
 )
 
-([viajes_ProjectKB_Class84] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "precio")
-	(property_list [viajes_ProjectKB_Class85])
-	(widget_class_name "edu.stanford.smi.protege.widget.FloatFieldWidget")
-	(width 100)
-	(x 100)
-	(y 0))
-
-([viajes_ProjectKB_Class85] of  Property_List
-)
-
 ([viajes_ProjectKB_Class88] of  Widget
 
 	(is_hidden FALSE)
@@ -1429,24 +1252,6 @@
 	(properties
 		[viajes_ProjectKB_Class113]
 		[viajes_ProjectKB_Class114]))
-
-([viajes_ProjectKB_Class97] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(label "Precio")
-	(name "precio")
-	(property_list [viajes_ProjectKB_Class98])
-	(widget_class_name "edu.stanford.smi.protege.widget.FloatFieldWidget")
-	(width 100)
-	(x 0)
-	(y 70))
-
-([viajes_ProjectKB_Class98] of  Property_List
-
-	(properties
-		[viajes_ProjectKB_Class10175]
-		[viajes_ProjectKB_Class10176]))
 
 ([viajes_ProjectKB_Class99] of  Widget
 
