@@ -1,7 +1,10 @@
-; Thu Mar 26 21:24:41 CET 2015
+; Tue Apr 14 17:45:07 CEST 2015
 ; 
 ;+ (version "3.4.8")
 ;+ (build "Build 629")
+
+([Jess+engine] of  %3AJESS-ENGINE
+)
 
 ([KB_866725_Class30] of  Area
 
@@ -334,6 +337,15 @@
 	(contiene_a [viajes_Class9])
 	(internacional TRUE)
 	(nombre "Grecia"))
+
+([viajes_Class30007] of  User
+
+	(Edad 35)
+	(Exotico 1)
+	(Familia 1)
+	(Hobby "Turismo")
+	(Nombre "Juan")
+	(Presupuesto 50000.0))
 
 ([viajes_Class4] of  Area
 
