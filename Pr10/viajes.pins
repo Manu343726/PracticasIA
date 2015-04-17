@@ -1,0 +1,386 @@
+; Fri Apr 17 18:11:53 CEST 2015
+; 
+;+ (version "3.4.8")
+;+ (build "Build 629")
+
+([Jess+engine] of  %3AJESS-ENGINE
+)
+
+([KB_866725_Class30] of  Area
+
+	(contiene_a [KB_866725_Class39])
+	(internacional FALSE)
+	(nombre "Andalucia"))
+
+([KB_866725_Class31] of  Area
+
+	(contiene_a [KB_866725_Class37])
+	(internacional FALSE)
+	(nombre "Madrid"))
+
+([KB_866725_Class32] of  Area
+
+	(contiene_a [KB_866725_Class38])
+	(internacional FALSE)
+	(nombre "Cantabria"))
+
+([KB_866725_Class33] of  Area
+
+	(contiene_a [KB_866725_Class40])
+	(internacional TRUE)
+	(nombre "Francia"))
+
+([KB_866725_Class34] of  Area
+
+	(contiene_a
+		[KB_866725_Class42]
+		[KB_866725_Class43])
+	(internacional TRUE)
+	(nombre "USA"))
+
+([KB_866725_Class35] of  Area
+
+	(contiene_a [KB_866725_Class41])
+	(internacional TRUE)
+	(nombre "Italia"))
+
+([KB_866725_Class37] of  Ciudad
+
+	(isla FALSE)
+	(nombre "Madrid")
+	(pertenece_a [KB_866725_Class31]))
+
+([KB_866725_Class38] of  Ciudad
+
+	(isla FALSE)
+	(nombre "Santander")
+	(pertenece_a [KB_866725_Class32]))
+
+([KB_866725_Class39] of  Ciudad
+
+	(isla FALSE)
+	(nombre "Sevilla")
+	(pertenece_a [KB_866725_Class30]))
+
+([KB_866725_Class40] of  Ciudad
+
+	(isla FALSE)
+	(nombre "Paris")
+	(pertenece_a [KB_866725_Class33]))
+
+([KB_866725_Class41] of  Ciudad
+
+	(isla FALSE)
+	(nombre "Roma")
+	(pertenece_a [KB_866725_Class35]))
+
+([KB_866725_Class42] of  Ciudad
+
+	(isla FALSE)
+	(nombre "Washington D.C.")
+	(pertenece_a [KB_866725_Class34]))
+
+([KB_866725_Class43] of  Ciudad
+
+	(isla FALSE)
+	(nombre "Boston")
+	(pertenece_a [KB_866725_Class34]))
+
+([KB_866725_Class45] of  Transporte
+
+	(calidad 2)
+	(precio 120.0)
+	(tipo "avion preferente"))
+
+([KB_866725_Class46] of  Transporte
+
+	(calidad 1)
+	(precio 100.0)
+	(tipo "avion turista"))
+
+([KB_866725_Class47] of  Transporte
+
+	(calidad 5)
+	(precio 2000.0)
+	(tipo "avion business"))
+
+([KB_866725_Class48] of  Transporte
+
+	(calidad 1)
+	(precio 20.0)
+	(tipo "barco ferry"))
+
+([KB_866725_Class49] of  Transporte
+
+	(calidad 3)
+	(precio 500.0)
+	(tipo "barco básico"))
+
+([KB_866725_Class50] of  Transporte
+
+	(calidad 4)
+	(precio 4000.0)
+	(tipo "barco crucero"))
+
+([KB_866725_Class52] of  Alojamiento
+
+	(calidad 1)
+	(pertenece_a_cadena [KB_866725_Class57])
+	(precio 400.0))
+
+([KB_866725_Class53] of  CadenaHotelera
+
+	(nombre "Melia")
+	(ofrece_alojamientos [KB_866725_Class58]))
+
+([KB_866725_Class54] of  CadenaHotelera
+
+	(nombre "HotelesPepito"))
+
+([KB_866725_Class55] of  CadenaHotelera
+
+	(nombre "HotelesJaimito")
+	(ofrece_alojamientos [viajes_Class11]))
+
+([KB_866725_Class56] of  CadenaHotelera
+
+	(nombre "HotelesJorjito")
+	(ofrece_alojamientos [viajes_Class16]))
+
+([KB_866725_Class57] of  CadenaHotelera
+
+	(nombre "HotelesYoDeberiaEstarProgramandoEnPythonOdioJava")
+	(ofrece_alojamientos [KB_866725_Class52]))
+
+([KB_866725_Class58] of  Alojamiento
+
+	(calidad 5)
+	(pertenece_a_cadena [KB_866725_Class53])
+	(precio 1000.0))
+
+([KB_866725_Class59] of  Viaje
+
+	(alojamiento [KB_866725_Class52])
+	(calidad 5)
+	(destino [KB_866725_Class40])
+	(duracion 6)
+	(precio 10000.0)
+	(transporte [KB_866725_Class47])
+	(travel [KB_866725_Class59])
+	(viaje_ofrecido_por [KB_866725_Class60]))
+
+([KB_866725_Class60] of  AgenciaViajes
+
+	(nombre "TravelPlan")
+	(ofrece_viajes
+		[KB_866725_Class59]
+		[KB_866725_Class61]
+		[viajes_Class10002]))
+
+([KB_866725_Class61] of  Viaje
+
+	(alojamiento [KB_866725_Class58])
+	(calidad 2)
+	(destino [KB_866725_Class39])
+	(duracion 5)
+	(precio 210.0)
+	(transporte [KB_866725_Class47])
+	(travel [KB_866725_Class61])
+	(viaje_ofrecido_por [KB_866725_Class60]))
+
+([viajes_Class0] of  AgenciaViajes
+
+	(nombre "Halcon Viajes")
+	(ofrece_viajes
+		[viajes_Class13]
+		[viajes_Class17]
+		[viajes_Class10007]))
+
+([viajes_Class1] of  Area
+
+	(contiene_a [viajes_Class6])
+	(internacional TRUE)
+	(nombre "Alemania"))
+
+([viajes_Class10] of  Ciudad
+
+	(isla FALSE)
+	(nombre "Viena")
+	(pertenece_a [viajes_Class4]))
+
+([viajes_Class10002] of  Viaje
+
+	(alojamiento [viajes_Class16])
+	(calidad 3)
+	(destino [KB_866725_Class41])
+	(duracion 6)
+	(precio 750.0)
+	(transporte [viajes_Class14])
+	(travel [viajes_Class10002])
+	(viaje_ofrecido_por [KB_866725_Class60]))
+
+([viajes_Class10003] of  AgenciaViajes
+
+	(nombre "PoliTours")
+	(ofrece_viajes [viajes_Class10009]))
+
+([viajes_Class10006] of  Ciudad
+
+	(isla TRUE)
+	(nombre "Isla de Ons")
+	(pertenece_a [viajes_Class5]))
+
+([viajes_Class10007] of  Viaje
+
+	(alojamiento [viajes_Class11])
+	(calidad 2)
+	(destino [viajes_Class10006])
+	(duracion 2)
+	(precio 250.0)
+	(transporte [viajes_Class14])
+	(travel [viajes_Class10007])
+	(viaje_ofrecido_por [viajes_Class0]))
+
+([viajes_Class10009] of  Viaje
+
+	(alojamiento [KB_866725_Class58])
+	(calidad 3)
+	(destino [viajes_Class7])
+	(duracion 5)
+	(precio 985.0)
+	(transporte [KB_866725_Class45])
+	(travel [viajes_Class10009])
+	(viaje_ofrecido_por [viajes_Class10003]))
+
+([viajes_Class11] of  Alojamiento
+
+	(calidad 3)
+	(pertenece_a_cadena [KB_866725_Class55])
+	(precio 100.0))
+
+([viajes_Class13] of  Viaje
+
+	(alojamiento [viajes_Class11])
+	(calidad 2)
+	(destino [KB_866725_Class39])
+	(duracion 2)
+	(precio 180.0)
+	(transporte [viajes_Class14])
+	(travel [viajes_Class13])
+	(viaje_ofrecido_por [viajes_Class0]))
+
+([viajes_Class14] of  Transporte
+
+	(calidad 1)
+	(precio 25.0)
+	(tipo "autobus"))
+
+([viajes_Class15] of  %3APAL-CONSTRAINT
+
+	(%3APAL-NAME "SumPrice")
+	(%3APAL-STATEMENT "precio = transporte.precio + alojamiento.precio"))
+
+([viajes_Class16] of  Alojamiento
+
+	(calidad 4)
+	(pertenece_a_cadena [KB_866725_Class56])
+	(precio 400.0))
+
+([viajes_Class17] of  Viaje
+
+	(alojamiento [viajes_Class16])
+	(calidad 4)
+	(destino [viajes_Class8])
+	(duracion 8)
+	(precio 1200.0)
+	(transporte [KB_866725_Class49])
+	(travel [viajes_Class17])
+	(viaje_ofrecido_por [viajes_Class0]))
+
+([viajes_Class2] of  Area
+
+	(contiene_a [viajes_Class7])
+	(internacional TRUE)
+	(nombre "Inglaterra"))
+
+([viajes_Class20001] of  Viaje
+
+	(alojamiento [KB_866725_Class58])
+	(calidad 4)
+	(destino [KB_866725_Class38])
+	(duracion 8)
+	(precio 1200.0)
+	(transporte [KB_866725_Class47])
+	(travel [viajes_Class20001])
+	(viaje_ofrecido_por [viajes_Class20002]))
+
+([viajes_Class20002] of  AgenciaViajes
+
+	(nombre "Panavision")
+	(ofrece_viajes
+		[viajes_Class20001]
+		[viajes_Class20003]))
+
+([viajes_Class20003] of  Viaje
+
+	(alojamiento [KB_866725_Class58])
+	(calidad 5)
+	(destino [KB_866725_Class42])
+	(duracion 6)
+	(precio 2500.0)
+	(transporte [KB_866725_Class47])
+	(travel [viajes_Class20003])
+	(viaje_ofrecido_por [viajes_Class20002]))
+
+([viajes_Class3] of  Area
+
+	(contiene_a [viajes_Class9])
+	(internacional TRUE)
+	(nombre "Grecia"))
+
+([viajes_Class30007] of  User
+
+	(Edad 35)
+	(Exotico 1)
+	(Familia 1)
+	(Hobby "Turismo")
+	(Nombre "Juan")
+	(Presupuesto 50000.0))
+
+([viajes_Class4] of  Area
+
+	(contiene_a [viajes_Class10])
+	(internacional TRUE)
+	(nombre "Austria"))
+
+([viajes_Class5] of  Area
+
+	(contiene_a
+		[viajes_Class8]
+		[viajes_Class10006])
+	(internacional FALSE)
+	(nombre "Galicia"))
+
+([viajes_Class6] of  Ciudad
+
+	(isla FALSE)
+	(nombre "Berlin")
+	(pertenece_a [viajes_Class1]))
+
+([viajes_Class7] of  Ciudad
+
+	(isla FALSE)
+	(nombre "Londres")
+	(pertenece_a [viajes_Class2]))
+
+([viajes_Class8] of  Ciudad
+
+	(isla FALSE)
+	(nombre "Vigo")
+	(pertenece_a [viajes_Class5]))
+
+([viajes_Class9] of  Ciudad
+
+	(isla FALSE)
+	(nombre "Atenas")
+	(pertenece_a [viajes_Class3]))
