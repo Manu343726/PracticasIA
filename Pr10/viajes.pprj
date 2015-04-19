@@ -1,4 +1,4 @@
-; Fri Apr 17 18:11:53 CEST 2015
+; Sun Apr 19 17:36:50 CEST 2015
 ; 
 ;+ (version "3.4.8")
 ;+ (build "Build 629")
@@ -20,20 +20,9 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[viajes_ProjectKB_Class20013]
-		[viajes_ProjectKB_Class20014]
-		[viajes_ProjectKB_Class20015]
-		[viajes_ProjectKB_Class20016]
-		[viajes_ProjectKB_Class20017]
-		[viajes_ProjectKB_Class20018]
-		[viajes_ProjectKB_Class20019]
-		[viajes_ProjectKB_Class20020]
-		[viajes_ProjectKB_Class20021]
-		[viajes_ProjectKB_Class20022]
-		[viajes_ProjectKB_Class20023]
-		[viajes_ProjectKB_Class20024]
-		[viajes_ProjectKB_Class20025]
-		[viajes_ProjectKB_Class20026]))
+		[Viajes_ProjectKB_Class111]
+		[Viajes_ProjectKB_Class112]
+		[Viajes_ProjectKB_Class113]))
 
 ([CLSES_TAB] of  Widget
 
@@ -77,111 +66,471 @@
 	(is_hidden FALSE)
 	(widget_class_name "edu.stanford.smi.protege.widget.InstancesTab"))
 
-([KB_328552_Class0] of  String
+([KB_460556_Class0] of  String
 
 	(name "factory_class_name")
 	(string_value "edu.stanford.smi.protege.storage.clips.ClipsKnowledgeBaseFactory"))
 
-([KB_328552_Class1] of  Map
+([KB_460556_Class1] of  Map
 
 	(entries
-		[viajes_ProjectKB_Class20027]
-		[viajes_ProjectKB_Class20028]
-		[viajes_ProjectKB_Class20029]))
+		[Viajes_ProjectKB_Class114]
+		[Viajes_ProjectKB_Class115]
+		[Viajes_ProjectKB_Class116]))
 
-([KB_328552_Class182] of  String
+([KB_460556_Class10] of  Property_List
+)
+
+([KB_460556_Class100] of  Property_List
+)
+
+([KB_460556_Class101] of  Property_List
+)
+
+([KB_460556_Class102] of  Property_List
+)
+
+([KB_460556_Class103] of  Property_List
+)
+
+([KB_460556_Class104] of  Property_List
+
+	(properties [Viajes_ProjectKB_Class107]))
+
+([KB_460556_Class105] of  String
 
 	(name "classes_file_name")
-	(string_value "viajes.pont"))
+	(string_value "Viajes.pont"))
 
-([KB_328552_Class183] of  String
+([KB_460556_Class106] of  String
 
 	(name "instances_file_name")
-	(string_value "viajes.pins"))
+	(string_value "Viajes.pins"))
 
-([KB_328552_Class77] of  Property_List
+([KB_460556_Class11] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class12])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.cls.OWLClassesTab"))
+
+([KB_460556_Class12] of  Property_List
+)
+
+([KB_460556_Class13] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class14])
+	(widget_class_name "edu.stanford.smi.protegex.server_changes.prompt.UsersTab"))
+
+([KB_460556_Class14] of  Property_List
+)
+
+([KB_460556_Class15] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class16])
+	(widget_class_name "edu.stanford.smi.protege.query.LuceneQueryPlugin"))
+
+([KB_460556_Class16] of  Property_List
+)
+
+([KB_460556_Class17] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class18])
+	(widget_class_name "edu.stanford.smi.protege.widget.ClsesAndInstancesTab"))
+
+([KB_460556_Class18] of  Property_List
+)
+
+([KB_460556_Class19] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class20])
+	(widget_class_name "edu.stanford.smi.protege.widget.KAToolTab"))
+
+([KB_460556_Class2] of  Map
+)
+
+([KB_460556_Class20] of  Property_List
+)
+
+([KB_460556_Class21] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class22])
+	(widget_class_name "edu.stanford.smi.protege.widget.instance_tree.KnowledgeTreeTab"))
+
+([KB_460556_Class22] of  Property_List
+)
+
+([KB_460556_Class23] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class24])
+	(widget_class_name "edu.stanford.smi.protege.keywordsearch.StringSearch"))
+
+([KB_460556_Class24] of  Property_List
+)
+
+([KB_460556_Class25] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class26])
+	(widget_class_name "edu.stanford.smi.protegex.prompt.PromptTab"))
+
+([KB_460556_Class26] of  Property_List
+)
+
+([KB_460556_Class27] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class28])
+	(widget_class_name "org.algernon.kb.okbc.protege.plugins.AlgernonTab"))
+
+([KB_460556_Class28] of  Property_List
+)
+
+([KB_460556_Class29] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class30])
+	(widget_class_name "edu.stanford.smi.protegex.widget.pal.PalConstraintsTab"))
+
+([KB_460556_Class3] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class4])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.OWLFormsTab"))
+
+([KB_460556_Class30] of  Property_List
+)
+
+([KB_460556_Class31] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class32])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.metadatatab.OWLMetadataTab"))
+
+([KB_460556_Class32] of  Property_List
+)
+
+([KB_460556_Class33] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class34])
+	(widget_class_name "edu.stanford.smi.RemoteKBTab.WordNetTab"))
+
+([KB_460556_Class34] of  Property_List
+)
+
+([KB_460556_Class35] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class36])
+	(widget_class_name "edu.stanford.smi.protegex.owl.swrl.ui.tab.SWRLTab"))
+
+([KB_460556_Class36] of  Property_List
+)
+
+([KB_460556_Class37] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class38])
+	(widget_class_name "org.protege.owl.mm.protege3.MappingMasterTab"))
+
+([KB_460556_Class38] of  Property_List
+)
+
+([KB_460556_Class39] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class40])
+	(widget_class_name "edu.stanford.smi.RemoteKBTab.UMLSTab"))
+
+([KB_460556_Class4] of  Property_List
+)
+
+([KB_460556_Class40] of  Property_List
+)
+
+([KB_460556_Class41] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class42])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.individuals.OWLIndividualsTab"))
+
+([KB_460556_Class42] of  Property_List
+)
+
+([KB_460556_Class43] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class44])
+	(widget_class_name "uk.ac.man.cs.mig.coode.debugger.test.DebuggerTestTab"))
+
+([KB_460556_Class44] of  Property_List
+)
+
+([KB_460556_Class45] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class46])
+	(widget_class_name "ca.uvic.csr.shrimp.jambalaya.JambalayaTab"))
+
+([KB_460556_Class46] of  Property_List
+)
+
+([KB_460556_Class47] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class48])
+	(widget_class_name "edu.stanford.smi.protegex.changes.ChangesTab"))
+
+([KB_460556_Class48] of  Property_List
+)
+
+([KB_460556_Class49] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class50])
+	(widget_class_name "org.protege.owl.axiome.ui.AxiomeTab"))
+
+([KB_460556_Class5] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class6])
+	(widget_class_name "edu.stanford.smi.protege.widget.ProtegePropertiesTab"))
+
+([KB_460556_Class50] of  Property_List
+)
+
+([KB_460556_Class51] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class52])
+	(widget_class_name "TGViztab.TGVizTab"))
+
+([KB_460556_Class52] of  Property_List
+)
+
+([KB_460556_Class53] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class54])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.properties.OWLPropertiesTab"))
+
+([KB_460556_Class54] of  Property_List
+)
+
+([KB_460556_Class55] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class56])
+	(widget_class_name "uk.ac.man.ac.mig.coode.individuals.ui.OWLDLIndividualsTab"))
+
+([KB_460556_Class56] of  Property_List
+)
+
+([KB_460556_Class57] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class58])
+	(widget_class_name "edu.stanford.smi.protege.widget.instance_tree.InstanceTreeTab"))
+
+([KB_460556_Class58] of  Property_List
+)
+
+([KB_460556_Class59] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class60])
+	(widget_class_name "edu.stanford.smi.protegex.evaluation.MetaAnalysis"))
+
+([KB_460556_Class6] of  Property_List
+)
+
+([KB_460556_Class60] of  Property_List
+)
+
+([KB_460556_Class61] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class62])
+	(widget_class_name "edu.stanford.smi.protegex.changes.changesKBViewTab.ChangesKBViewTab"))
+
+([KB_460556_Class62] of  Property_List
+)
+
+([KB_460556_Class63] of  Widget
+
+	(is_hidden FALSE)
+	(property_list [KB_460556_Class64])
+	(widget_class_name "se.liu.ida.JessTab.JessTab"))
+
+([KB_460556_Class64] of  Property_List
+)
+
+([KB_460556_Class65] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class66])
+	(widget_class_name "edu.stanford.smi.protegex.changeanalysis.ChangeAnalysisTab"))
+
+([KB_460556_Class66] of  Property_List
+)
+
+([KB_460556_Class67] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class68])
+	(widget_class_name "uk.ac.man.cs.mig.coode.owlviz.ui.OWLVizTab"))
+
+([KB_460556_Class68] of  Property_List
+)
+
+([KB_460556_Class69] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class70])
+	(widget_class_name "edu.stanford.smi.protegex.changes.stats.ChangeStatisticsTab"))
+
+([KB_460556_Class7] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class8])
+	(widget_class_name "edu.stanford.smi.protegex.widget.pal.PalQueriesTab"))
+
+([KB_460556_Class70] of  Property_List
+)
+
+([KB_460556_Class71] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class72])
+	(widget_class_name "script.ProtegeScriptTab"))
+
+([KB_460556_Class72] of  Property_List
+)
+
+([KB_460556_Class73] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class74])
+	(widget_class_name "edu.stanford.smi.protegex.chatPlugin.ChatTab"))
+
+([KB_460556_Class74] of  Property_List
+)
+
+([KB_460556_Class75] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class76])
+	(widget_class_name "edu.stanford.smi.protegex.fctab.FacetConstraintsTab"))
+
+([KB_460556_Class76] of  Property_List
+)
+
+([KB_460556_Class77] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class78])
+	(widget_class_name "edu.stanford.smi.protegex.xml.tab.XMLTab"))
+
+([KB_460556_Class78] of  Property_List
+)
+
+([KB_460556_Class79] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class80])
+	(widget_class_name "edu.stanford.smi.protegex.datamaster.DataMasterTab"))
+
+([KB_460556_Class8] of  Property_List
+)
+
+([KB_460556_Class80] of  Property_List
+)
+
+([KB_460556_Class81] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class82])
+	(widget_class_name "ezpal.EZPalTab"))
+
+([KB_460556_Class82] of  Property_List
+)
+
+([KB_460556_Class83] of  Property_List
 
 	(properties
-		[KB_328552_Class78]
-		[KB_328552_Class79]))
+		[KB_460556_Class84]
+		[KB_460556_Class85]))
 
-([KB_328552_Class78] of  Boolean
+([KB_460556_Class84] of  Boolean
 
 	(boolean_value FALSE)
 	(name "ButtonDisplayed-View References to Value"))
 
-([KB_328552_Class79] of  Boolean
+([KB_460556_Class85] of  Boolean
 
 	(boolean_value FALSE)
 	(name "ButtonDisplayed-Delete Instance"))
 
-([KB_328552_Class80] of  Property_List
+([KB_460556_Class86] of  Property_List
 )
 
-([KB_328552_Class81] of  Property_List
+([KB_460556_Class87] of  Property_List
 )
 
-([KB_328552_Class82] of  Property_List
+([KB_460556_Class88] of  Property_List
 
 	(properties
-		[KB_328552_Class83]
-		[KB_328552_Class84]))
+		[KB_460556_Class89]
+		[KB_460556_Class90]))
 
-([KB_328552_Class83] of  Boolean
+([KB_460556_Class89] of  Boolean
 
 	(boolean_value FALSE)
 	(name "ButtonDisplayed-Move up"))
 
-([KB_328552_Class84] of  Boolean
+([KB_460556_Class9] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_460556_Class10])
+	(widget_class_name "dfki.protege.ontoviz_tab.OntovizTab"))
+
+([KB_460556_Class90] of  Boolean
 
 	(boolean_value FALSE)
 	(name "ButtonDisplayed-Move down"))
 
-([KB_328552_Class85] of  Property_List
+([KB_460556_Class91] of  Property_List
 )
 
-([KB_328552_Class86] of  Property_List
+([KB_460556_Class92] of  Property_List
 
 	(name "layout properties"))
 
-([KB_328552_Class87] of  Property_List
+([KB_460556_Class93] of  Property_List
 )
 
-([KB_328552_Class88] of  Property_List
+([KB_460556_Class94] of  Property_List
 )
 
-([KB_328552_Class89] of  Property_List
+([KB_460556_Class95] of  Property_List
 )
 
-([KB_328552_Class90] of  Property_List
+([KB_460556_Class96] of  Property_List
 )
 
-([KB_328552_Class91] of  Property_List
+([KB_460556_Class97] of  Property_List
 )
 
-([KB_328552_Class92] of  Property_List
+([KB_460556_Class98] of  Property_List
 )
 
-([KB_328552_Class93] of  Property_List
-)
-
-([KB_328552_Class94] of  Property_List
-)
-
-([KB_328552_Class95] of  Property_List
-)
-
-([KB_328552_Class96] of  Property_List
-)
-
-([KB_328552_Class97] of  Property_List
-)
-
-([KB_328552_Class98] of  Property_List
-
-	(properties [viajes_ProjectKB_Class184]))
-
-([KB_651030_Class3] of  Map
+([KB_460556_Class99] of  Property_List
 )
 
 ([LAYOUT_PROPERTIES] of  Property_List
@@ -206,7 +555,6 @@
 	(is_hidden FALSE)
 	(label "Description")
 	(name ":PAL-DESCRIPTION")
-	(property_list [viajes_ProjectKB_Class164])
 	(widget_class_name "edu.stanford.smi.protege.widget.TextAreaWidget")
 	(width 250)
 	(x 275)
@@ -229,7 +577,6 @@
 	(is_hidden FALSE)
 	(label "Name")
 	(name ":PAL-NAME")
-	(property_list [viajes_ProjectKB_Class163])
 	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
 	(width 275)
 	(x 0)
@@ -241,8 +588,7 @@
 		[PAL_NAME_WIDGET]
 		[PAL_RANGE_WIDGET]
 		[PAL_DESCRIPTION_WIDGET]
-		[PAL_STATEMENT_WIDGET]
-		[viajes_ProjectKB_Class162]))
+		[PAL_STATEMENT_WIDGET]))
 
 ([PAL_RANGE_WIDGET] of  Widget
 
@@ -250,7 +596,6 @@
 	(is_hidden FALSE)
 	(label "Range")
 	(name ":PAL-RANGE")
-	(property_list [viajes_ProjectKB_Class165])
 	(widget_class_name "edu.stanford.smi.protegex.widget.pal.constraint.PalRangeWidget")
 	(width 250)
 	(x 275)
@@ -262,7 +607,6 @@
 	(is_hidden FALSE)
 	(label "Statement")
 	(name ":PAL-STATEMENT")
-	(property_list [viajes_ProjectKB_Class166])
 	(widget_class_name "edu.stanford.smi.protegex.widget.pal.constraint.PalConstraintWidget")
 	(width 275)
 	(x 0)
@@ -272,20 +616,11 @@
 
 	(browser_slot_names [BROWSER_SLOT_NAMES])
 	(customized_instance_widgets
-		[STANDARD_CLASS_FORM_WIDGET]
-		[viajes_ProjectKB_Class10059]
-		[STANDARD_SLOT_FORM_WIDGET]
-		[viajes_ProjectKB_Class10038]
-		[viajes_ProjectKB_Class20097]
-		[viajes_ProjectKB_Class20139]
 		[INSTANCE_ANNOTATION_FORM_WIDGET]
-		[viajes_ProjectKB_Class20118]
+		[STANDARD_CLASS_FORM_WIDGET]
+		[STANDARD_SLOT_FORM_WIDGET]
 		[STANDARD_FACET_FORM_WIDGET]
-		[PAL_FORM_WIDGET]
-		[viajes_ProjectKB_Class10076]
-		[viajes_ProjectKB_Class10017]
-		[viajes_ProjectKB_Class88]
-		[viajes_ProjectKB_Class10004])
+		[PAL_FORM_WIDGET])
 	(default_cls_metaclass ":STANDARD-CLASS")
 	(default_facet_metaclass ":STANDARD-FACET")
 	(default_instance_widget_class_name "edu.stanford.smi.protege.widget.FormWidget")
@@ -293,7 +628,7 @@
 	(journaling_enabled FALSE)
 	(next_frame_number 0)
 	(options [option_instance])
-	(property_map [KB_328552_Class1])
+	(property_map [KB_460556_Class1])
 	(sources [SOURCES])
 	(tabs
 		[CLSES_TAB]
@@ -301,51 +636,51 @@
 		[FORMS_TAB]
 		[INSTANCES_TAB]
 		[QUERIES_TAB]
-		[viajes_ProjectKB_Class25]
-		[viajes_ProjectKB_Class63]
-		[viajes_ProjectKB_Class45]
-		[viajes_ProjectKB_Class15]
-		[viajes_ProjectKB_Class77]
-		[viajes_ProjectKB_Class41]
-		[viajes_ProjectKB_Class73]
-		[viajes_ProjectKB_Class55]
-		[viajes_ProjectKB_Class43]
-		[viajes_ProjectKB_Class61]
-		[viajes_ProjectKB_Class17]
-		[viajes_ProjectKB_Class19]
-		[viajes_ProjectKB_Class13]
-		[viajes_ProjectKB_Class57]
-		[viajes_ProjectKB_Class7]
-		[viajes_ProjectKB_Class53]
-		[viajes_ProjectKB_Class1]
-		[viajes_ProjectKB_Class27]
-		[viajes_ProjectKB_Class23]
-		[viajes_ProjectKB_Class3]
-		[viajes_ProjectKB_Class69]
-		[viajes_ProjectKB_Class21]
-		[viajes_ProjectKB_Class49]
-		[viajes_ProjectKB_Class37]
-		[viajes_ProjectKB_Class75]
-		[viajes_ProjectKB_Class47]
-		[viajes_ProjectKB_Class59]
-		[viajes_ProjectKB_Class67]
-		[viajes_ProjectKB_Class71]
-		[viajes_ProjectKB_Class79]
-		[viajes_ProjectKB_Class35]
-		[viajes_ProjectKB_Class9]
-		[viajes_ProjectKB_Class39]
-		[viajes_ProjectKB_Class29]
-		[viajes_ProjectKB_Class51]
-		[viajes_ProjectKB_Class65]
-		[viajes_ProjectKB_Class5]
-		[viajes_ProjectKB_Class33]
-		[viajes_ProjectKB_Class11]
-		[viajes_ProjectKB_Class31]))
+		[KB_460556_Class27]
+		[KB_460556_Class65]
+		[KB_460556_Class47]
+		[KB_460556_Class17]
+		[KB_460556_Class79]
+		[KB_460556_Class43]
+		[KB_460556_Class75]
+		[KB_460556_Class57]
+		[KB_460556_Class45]
+		[KB_460556_Class63]
+		[KB_460556_Class19]
+		[KB_460556_Class21]
+		[KB_460556_Class15]
+		[KB_460556_Class59]
+		[KB_460556_Class9]
+		[KB_460556_Class55]
+		[KB_460556_Class3]
+		[KB_460556_Class29]
+		[KB_460556_Class25]
+		[KB_460556_Class5]
+		[KB_460556_Class71]
+		[KB_460556_Class23]
+		[KB_460556_Class51]
+		[KB_460556_Class39]
+		[KB_460556_Class77]
+		[KB_460556_Class49]
+		[KB_460556_Class61]
+		[KB_460556_Class69]
+		[KB_460556_Class73]
+		[KB_460556_Class81]
+		[KB_460556_Class37]
+		[KB_460556_Class11]
+		[KB_460556_Class41]
+		[KB_460556_Class31]
+		[KB_460556_Class53]
+		[KB_460556_Class67]
+		[KB_460556_Class7]
+		[KB_460556_Class35]
+		[KB_460556_Class13]
+		[KB_460556_Class33]))
 
 ([QUERIES_TAB] of  Widget
 
 	(is_hidden FALSE)
-	(property_list [KB_328552_Class98])
+	(property_list [KB_460556_Class104])
 	(widget_class_name "edu.stanford.smi.protegex.queries_tab.QueriesTab"))
 
 ([SLOTS_TAB] of  Widget
@@ -356,16 +691,16 @@
 ([SOURCES] of  Property_List
 
 	(properties
-		[KB_328552_Class0]
-		[KB_328552_Class182]
-		[KB_328552_Class183]))
+		[KB_460556_Class0]
+		[KB_460556_Class105]
+		[KB_460556_Class106]))
 
 ([STANDARD_CLASS_CONSTRAINTS_WIDGET] of  Widget
 
 	(height 120)
 	(label "Constraints")
 	(name ":SLOT-CONSTRAINTS")
-	(property_list [KB_328552_Class77])
+	(property_list [KB_460556_Class83])
 	(widget_class_name "edu.stanford.smi.protege.widget.ConstraintsWidget")
 	(width 200)
 	(x 400)
@@ -392,7 +727,7 @@
 	(height 120)
 	(label "Documentation")
 	(name ":DOCUMENTATION")
-	(property_list [KB_328552_Class80])
+	(property_list [KB_460556_Class86])
 	(widget_class_name "edu.stanford.smi.protege.widget.DocumentationWidget")
 	(width 200)
 	(x 200)
@@ -409,7 +744,7 @@
 	(height 60)
 	(label "Name")
 	(name ":NAME")
-	(property_list [KB_328552_Class81])
+	(property_list [KB_460556_Class87])
 	(widget_class_name "edu.stanford.smi.protege.widget.InstanceNameWidget")
 	(width 200)
 	(x 0)
@@ -420,7 +755,7 @@
 	(height 60)
 	(label "Role")
 	(name ":ROLE")
-	(property_list [KB_328552_Class85])
+	(property_list [KB_460556_Class91])
 	(widget_class_name "edu.stanford.smi.protege.widget.RoleWidget")
 	(width 200)
 	(x 0)
@@ -431,7 +766,7 @@
 	(height 150)
 	(label "Template Slots")
 	(name ":DIRECT-TEMPLATE-SLOTS")
-	(property_list [KB_328552_Class82])
+	(property_list [KB_460556_Class88])
 	(widget_class_name "edu.stanford.smi.protege.widget.TemplateSlotsWidget")
 	(width 600)
 	(x 0)
@@ -509,7 +844,7 @@
 	(height 90)
 	(label "Default")
 	(name ":SLOT-DEFAULTS")
-	(property_list [KB_328552_Class89])
+	(property_list [KB_460556_Class95])
 	(widget_class_name "edu.stanford.smi.protege.widget.DefaultValuesWidget")
 	(width 200)
 	(x 400)
@@ -520,7 +855,7 @@
 	(height 95)
 	(label "Domain")
 	(name ":DIRECT-DOMAIN")
-	(property_list [KB_328552_Class87])
+	(property_list [KB_460556_Class93])
 	(widget_class_name "edu.stanford.smi.protege.widget.DirectDomainWidget")
 	(width 200)
 	(x 400)
@@ -535,7 +870,7 @@
 	(height 120)
 	(label "Documentation")
 	(name ":DOCUMENTATION")
-	(property_list [KB_328552_Class90])
+	(property_list [KB_460556_Class96])
 	(widget_class_name "edu.stanford.smi.protege.widget.DocumentationWidget")
 	(width 200)
 	(x 200)
@@ -552,7 +887,7 @@
 	(height 60)
 	(label "Inverse Slot")
 	(name ":SLOT-INVERSE")
-	(property_list [KB_328552_Class96])
+	(property_list [KB_460556_Class102])
 	(widget_class_name "edu.stanford.smi.protege.widget.InverseSlotWidget")
 	(width 200)
 	(x 200)
@@ -562,7 +897,7 @@
 
 	(height 35)
 	(name ":SLOT-MAXIMUM-CARDINALITY")
-	(property_list [KB_328552_Class95])
+	(property_list [KB_460556_Class101])
 	(widget_class_name "edu.stanford.smi.protege.widget.MaximumCardinalityWidget")
 	(width 200)
 	(x 200)
@@ -573,7 +908,7 @@
 	(height 60)
 	(label "Maximum")
 	(name ":SLOT-NUMERIC-MAXIMUM")
-	(property_list [KB_328552_Class91])
+	(property_list [KB_460556_Class97])
 	(widget_class_name "edu.stanford.smi.protege.widget.NumericMaximumWidget")
 	(width 100)
 	(x 100)
@@ -584,7 +919,7 @@
 	(height 60)
 	(label "Cardinality")
 	(name ":SLOT-MINIMUM-CARDINALITY")
-	(property_list [KB_328552_Class94])
+	(property_list [KB_460556_Class100])
 	(widget_class_name "edu.stanford.smi.protege.widget.MinimumCardinalityWidget")
 	(width 200)
 	(x 200)
@@ -595,7 +930,7 @@
 	(height 60)
 	(label "Minimum")
 	(name ":SLOT-NUMERIC-MINIMUM")
-	(property_list [KB_328552_Class92])
+	(property_list [KB_460556_Class98])
 	(widget_class_name "edu.stanford.smi.protege.widget.NumericMinimumWidget")
 	(width 100)
 	(x 0)
@@ -606,7 +941,7 @@
 	(height 60)
 	(label "Name")
 	(name ":NAME")
-	(property_list [KB_328552_Class93])
+	(property_list [KB_460556_Class99])
 	(widget_class_name "edu.stanford.smi.protege.widget.InstanceNameWidget")
 	(width 200)
 	(x 0)
@@ -625,7 +960,7 @@
 	(height 155)
 	(label "Value Type")
 	(name ":SLOT-VALUE-TYPE")
-	(property_list [KB_328552_Class97])
+	(property_list [KB_460556_Class103])
 	(widget_class_name "edu.stanford.smi.protege.widget.ValueTypeWidget")
 	(width 200)
 	(x 0)
@@ -636,7 +971,7 @@
 	(height 90)
 	(label "Template Values")
 	(name ":SLOT-VALUES")
-	(property_list [KB_328552_Class88])
+	(property_list [KB_460556_Class94])
 	(widget_class_name "edu.stanford.smi.protege.widget.SlotValuesWidget")
 	(width 200)
 	(x 400)
@@ -662,1300 +997,49 @@
 		[STANDARD_SLOT_NAME_WIDGET]
 		[STANDARD_SLOT_INVERSE_WIDGET]
 		[STANDARD_SLOT_TYPE_WIDGET]
-		[KB_328552_Class86]))
+		[KB_460556_Class92]))
 
 ([VERTICAL_STRETCHER] of  String
 
 	(name "vertical_stretcher")
 	(string_value ":DIRECT-TEMPLATE-SLOTS"))
 
-([viajes_ProjectKB_Class1] of  Widget
+([Viajes_ProjectKB_Class107] of  String
 
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class2])
-	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.OWLFormsTab"))
+	(name "SearchTab_Query"))
 
-([viajes_ProjectKB_Class10] of  Property_List
-)
-
-([viajes_ProjectKB_Class100] of  Property_List
-)
-
-([viajes_ProjectKB_Class10004] of  Widget
-
-	(is_hidden FALSE)
-	(name ":JESS-ENGINE")
-	(property_list [viajes_ProjectKB_Class10011])
-	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
-
-([viajes_ProjectKB_Class10011] of  Property_List
-
-	(properties
-		[viajes_ProjectKB_Class10012]
-		[viajes_ProjectKB_Class10013]
-		[viajes_ProjectKB_Class10015]))
-
-([viajes_ProjectKB_Class10012] of  Property_List
-
-	(name "layout properties"))
-
-([viajes_ProjectKB_Class10013] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(label "Startup file name")
-	(name ":STARTUP-FILE")
-	(property_list [viajes_ProjectKB_Class10014])
-	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
-	(width 250)
-	(x 0)
-	(y 0))
-
-([viajes_ProjectKB_Class10014] of  Property_List
-)
-
-([viajes_ProjectKB_Class10015] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(label "Startup expression")
-	(name ":STARTUP-EXPRESSION")
-	(property_list [viajes_ProjectKB_Class10016])
-	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
-	(width 250)
-	(x 0)
-	(y 120))
-
-([viajes_ProjectKB_Class10016] of  Property_List
-)
-
-([viajes_ProjectKB_Class10017] of  Widget
-
-	(is_hidden FALSE)
-	(name ":JESS-RULE")
-	(property_list [viajes_ProjectKB_Class10028])
-	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
-
-([viajes_ProjectKB_Class10028] of  Property_List
-
-	(properties
-		[viajes_ProjectKB_Class10029]
-		[viajes_ProjectKB_Class10030]
-		[viajes_ProjectKB_Class10032]
-		[viajes_ProjectKB_Class10034]
-		[viajes_ProjectKB_Class10036]))
-
-([viajes_ProjectKB_Class10029] of  Property_List
-
-	(name "layout properties"))
-
-([viajes_ProjectKB_Class10030] of  Widget
-
-	(height 120)
-	(is_hidden FALSE)
-	(label "Documentation")
-	(name ":DOCUMENTATION")
-	(property_list [viajes_ProjectKB_Class10031])
-	(widget_class_name "se.liu.ida.JessTab.JessDocumentationWidget")
-	(width 200)
-	(x 250)
-	(y 0))
-
-([viajes_ProjectKB_Class10031] of  Property_List
-)
-
-([viajes_ProjectKB_Class10032] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(label "Name")
-	(name ":DEFINITION-NAME")
-	(property_list [viajes_ProjectKB_Class10033])
-	(widget_class_name "se.liu.ida.JessTab.JessDefinitionNameWidget")
-	(width 200)
-	(x 0)
-	(y 0))
-
-([viajes_ProjectKB_Class10033] of  Property_List
-)
-
-([viajes_ProjectKB_Class10034] of  Widget
-
-	(height 250)
-	(is_hidden FALSE)
-	(label "Jess definition")
-	(name ":DEFINITION")
-	(property_list [viajes_ProjectKB_Class10035])
-	(widget_class_name "se.liu.ida.JessTab.JessDefinitionWidget")
-	(width 450)
-	(x 0)
-	(y 120))
-
-([viajes_ProjectKB_Class10035] of  Property_List
-)
-
-([viajes_ProjectKB_Class10036] of  Widget
-
-	(height 30)
-	(is_hidden FALSE)
-	(label "Save definition in knowledge base")
-	(name ":KB-SAVE")
-	(property_list [viajes_ProjectKB_Class10037])
-	(widget_class_name "edu.stanford.smi.protege.widget.CheckBoxWidget")
-	(width 250)
-	(x 0)
-	(y 380))
-
-([viajes_ProjectKB_Class10037] of  Property_List
-)
-
-([viajes_ProjectKB_Class10038] of  Widget
-
-	(is_hidden FALSE)
-	(name ":JESS-FUNCTION")
-	(property_list [viajes_ProjectKB_Class10049])
-	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
-
-([viajes_ProjectKB_Class10049] of  Property_List
-
-	(properties
-		[viajes_ProjectKB_Class10050]
-		[viajes_ProjectKB_Class10051]
-		[viajes_ProjectKB_Class10053]
-		[viajes_ProjectKB_Class10055]
-		[viajes_ProjectKB_Class10057]))
-
-([viajes_ProjectKB_Class10050] of  Property_List
-
-	(name "layout properties"))
-
-([viajes_ProjectKB_Class10051] of  Widget
-
-	(height 120)
-	(is_hidden FALSE)
-	(label "Documentation")
-	(name ":DOCUMENTATION")
-	(property_list [viajes_ProjectKB_Class10052])
-	(widget_class_name "se.liu.ida.JessTab.JessDocumentationWidget")
-	(width 200)
-	(x 250)
-	(y 0))
-
-([viajes_ProjectKB_Class10052] of  Property_List
-)
-
-([viajes_ProjectKB_Class10053] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(label "Name")
-	(name ":DEFINITION-NAME")
-	(property_list [viajes_ProjectKB_Class10054])
-	(widget_class_name "se.liu.ida.JessTab.JessDefinitionNameWidget")
-	(width 200)
-	(x 0)
-	(y 0))
-
-([viajes_ProjectKB_Class10054] of  Property_List
-)
-
-([viajes_ProjectKB_Class10055] of  Widget
-
-	(height 250)
-	(is_hidden FALSE)
-	(label "Jess definition")
-	(name ":DEFINITION")
-	(property_list [viajes_ProjectKB_Class10056])
-	(widget_class_name "se.liu.ida.JessTab.JessDefinitionWidget")
-	(width 450)
-	(x 0)
-	(y 120))
-
-([viajes_ProjectKB_Class10056] of  Property_List
-)
-
-([viajes_ProjectKB_Class10057] of  Widget
-
-	(height 30)
-	(is_hidden FALSE)
-	(label "Save definition in knowledge base")
-	(name ":KB-SAVE")
-	(property_list [viajes_ProjectKB_Class10058])
-	(widget_class_name "edu.stanford.smi.protege.widget.CheckBoxWidget")
-	(width 250)
-	(x 0)
-	(y 380))
-
-([viajes_ProjectKB_Class10058] of  Property_List
-)
-
-([viajes_ProjectKB_Class10059] of  Widget
-
-	(is_hidden FALSE)
-	(name ":JESS-DEFGLOBAL")
-	(property_list [viajes_ProjectKB_Class10068])
-	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
-
-([viajes_ProjectKB_Class10068] of  Property_List
-
-	(properties
-		[viajes_ProjectKB_Class10069]
-		[viajes_ProjectKB_Class10070]
-		[viajes_ProjectKB_Class10072]
-		[viajes_ProjectKB_Class10074]))
-
-([viajes_ProjectKB_Class10069] of  Property_List
-
-	(name "layout properties"))
-
-([viajes_ProjectKB_Class10070] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(label "Name")
-	(name ":DEFINITION-NAME")
-	(property_list [viajes_ProjectKB_Class10071])
-	(widget_class_name "se.liu.ida.JessTab.JessDefinitionNameWidget")
-	(width 200)
-	(x 0)
-	(y 0))
-
-([viajes_ProjectKB_Class10071] of  Property_List
-)
-
-([viajes_ProjectKB_Class10072] of  Widget
-
-	(height 250)
-	(is_hidden FALSE)
-	(label "Jess definition")
-	(name ":DEFINITION")
-	(property_list [viajes_ProjectKB_Class10073])
-	(widget_class_name "se.liu.ida.JessTab.JessDefinitionWidget")
-	(width 450)
-	(x 0)
-	(y 120))
-
-([viajes_ProjectKB_Class10073] of  Property_List
-)
-
-([viajes_ProjectKB_Class10074] of  Widget
-
-	(height 30)
-	(is_hidden FALSE)
-	(label "Save definition in knowledge base")
-	(name ":KB-SAVE")
-	(property_list [viajes_ProjectKB_Class10075])
-	(widget_class_name "edu.stanford.smi.protege.widget.CheckBoxWidget")
-	(width 250)
-	(x 0)
-	(y 380))
-
-([viajes_ProjectKB_Class10075] of  Property_List
-)
-
-([viajes_ProjectKB_Class10076] of  Widget
-
-	(is_hidden FALSE)
-	(name ":JESS-DEFTEMPLATE")
-	(property_list [viajes_ProjectKB_Class10087])
-	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
-
-([viajes_ProjectKB_Class10087] of  Property_List
-
-	(properties
-		[viajes_ProjectKB_Class20088]
-		[viajes_ProjectKB_Class20089]
-		[viajes_ProjectKB_Class20091]
-		[viajes_ProjectKB_Class20093]
-		[viajes_ProjectKB_Class20095]))
-
-([viajes_ProjectKB_Class101] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "alojamiento")
-	(property_list [viajes_ProjectKB_Class102])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
-	(width 200)
-	(x 0)
-	(y 300))
-
-([viajes_ProjectKB_Class10187] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "precio")
-	(property_list [viajes_ProjectKB_Class10188])
-	(widget_class_name "edu.stanford.smi.protege.widget.FloatFieldWidget")
-	(width 100)
-	(x 0)
-	(y 240))
-
-([viajes_ProjectKB_Class10188] of  Property_List
-)
-
-([viajes_ProjectKB_Class10193] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-View References to Value"))
-
-([viajes_ProjectKB_Class10194] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-Delete Instance"))
-
-([viajes_ProjectKB_Class102] of  Property_List
-
-	(properties
-		[viajes_ProjectKB_Class10193]
-		[viajes_ProjectKB_Class10194]))
-
-([viajes_ProjectKB_Class105] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "viaje_ofrecido_por")
-	(property_list [viajes_ProjectKB_Class106])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
-	(width 200)
-	(x 200)
-	(y 120))
-
-([viajes_ProjectKB_Class106] of  Property_List
-
-	(properties
-		[viajes_ProjectKB_Class107]
-		[viajes_ProjectKB_Class108]))
-
-([viajes_ProjectKB_Class107] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-View References to Value"))
-
-([viajes_ProjectKB_Class108] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-Delete Instance"))
-
-([viajes_ProjectKB_Class109] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "transporte")
-	(property_list [viajes_ProjectKB_Class110])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
-	(width 200)
-	(x 200)
-	(y 60))
-
-([viajes_ProjectKB_Class11] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class12])
-	(widget_class_name "edu.stanford.smi.protegex.server_changes.prompt.UsersTab"))
-
-([viajes_ProjectKB_Class110] of  Property_List
-
-	(properties
-		[viajes_ProjectKB_Class111]
-		[viajes_ProjectKB_Class112]))
-
-([viajes_ProjectKB_Class111] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-View References to Value"))
-
-([viajes_ProjectKB_Class112] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-Delete Instance"))
-
-([viajes_ProjectKB_Class113] of  String
-
-	(name "tooltip_text"))
-
-([viajes_ProjectKB_Class114] of  Boolean
-
-	(boolean_value FALSE)
-	(name "readOnly_configured"))
-
-([viajes_ProjectKB_Class12] of  Property_List
-)
-
-([viajes_ProjectKB_Class125] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "travel")
-	(property_list [viajes_ProjectKB_Class126])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
-	(width 200)
-	(x 0)
-	(y 180))
-
-([viajes_ProjectKB_Class126] of  Property_List
-
-	(properties
-		[viajes_ProjectKB_Class127]
-		[viajes_ProjectKB_Class128]))
-
-([viajes_ProjectKB_Class127] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-View References to Value"))
-
-([viajes_ProjectKB_Class128] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-Delete Instance"))
-
-([viajes_ProjectKB_Class13] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class14])
-	(widget_class_name "edu.stanford.smi.protege.query.LuceneQueryPlugin"))
-
-([viajes_ProjectKB_Class14] of  Property_List
-)
-
-([viajes_ProjectKB_Class15] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class16])
-	(widget_class_name "edu.stanford.smi.protege.widget.ClsesAndInstancesTab"))
-
-([viajes_ProjectKB_Class150] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-View References to Value"))
-
-([viajes_ProjectKB_Class151] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-Delete Instance"))
-
-([viajes_ProjectKB_Class152] of  String
-
-	(name "horizontal_stretcher")
-	(string_value "<<all>>"))
-
-([viajes_ProjectKB_Class153] of  String
-
-	(name "vertical_stretcher")
-	(string_value "<<none>>"))
-
-([viajes_ProjectKB_Class16] of  Property_List
-)
-
-([viajes_ProjectKB_Class162] of  Property_List
-
-	(name "layout properties"))
-
-([viajes_ProjectKB_Class163] of  Property_List
-)
-
-([viajes_ProjectKB_Class164] of  Property_List
-)
-
-([viajes_ProjectKB_Class165] of  Property_List
-)
-
-([viajes_ProjectKB_Class166] of  Property_List
-)
-
-([viajes_ProjectKB_Class17] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class18])
-	(widget_class_name "edu.stanford.smi.protege.widget.KAToolTab"))
-
-([viajes_ProjectKB_Class18] of  Property_List
-)
-
-([viajes_ProjectKB_Class184] of  String
-
-	(name "SearchTab_Query")
-	(string_value "Query Name: CiudadesAndalucia\nMatch All:true\nLength: 1\nCiudad	pertenece_a	contains	Instance:KB_866725_Class30|Andalucia	1	\n\nQuery Name: Alojamiento4Estrellas\nMatch All:true\nLength: 1\nAlojamiento	calidad	is	Other:4	1	\n\nQuery Name: TransporteNoAvion\nMatch All:true\nLength: 1\nTransporte	tipo	does not contain	Other:avion	1	\n\nQuery Name: AreaInternacional\nMatch All:true\nLength: 1\nArea	internacional	is	Other:true	1	\n\nQuery Name: CiudadInternacional\nMatch All:true\nLength: 1\nCiudad	pertenece_a	contains	Query:AreaInternacional|AreaInternacional	1	\n\nQuery Name: CiudadNoInternacional\nMatch All:true\nLength: 1\nCiudad	pertenece_a	does not contain	Query:AreaInternacional|AreaInternacional	1	\n\nQuery Name: Viaje1000InternacionalMenosDe7\nMatch All:true\nLength: 3\nViaje	precio	is greater than	Other:1000	1	\nViaje	destino	contains	Query:CiudadInternacional|CiudadInternacional	1	\nViaje	duracion	is less than	Other:7	1	\n\nQuery Name: Viaje1000NacionalMasDe7\nMatch All:true\nLength: 3\nViaje	precio	is greater than	Other:1000	1	\nViaje	destino	contains	Query:CiudadNoInternacional|CiudadNoInternacional	1	\nViaje	duracion	is greater than	Other:7	1	\n\nQuery Name: AvionDeLujo\nMatch All:true\nLength: 2\nTransporte	calidad	is greater than	Other:3	1	\nTransporte	tipo	contains	Other:avion	1	\n\nQuery Name: Hotel4EstrellasOMas\nMatch All:true\nLength: 1\nAlojamiento	calidad	is greater than	Other:3	1	\n\nQuery Name: EsIsla\nMatch All:true\nLength: 1\nCiudad	isla	is	Other:true	1	\n\nQuery Name: ViajeAIslaSinCrucero\nMatch All:true\nLength: 2\nViaje	destino	contains	Query:EsIsla|EsIsla	1	\nViaje	transporte	does not contain	Query:ViajeEnBarcoNoCrucero|ViajeEnBarcoNoCrucero	1	\n\nQuery Name: HotelMelia\nMatch All:true\nLength: 1\nCadenaHotelera	nombre	is	Other:Melia	1	\n\nQuery Name: AgenciaPolitours\nMatch All:true\nLength: 1\nAgenciaViajes	nombre	contains	Other:Politours	1	\n\nQuery Name: AlojamientoMelia\nMatch All:true\nLength: 1\nAlojamiento	pertenece_a_cadena	contains	Query:HotelMelia|HotelMelia	1	\n\nQuery Name: ViajeEnBarcoNoCrucero\nMatch All:true\nLength: 2\nTransporte	tipo	contains	Other:barco	1	\nTransporte	tipo	is not	Other:barco crucero	1	\n\nQuery Name: AgenciaPanavision\nMatch All:true\nLength: 1\nAgenciaViajes	nombre	is	Other:Panavision	1	\n\nQuery Name: Viajes por Panavision\nMatch All:true\nLength: 1\nViaje	viaje_ofrecido_por	contains	Query:AgenciaPanavision|AgenciaPanavision	1	\n\nQuery Name: 1)Viajes a Andalucia por menos de 200\nMatch All:true\nLength: 2\nViaje	precio	is less than	Other:200	1	\nViaje	destino	contains	Query:CiudadesAndalucia|CiudadesAndalucia	1	\n\nQuery Name: 2) Viajes con hotel de 4 estrellas y transporte que no es avion\nMatch All:true\nLength: 2\nViaje	transporte	contains	Query:TransporteNoAvion|TransporteNoAvion	1	\nViaje	alojamiento	contains	Query:Alojamiento4Estrellas|Alojamiento4Estrellas	1	\n\nQuery Name: 3) Viajes de mas de 1000 euros de menos de 7 dias o internacionales\nMatch All:false\nLength: 2\nViaje	travel	contains	Query:Viaje1000InternacionalMenosDe7|Viaje1000InternacionalMenosDe7	1	\nViaje	travel	contains	Query:Viaje1000NacionalMasDe7|Viaje1000NacionalMasDe7	1	\n\nQuery Name: 4) Viajes con alojamiento de lujo y transporte VIP en avión\nMatch All:true\nLength: 2\nViaje	transporte	contains	Query:AvionDeLujo|AvionDeLujo	1	\nViaje	alojamiento	contains	Query:Hotel4EstrellasOMas|Hotel4EstrellasOMas	1	\n\nQuery Name: 5) Destinos ofertados por Travelplan entre 700 y 1000 euros\nMatch All:true\nLength: 3\nViaje	viaje_ofrecido_por	contains	Instance:KB_866725_Class60|TravelPlan	1	\nViaje	precio	is greater than	Other:700	1	\nViaje	precio	is less than	Other:1000	1	\n\nQuery Name: 6) Mayoristas que ofrecen viajes a islas y no es un crucero\nMatch All:true\nLength: 1\nAgenciaViajes	ofrece_viajes	contains	Query:ViajeAIslaSinCrucero|ViajeAIslaSinCrucero	1	\n\nQuery Name: 7) Hoteles de la cadena Melia disponibles por Politours\nMatch All:true\nLength: 2\nViaje	viaje_ofrecido_por	contains	Query:AgenciaPolitours|AgenciaPolitours	1	\nViaje	alojamiento	contains	Query:AlojamientoMelia|AlojamientoMelia	1	\n\n"))
-
-([viajes_ProjectKB_Class19] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class20])
-	(widget_class_name "edu.stanford.smi.protege.widget.instance_tree.KnowledgeTreeTab"))
-
-([viajes_ProjectKB_Class2] of  Property_List
-)
-
-([viajes_ProjectKB_Class20] of  Property_List
-)
-
-([viajes_ProjectKB_Class20013] of  String
-
-	(name "Area")
-	(string_value "nombre"))
-
-([viajes_ProjectKB_Class20014] of  String
-
-	(name ":FUNCTION")
-	(string_value "%3ADEFINITION-NAME"))
-
-([viajes_ProjectKB_Class20015] of  String
-
-	(name "Transporte")
-	(string_value "tipo"))
-
-([viajes_ProjectKB_Class20016] of  String
-
-	(name "AgenciaViajes")
-	(string_value "nombre"))
-
-([viajes_ProjectKB_Class20017] of  String
-
-	(name "Alojamiento")
-	(string_value "pertenece_a_cadena"))
-
-([viajes_ProjectKB_Class20018] of  String
-
-	(name ":JESS-DEFINITION")
-	(string_value "%3ADEFINITION-NAME"))
-
-([viajes_ProjectKB_Class20019] of  String
+([Viajes_ProjectKB_Class111] of  String
 
 	(name ":INSTANCE-ANNOTATION")
 	(string_value "%3AANNOTATION-TEXT"))
 
-([viajes_ProjectKB_Class20020] of  String
-
-	(name "Ciudad")
-	(string_value "nombre"))
-
-([viajes_ProjectKB_Class20021] of  String
-
-	(name "CadenaHotelera")
-	(string_value "nombre"))
-
-([viajes_ProjectKB_Class20022] of  String
-
-	(name ":RULE")
-	(string_value "%3ADEFINITION-NAME"))
-
-([viajes_ProjectKB_Class20023] of  String
+([Viajes_ProjectKB_Class112] of  String
 
 	(name ":PAL-CONSTRAINT")
 	(string_value "%3APAL-NAME"))
 
-([viajes_ProjectKB_Class20024] of  String
+([Viajes_ProjectKB_Class113] of  String
 
 	(name ":META-CLASS")
 	(string_value "%3ANAME"))
 
-([viajes_ProjectKB_Class20025] of  String
-
-	(name "User")
-	(string_value "Nombre"))
-
-([viajes_ProjectKB_Class20026] of  String
-
-	(name "Viaje")
-	(string_value "destino"))
-
-([viajes_ProjectKB_Class20027] of  Map_Entry
+([Viajes_ProjectKB_Class114] of  Map_Entry
 
 	(key "suppress_instance_counting")
 	(key_class "java.lang.String")
 	(value "false")
 	(value_class "java.lang.String"))
 
-([viajes_ProjectKB_Class20028] of  Map_Entry
+([Viajes_ProjectKB_Class115] of  Map_Entry
 
 	(key "add_name_on_instance_form")
 	(key_class "java.lang.String")
 	(value "false")
 	(value_class "java.lang.String"))
 
-([viajes_ProjectKB_Class20029] of  Map_Entry
+([Viajes_ProjectKB_Class116] of  Map_Entry
 
 	(key "change_tracking_active")
 	(key_class "java.lang.String")
 	(value "false")
 	(value_class "java.lang.String"))
-
-([viajes_ProjectKB_Class20088] of  Property_List
-
-	(name "layout properties"))
-
-([viajes_ProjectKB_Class20089] of  Widget
-
-	(height 120)
-	(is_hidden FALSE)
-	(label "Documentation")
-	(name ":DOCUMENTATION")
-	(property_list [viajes_ProjectKB_Class20090])
-	(widget_class_name "se.liu.ida.JessTab.JessDocumentationWidget")
-	(width 200)
-	(x 250)
-	(y 0))
-
-([viajes_ProjectKB_Class20090] of  Property_List
-)
-
-([viajes_ProjectKB_Class20091] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(label "Name")
-	(name ":DEFINITION-NAME")
-	(property_list [viajes_ProjectKB_Class20092])
-	(widget_class_name "se.liu.ida.JessTab.JessDefinitionNameWidget")
-	(width 200)
-	(x 0)
-	(y 0))
-
-([viajes_ProjectKB_Class20092] of  Property_List
-)
-
-([viajes_ProjectKB_Class20093] of  Widget
-
-	(height 250)
-	(is_hidden FALSE)
-	(label "Jess definition")
-	(name ":DEFINITION")
-	(property_list [viajes_ProjectKB_Class20094])
-	(widget_class_name "se.liu.ida.JessTab.JessDefinitionWidget")
-	(width 450)
-	(x 0)
-	(y 120))
-
-([viajes_ProjectKB_Class20094] of  Property_List
-)
-
-([viajes_ProjectKB_Class20095] of  Widget
-
-	(height 30)
-	(is_hidden FALSE)
-	(label "Save definition in knowledge base")
-	(name ":KB-SAVE")
-	(property_list [viajes_ProjectKB_Class20096])
-	(widget_class_name "edu.stanford.smi.protege.widget.CheckBoxWidget")
-	(width 250)
-	(x 0)
-	(y 380))
-
-([viajes_ProjectKB_Class20096] of  Property_List
-)
-
-([viajes_ProjectKB_Class20097] of  Widget
-
-	(is_hidden FALSE)
-	(name ":JESS-DEFFACTS")
-	(property_list [viajes_ProjectKB_Class20108])
-	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
-
-([viajes_ProjectKB_Class20108] of  Property_List
-
-	(properties
-		[viajes_ProjectKB_Class20109]
-		[viajes_ProjectKB_Class20110]
-		[viajes_ProjectKB_Class20112]
-		[viajes_ProjectKB_Class20114]
-		[viajes_ProjectKB_Class20116]))
-
-([viajes_ProjectKB_Class20109] of  Property_List
-
-	(name "layout properties"))
-
-([viajes_ProjectKB_Class20110] of  Widget
-
-	(height 120)
-	(is_hidden FALSE)
-	(label "Documentation")
-	(name ":DOCUMENTATION")
-	(property_list [viajes_ProjectKB_Class20111])
-	(widget_class_name "se.liu.ida.JessTab.JessDocumentationWidget")
-	(width 200)
-	(x 250)
-	(y 0))
-
-([viajes_ProjectKB_Class20111] of  Property_List
-)
-
-([viajes_ProjectKB_Class20112] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(label "Name")
-	(name ":DEFINITION-NAME")
-	(property_list [viajes_ProjectKB_Class20113])
-	(widget_class_name "se.liu.ida.JessTab.JessDefinitionNameWidget")
-	(width 200)
-	(x 0)
-	(y 0))
-
-([viajes_ProjectKB_Class20113] of  Property_List
-)
-
-([viajes_ProjectKB_Class20114] of  Widget
-
-	(height 250)
-	(is_hidden FALSE)
-	(label "Jess definition")
-	(name ":DEFINITION")
-	(property_list [viajes_ProjectKB_Class20115])
-	(widget_class_name "se.liu.ida.JessTab.JessDefinitionWidget")
-	(width 450)
-	(x 0)
-	(y 120))
-
-([viajes_ProjectKB_Class20115] of  Property_List
-)
-
-([viajes_ProjectKB_Class20116] of  Widget
-
-	(height 30)
-	(is_hidden FALSE)
-	(label "Save definition in knowledge base")
-	(name ":KB-SAVE")
-	(property_list [viajes_ProjectKB_Class20117])
-	(widget_class_name "edu.stanford.smi.protege.widget.CheckBoxWidget")
-	(width 250)
-	(x 0)
-	(y 380))
-
-([viajes_ProjectKB_Class20117] of  Property_List
-)
-
-([viajes_ProjectKB_Class20118] of  Widget
-
-	(is_hidden FALSE)
-	(name ":JESS-DEFMESSAGE-HANDLER")
-	(property_list [viajes_ProjectKB_Class20129])
-	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
-
-([viajes_ProjectKB_Class20129] of  Property_List
-
-	(properties
-		[viajes_ProjectKB_Class20130]
-		[viajes_ProjectKB_Class20131]
-		[viajes_ProjectKB_Class20133]
-		[viajes_ProjectKB_Class20135]
-		[viajes_ProjectKB_Class20137]))
-
-([viajes_ProjectKB_Class20130] of  Property_List
-
-	(name "layout properties"))
-
-([viajes_ProjectKB_Class20131] of  Widget
-
-	(height 120)
-	(is_hidden FALSE)
-	(label "Documentation")
-	(name ":DOCUMENTATION")
-	(property_list [viajes_ProjectKB_Class20132])
-	(widget_class_name "se.liu.ida.JessTab.JessDocumentationWidget")
-	(width 200)
-	(x 250)
-	(y 0))
-
-([viajes_ProjectKB_Class20132] of  Property_List
-)
-
-([viajes_ProjectKB_Class20133] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(label "Name")
-	(name ":DEFINITION-NAME")
-	(property_list [viajes_ProjectKB_Class20134])
-	(widget_class_name "se.liu.ida.JessTab.JessDefinitionNameWidget")
-	(width 200)
-	(x 0)
-	(y 0))
-
-([viajes_ProjectKB_Class20134] of  Property_List
-)
-
-([viajes_ProjectKB_Class20135] of  Widget
-
-	(height 250)
-	(is_hidden FALSE)
-	(label "Jess definition")
-	(name ":DEFINITION")
-	(property_list [viajes_ProjectKB_Class20136])
-	(widget_class_name "se.liu.ida.JessTab.JessDefinitionWidget")
-	(width 450)
-	(x 0)
-	(y 120))
-
-([viajes_ProjectKB_Class20136] of  Property_List
-)
-
-([viajes_ProjectKB_Class20137] of  Widget
-
-	(height 30)
-	(is_hidden FALSE)
-	(label "Save definition in knowledge base")
-	(name ":KB-SAVE")
-	(property_list [viajes_ProjectKB_Class20138])
-	(widget_class_name "edu.stanford.smi.protege.widget.CheckBoxWidget")
-	(width 250)
-	(x 0)
-	(y 380))
-
-([viajes_ProjectKB_Class20138] of  Property_List
-)
-
-([viajes_ProjectKB_Class20139] of  Widget
-
-	(is_hidden FALSE)
-	(name ":JESS-DEFMETHOD")
-	(property_list [viajes_ProjectKB_Class20150])
-	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
-
-([viajes_ProjectKB_Class20150] of  Property_List
-
-	(properties
-		[viajes_ProjectKB_Class20151]
-		[viajes_ProjectKB_Class20152]
-		[viajes_ProjectKB_Class20154]
-		[viajes_ProjectKB_Class20156]
-		[viajes_ProjectKB_Class20158]))
-
-([viajes_ProjectKB_Class20151] of  Property_List
-
-	(name "layout properties"))
-
-([viajes_ProjectKB_Class20152] of  Widget
-
-	(height 120)
-	(is_hidden FALSE)
-	(label "Documentation")
-	(name ":DOCUMENTATION")
-	(property_list [viajes_ProjectKB_Class20153])
-	(widget_class_name "se.liu.ida.JessTab.JessDocumentationWidget")
-	(width 200)
-	(x 250)
-	(y 0))
-
-([viajes_ProjectKB_Class20153] of  Property_List
-)
-
-([viajes_ProjectKB_Class20154] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(label "Name")
-	(name ":DEFINITION-NAME")
-	(property_list [viajes_ProjectKB_Class20155])
-	(widget_class_name "se.liu.ida.JessTab.JessDefinitionNameWidget")
-	(width 200)
-	(x 0)
-	(y 0))
-
-([viajes_ProjectKB_Class20155] of  Property_List
-)
-
-([viajes_ProjectKB_Class20156] of  Widget
-
-	(height 250)
-	(is_hidden FALSE)
-	(label "Jess definition")
-	(name ":DEFINITION")
-	(property_list [viajes_ProjectKB_Class20157])
-	(widget_class_name "se.liu.ida.JessTab.JessDefinitionWidget")
-	(width 450)
-	(x 0)
-	(y 120))
-
-([viajes_ProjectKB_Class20157] of  Property_List
-)
-
-([viajes_ProjectKB_Class20158] of  Widget
-
-	(height 30)
-	(is_hidden FALSE)
-	(label "Save definition in knowledge base")
-	(name ":KB-SAVE")
-	(property_list [viajes_ProjectKB_Class20159])
-	(widget_class_name "edu.stanford.smi.protege.widget.CheckBoxWidget")
-	(width 250)
-	(x 0)
-	(y 380))
-
-([viajes_ProjectKB_Class20159] of  Property_List
-)
-
-([viajes_ProjectKB_Class21] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class22])
-	(widget_class_name "edu.stanford.smi.protege.keywordsearch.StringSearch"))
-
-([viajes_ProjectKB_Class22] of  Property_List
-)
-
-([viajes_ProjectKB_Class23] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class24])
-	(widget_class_name "edu.stanford.smi.protegex.prompt.PromptTab"))
-
-([viajes_ProjectKB_Class24] of  Property_List
-)
-
-([viajes_ProjectKB_Class25] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class26])
-	(widget_class_name "org.algernon.kb.okbc.protege.plugins.AlgernonTab"))
-
-([viajes_ProjectKB_Class26] of  Property_List
-)
-
-([viajes_ProjectKB_Class27] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class28])
-	(widget_class_name "edu.stanford.smi.protegex.widget.pal.PalConstraintsTab"))
-
-([viajes_ProjectKB_Class28] of  Property_List
-)
-
-([viajes_ProjectKB_Class29] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class30])
-	(widget_class_name "edu.stanford.smi.protegex.owl.ui.metadatatab.OWLMetadataTab"))
-
-([viajes_ProjectKB_Class3] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class4])
-	(widget_class_name "edu.stanford.smi.protege.widget.ProtegePropertiesTab"))
-
-([viajes_ProjectKB_Class30] of  Property_List
-)
-
-([viajes_ProjectKB_Class31] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class32])
-	(widget_class_name "edu.stanford.smi.RemoteKBTab.WordNetTab"))
-
-([viajes_ProjectKB_Class32] of  Property_List
-)
-
-([viajes_ProjectKB_Class33] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class34])
-	(widget_class_name "edu.stanford.smi.protegex.owl.swrl.ui.tab.SWRLTab"))
-
-([viajes_ProjectKB_Class34] of  Property_List
-)
-
-([viajes_ProjectKB_Class35] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class36])
-	(widget_class_name "org.protege.owl.mm.protege3.MappingMasterTab"))
-
-([viajes_ProjectKB_Class36] of  Property_List
-)
-
-([viajes_ProjectKB_Class37] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class38])
-	(widget_class_name "edu.stanford.smi.RemoteKBTab.UMLSTab"))
-
-([viajes_ProjectKB_Class38] of  Property_List
-)
-
-([viajes_ProjectKB_Class39] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class40])
-	(widget_class_name "edu.stanford.smi.protegex.owl.ui.individuals.OWLIndividualsTab"))
-
-([viajes_ProjectKB_Class4] of  Property_List
-)
-
-([viajes_ProjectKB_Class40] of  Property_List
-)
-
-([viajes_ProjectKB_Class41] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class42])
-	(widget_class_name "uk.ac.man.cs.mig.coode.debugger.test.DebuggerTestTab"))
-
-([viajes_ProjectKB_Class42] of  Property_List
-)
-
-([viajes_ProjectKB_Class43] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class44])
-	(widget_class_name "ca.uvic.csr.shrimp.jambalaya.JambalayaTab"))
-
-([viajes_ProjectKB_Class44] of  Property_List
-)
-
-([viajes_ProjectKB_Class45] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class46])
-	(widget_class_name "edu.stanford.smi.protegex.changes.ChangesTab"))
-
-([viajes_ProjectKB_Class46] of  Property_List
-)
-
-([viajes_ProjectKB_Class47] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class48])
-	(widget_class_name "org.protege.owl.axiome.ui.AxiomeTab"))
-
-([viajes_ProjectKB_Class48] of  Property_List
-)
-
-([viajes_ProjectKB_Class49] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class50])
-	(widget_class_name "TGViztab.TGVizTab"))
-
-([viajes_ProjectKB_Class5] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class6])
-	(widget_class_name "edu.stanford.smi.protegex.widget.pal.PalQueriesTab"))
-
-([viajes_ProjectKB_Class50] of  Property_List
-)
-
-([viajes_ProjectKB_Class51] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class52])
-	(widget_class_name "edu.stanford.smi.protegex.owl.ui.properties.OWLPropertiesTab"))
-
-([viajes_ProjectKB_Class52] of  Property_List
-)
-
-([viajes_ProjectKB_Class53] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class54])
-	(widget_class_name "uk.ac.man.ac.mig.coode.individuals.ui.OWLDLIndividualsTab"))
-
-([viajes_ProjectKB_Class54] of  Property_List
-)
-
-([viajes_ProjectKB_Class55] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class56])
-	(widget_class_name "edu.stanford.smi.protege.widget.instance_tree.InstanceTreeTab"))
-
-([viajes_ProjectKB_Class56] of  Property_List
-)
-
-([viajes_ProjectKB_Class57] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class58])
-	(widget_class_name "edu.stanford.smi.protegex.evaluation.MetaAnalysis"))
-
-([viajes_ProjectKB_Class58] of  Property_List
-)
-
-([viajes_ProjectKB_Class59] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class60])
-	(widget_class_name "edu.stanford.smi.protegex.changes.changesKBViewTab.ChangesKBViewTab"))
-
-([viajes_ProjectKB_Class6] of  Property_List
-)
-
-([viajes_ProjectKB_Class60] of  Property_List
-)
-
-([viajes_ProjectKB_Class61] of  Widget
-
-	(is_hidden FALSE)
-	(property_list [viajes_ProjectKB_Class62])
-	(widget_class_name "se.liu.ida.JessTab.JessTab"))
-
-([viajes_ProjectKB_Class62] of  Property_List
-)
-
-([viajes_ProjectKB_Class63] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class64])
-	(widget_class_name "edu.stanford.smi.protegex.changeanalysis.ChangeAnalysisTab"))
-
-([viajes_ProjectKB_Class64] of  Property_List
-)
-
-([viajes_ProjectKB_Class65] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class66])
-	(widget_class_name "uk.ac.man.cs.mig.coode.owlviz.ui.OWLVizTab"))
-
-([viajes_ProjectKB_Class66] of  Property_List
-)
-
-([viajes_ProjectKB_Class67] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class68])
-	(widget_class_name "edu.stanford.smi.protegex.changes.stats.ChangeStatisticsTab"))
-
-([viajes_ProjectKB_Class68] of  Property_List
-)
-
-([viajes_ProjectKB_Class69] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class70])
-	(widget_class_name "script.ProtegeScriptTab"))
-
-([viajes_ProjectKB_Class7] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class8])
-	(widget_class_name "dfki.protege.ontoviz_tab.OntovizTab"))
-
-([viajes_ProjectKB_Class70] of  Property_List
-)
-
-([viajes_ProjectKB_Class71] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class72])
-	(widget_class_name "edu.stanford.smi.protegex.chatPlugin.ChatTab"))
-
-([viajes_ProjectKB_Class72] of  Property_List
-)
-
-([viajes_ProjectKB_Class73] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class74])
-	(widget_class_name "edu.stanford.smi.protegex.fctab.FacetConstraintsTab"))
-
-([viajes_ProjectKB_Class74] of  Property_List
-)
-
-([viajes_ProjectKB_Class75] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class76])
-	(widget_class_name "edu.stanford.smi.protegex.xml.tab.XMLTab"))
-
-([viajes_ProjectKB_Class76] of  Property_List
-)
-
-([viajes_ProjectKB_Class77] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class78])
-	(widget_class_name "edu.stanford.smi.protegex.datamaster.DataMasterTab"))
-
-([viajes_ProjectKB_Class78] of  Property_List
-)
-
-([viajes_ProjectKB_Class79] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class80])
-	(widget_class_name "ezpal.EZPalTab"))
-
-([viajes_ProjectKB_Class8] of  Property_List
-)
-
-([viajes_ProjectKB_Class80] of  Property_List
-)
-
-([viajes_ProjectKB_Class88] of  Widget
-
-	(is_hidden FALSE)
-	(name "Viaje")
-	(property_list [viajes_ProjectKB_Class89])
-	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
-
-([viajes_ProjectKB_Class89] of  Property_List
-
-	(properties
-		[viajes_ProjectKB_Class90]
-		[viajes_ProjectKB_Class91]
-		[viajes_ProjectKB_Class95]
-		[viajes_ProjectKB_Class99]
-		[viajes_ProjectKB_Class101]
-		[viajes_ProjectKB_Class105]
-		[viajes_ProjectKB_Class109]
-		[viajes_ProjectKB_Class125]
-		[viajes_ProjectKB_Class10187]))
-
-([viajes_ProjectKB_Class9] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [viajes_ProjectKB_Class10])
-	(widget_class_name "edu.stanford.smi.protegex.owl.ui.cls.OWLClassesTab"))
-
-([viajes_ProjectKB_Class90] of  Property_List
-
-	(name "layout properties")
-	(properties
-		[viajes_ProjectKB_Class152]
-		[viajes_ProjectKB_Class153]))
-
-([viajes_ProjectKB_Class91] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "destino")
-	(property_list [viajes_ProjectKB_Class92])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
-	(width 200)
-	(x 200)
-	(y 0))
-
-([viajes_ProjectKB_Class92] of  Property_List
-
-	(properties
-		[viajes_ProjectKB_Class150]
-		[viajes_ProjectKB_Class151]))
-
-([viajes_ProjectKB_Class95] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(label "Duracion")
-	(name "duracion")
-	(property_list [viajes_ProjectKB_Class96])
-	(widget_class_name "edu.stanford.smi.protege.widget.IntegerFieldWidget")
-	(width 100)
-	(x 100)
-	(y 0))
-
-([viajes_ProjectKB_Class96] of  Property_List
-
-	(properties
-		[viajes_ProjectKB_Class113]
-		[viajes_ProjectKB_Class114]))
-
-([viajes_ProjectKB_Class99] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "calidad")
-	(property_list [viajes_ProjectKB_Class100])
-	(widget_class_name "edu.stanford.smi.protege.widget.IntegerFieldWidget")
-	(width 100)
-	(x 0)
-	(y 0))
