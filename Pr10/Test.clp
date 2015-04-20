@@ -90,10 +90,12 @@
 ;; Loading module
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(defmodule load)
+
 (defrule loadUser "Carga al usuario desde protegé"
     (object (is-a User) (season ?sea) (budget ?bud) (hobby ?hob) (age ?age) (companion ?com) (exotic ?exo) (continent ?con) (languages ?lan))
     =>
-    (assert (user ) (season ?sea) (budget ?bud) (hobby ?hob) (age ?age) (companion ?com) (exotic ?exo) (continent ?con) (languages ?lan))
+    (assert (user (season ?sea) (budget ?bud) (hobby ?hob) (age ?age) (companion ?com) (exotic ?exo) (continent ?con) (languages ?lan)))
 
 )
 
@@ -185,6 +187,12 @@
     (assert (recommendation (name ?tn) (description ?td))) ;Aserta una recomendaci�n
     )
 
+(defrule protegeRecom "carga las recomendaciones de viajes en protege"
+    (recommendation (name ?n) (description ?d))
+    =>
+    (make-instance of Recommendation (name ?n) (description ?d))
+)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; REPORT MODULE; This module handles showing the information on screen
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -201,7 +209,7 @@
 (deffunction run-system ()
     "Equivalent to main function"
   (reset);resets all facts
-  (focus selection travelRecommendation report) ;order in wich modules will be 'executed'
+  (focus selection load travelRecommendation report)
   (run))
 
 (run-system)

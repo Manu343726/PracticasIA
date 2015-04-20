@@ -1,4 +1,122 @@
-; Sun Apr 19 17:36:50 CEST 2015
+; Mon Apr 20 21:43:41 CEST 2015
 ; 
 ;+ (version "3.4.8")
 ;+ (build "Build 629")
+
+([Jess+engine] of  %3AJESS-ENGINE
+)
+
+([Viajes_Class0] of  User
+
+	(age 26)
+	(budget 5000)
+	(companion 0)
+	(continent 1)
+	(exotic 1)
+	(hobby 1)
+	(languages 2)
+	(season 1))
+
+([Viajes_Class1] of  Recommendation
+
+	(description "Australia en verano es un sitio inhospito, perfecto para la gente que busca aventuras")
+	(name "Australia: La tierra del peligro"))
+
+([Viajes_Class12] of  Travel
+
+	(begins 130)
+	(continent 1)
+	(cost 3000)
+	(description "Un viaje cultural por la India, donde nacion el buddhismo.")
+	(ends 145)
+	(language 5)
+	(name "La India y la Religion")
+	(theme 2))
+
+([Viajes_Class13] of  Travel
+
+	(begins 174)
+	(continent 2)
+	(cost 4500)
+	(description "Australia en verano es un sitio inhospito, perfecto para la gente que busca aventuras")
+	(ends 190)
+	(language 1)
+	(name "Australia: La tierra del peligro")
+	(theme 1))
+
+([Viajes_Class14] of  Travel
+
+	(begins 88)
+	(continent 3)
+	(cost 4200)
+	(description "Un viaje por la zona franco-parlante de Canada.")
+	(ends 98)
+	(language 2)
+	(name "Quebeq, la Francia ovlidada")
+	(theme 3))
+
+([Viajes_Class15] of  Travel
+
+	(begins 266)
+	(continent 3)
+	(cost 1100)
+	(description "Recorra de costa este a oeste los estados unidos en bicicleta; un viaje duro para los mas osados")
+	(ends 286)
+	(language 1)
+	(name "Estados unidos en bicicleta")
+	(theme 0))
+
+([Viajes_Class16] of  Travel
+
+	(begins 360)
+	(continent 0)
+	(cost 1000)
+	(description "Roma es el destino ideal para turistas")
+	(ends 4)
+	(language 4)
+	(name "Roma")
+	(theme 3))
+
+([Viajes_Class17] of  Travel
+
+	(begins 360)
+	(continent 0)
+	(cost 1200)
+	(description "Berlin tiene una cantidad de museos impresionantes, podras visitarlos todos")
+	(ends 4)
+	(language 4)
+	(name "El Berlin de los museos")
+	(theme 2))
+
+([Viajes_Class18] of  Travel
+
+	(begins 356)
+	(continent 4)
+	(cost 8000)
+	(description "La patagonia no es un sitio para cualquiera. Verano es la mejor epoca para visitar a los enormes glaciares que se desprenderï¿½n ante tus ojos.")
+	(ends 10)
+	(language 0)
+	(name "La patagonia")
+	(theme 1))
+
+([Viajes_Class19] of  Travel
+
+	(begins 90)
+	(continent 1)
+	(cost 4500)
+	(description "Siete dias de ensueÃ±o en los que pasara por los mejores restaurantes de China, coincidiendo con el mercado de Primavera.")
+	(ends 97)
+	(language 3)
+	(name "Gastronomia Pekinesa")
+	(theme 4))
+
+([Viajes_Class20] of  Travel
+
+	(begins 180)
+	(continent 1)
+	(cost 5000)
+	(description "Un viaje de 21 dias por el Tibet, una experiencia para los mas aventureros")
+	(ends 201)
+	(language 3)
+	(name "Viaje al Tibet")
+	(theme 1))
