@@ -1,0 +1,53 @@
+Inteligencia Artificial, Práctica 10
+====================================
+
+Pablo Mac Veigh 
+Manuel Sánchez Pérez
+
+Descripción y manipulación de ontologías con Protegé y Jess
+
+Descripción
+-----------
+
+Nos hemos basado en el sistema de recomendación de viajes implemntado en Jess durante la práctica 6, ya que la ontología de la práctica 10 nos resultó algo complicada de representar en Jess.
+
+### Representación de los campos para Travel y User: 
+
+Hemos optado por representar las categorías con campos numéricos ya que es mas fácil utilizar reglas aritméticas con estos. 
+El código incluye una leyenda con las tablas en la cabecera, como por ejemplo: 
+
+    hobby / theme 
+    0: Deportes 1: Aventura 2: Cultura 3: Turismo 4: Gastronomía 
+
+### Definición de Templates: 
+
+Template usuario: 
+
+    (deftemplate user (slot season(type number)); Época del año [enumerado] (slot budget(type number)); Presupuesto [>0] (slot hobby(type number)); Aficiones [enumerado] (slot age(type number)); Edad [>0] (slot companion(type number)); Acompañantes [enumerado] (slot exotic(type number)); Viaje exótico? [0/1] (slot continent(type number)); Continente [enumerado] (slot languages(type number)); Idioma [enumerado]) 
+
+Template viaje: 
+
+    (deftemplate travel (slot begins(type number)); Día que empieza [0-365] (slot ends(type number)); Día que acaba [0-365] (slot theme(type number)); Temática [mismo enumerado que hobby] (slot cost (type number)) ; Precio (slot language(type number)); Idioma [enumerado] (slot name(type STRING)); Nombre del viaje (slot continent (type number));Continente [enumerado] (slot description(type STRING)); Descripción del viaje 
+) 
+
+### Reglas implementadas: 
+
+ - fitsSeason: Una función que busca encajar la preferencia de temporada del usuario con los días definidos del viaje. 
+ - exotic: Una regla que intenta forzar un viaje exótico para el usuario: Le manda a un continente distinto del suyo en un país donde no se hable su idioma. 
+ - age: Una regla para controlar las edades: Si es menor de edad y no hace un viaje exótico, se quedará en su continente. Si es mayor de edad y pide aventuras le mandará a un destino con deportes de aventura.
+ - company: Un viajante solo puede hacer cualquier tipo de viaje: Entre amigos se hacen viajes de deporte y aventuras, y en familia se hacen viajes sobre cultura.
+ - hobbies: Por último, esta regla intenta darte un viaje parecido a tu hobby: Los hemos puesto en dos grupos: Deportes/Aventura y Cultura.
+
+---
+
+Para que un viaje sea recomendado al usuario, debe superar todas estas funciones, utilizadas como test en la regla 'recommend' en el módulo 'travel-recommendation' Tras la aserción de estos hechos, el módulo 'report' se encarga de evitar repeticiones y mostrar por pantalla. 
+
+Ejemplos de ejecución: Tenemos una serie de viajes de ejemplo (No hay sufucientes para cubrir todos los casos) y un usuario por ejecución: 
+
+    (user (season 1) (budget 5000) (hobby 1) (age 26) (companion 0) (continent 3) (exotic 1) (languages 1)) 
+
+Este usuario busca un viaje en Verano, por menos de 5000€, su hobby es la Aventura, tiene 26 años, viaja solo, quiere un viaje exótico y habla inglés. La salida es pues: "You should consider the following trip: Viaje al Tíbet Description: Un viaje de 21 dias por el Tíbet, una experiencia para los mas aventureros".
+Este viaje podría recomendar también un viaje a Australia, pero debido a la regla exótica, no le lleva a un país en el que se habla inglés. 
+
+Mediante Protegé JessTabs las reglas anteriores son cargadas como una ontología en Protegé, pudiendo realizar consultas mediante la interfaz de Protegé. Así, se pueden ejecutar los ejemplos anteriores de manera más cómoda utilizando un formulario de Protegé para la introducción de datos. Además la vista de instancias de protegé ofrece una manera mucho mas sencilla de visionar los resultados que la interfaz por ĺinea de comandos de Jess.
+Por ejemplo, podemos utilizar la interfaz de Jess para instanciar mas ejemplos de viajes y probar diferentes recomendaciones mediante un formulario de entrada.
