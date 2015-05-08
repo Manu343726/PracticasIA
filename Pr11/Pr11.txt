@@ -1,0 +1,165 @@
+Manuel Sánchez
+Pablo Mac-Veigh
+
+Practica 11: WEKA
+
+Apartado 1: Diabetes.arff
+
+-¿Cuántas instancias hay? ¿Cuántos atributos se utilizan?
+
+	En este archivo nos encontramos con 768 instancias, con 9 atributos.
+
+-¿Por qué atributo queremos aprender a clasificar?
+	
+	En este caso nos interesa clasificarlos por "Class".
+
+-Ejecuta J48 (versión WEKA de C4.5). Utiliza para la validación el “training set”. Incluye en la
+memoria los resultados obtenidos y la representación gráfica del árbol correspondiente.
+
+=== Run information ===
+
+Scheme:weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     pima_diabetes
+Instances:    768
+Attributes:   9
+              preg
+              plas
+              pres
+              skin
+              insu
+              mass
+              pedi
+              age
+              class
+Test mode:evaluate on training data
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+plas <= 127
+|   mass <= 26.4: tested_negative (132.0/3.0)
+|   mass > 26.4
+|   |   age <= 28: tested_negative (180.0/22.0)
+|   |   age > 28
+|   |   |   plas <= 99: tested_negative (55.0/10.0)
+|   |   |   plas > 99
+|   |   |   |   pedi <= 0.561: tested_negative (84.0/34.0)
+|   |   |   |   pedi > 0.561
+|   |   |   |   |   preg <= 6
+|   |   |   |   |   |   age <= 30: tested_positive (4.0)
+|   |   |   |   |   |   age > 30
+|   |   |   |   |   |   |   age <= 34: tested_negative (7.0/1.0)
+|   |   |   |   |   |   |   age > 34
+|   |   |   |   |   |   |   |   mass <= 33.1: tested_positive (6.0)
+|   |   |   |   |   |   |   |   mass > 33.1: tested_negative (4.0/1.0)
+|   |   |   |   |   preg > 6: tested_positive (13.0)
+plas > 127
+|   mass <= 29.9
+|   |   plas <= 145: tested_negative (41.0/6.0)
+|   |   plas > 145
+|   |   |   age <= 25: tested_negative (4.0)
+|   |   |   age > 25
+|   |   |   |   age <= 61
+|   |   |   |   |   mass <= 27.1: tested_positive (12.0/1.0)
+|   |   |   |   |   mass > 27.1
+|   |   |   |   |   |   pres <= 82
+|   |   |   |   |   |   |   pedi <= 0.396: tested_positive (8.0/1.0)
+|   |   |   |   |   |   |   pedi > 0.396: tested_negative (3.0)
+|   |   |   |   |   |   pres > 82: tested_negative (4.0)
+|   |   |   |   age > 61: tested_negative (4.0)
+|   mass > 29.9
+|   |   plas <= 157
+|   |   |   pres <= 61: tested_positive (15.0/1.0)
+|   |   |   pres > 61
+|   |   |   |   age <= 30: tested_negative (40.0/13.0)
+|   |   |   |   age > 30: tested_positive (60.0/17.0)
+|   |   plas > 157: tested_positive (92.0/12.0)
+
+Number of Leaves  : 	20
+
+Size of the tree : 	39
+
+
+Time taken to build model: 0.02 seconds
+
+=== Evaluation on training set ===
+=== Summary ===
+
+Correctly Classified Instances         646               84.1146 %
+Incorrectly Classified Instances       122               15.8854 %
+Kappa statistic                          0.6319
+Mean absolute error                      0.2383
+Root mean squared error                  0.3452
+Relative absolute error                 52.4339 %
+Root relative squared error             72.4207 %
+Total Number of Instances              768     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.936     0.336      0.839     0.936     0.885      0.888    tested_negative
+                 0.664     0.064      0.848     0.664     0.745      0.888    tested_positive
+Weighted Avg.    0.841     0.241      0.842     0.841     0.836      0.888
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 468  32 |   a = tested_negative
+  90 178 |   b = tested_positive
+
+
+ 				========================================
+
+-¿Cuántas instancias han sido mal clasificadas?
+
+Se han clasificado bien 468 para el caso negativo y 178 para el caso positivo.
+Se han clasificado mal 32 para el caso negativo y 90 para el caso positivo.
+Esto es un 6,4% de fallos en el caso negativo y un 33,5% en el caso positivo.
+
+-¿Cuántos nodos terminales hay en el árbol? ¿Por qué atributo se clasifica en el primer nivel del árbol?
+
+Hay 20 nodos terminales, y el primer atributo por el que se clasifica es "plas".
+
+-Vuelve a ejecutar J48 primero con "cross-validation" y después con "percentage split" 
+
+Utilizando "cross-validation": 93 errores y 407 aciertos para el caso negativo y 108 y 160 para el caso positivo.
+Esto es un 18,6% de fallos en el negativo y un 40,2% de fallos en el positivo.
+
+
+Utilizando "precentage split 66%": 26 errores y 152 aciertos para el negativo y 36 fallos y 47 aciertos para el positivo.
+Esti es un 14,6% de fallos en el negativo y un 43,3% de fallos en el positivo.
+
+- ¿Cuál de las tres validaciones es más realista? ¿Por qué?
+
+El mas realista es percentage split porque su precision es mas alta. Corresponde al numero de nodos que se han marcado como verdaderos y que realmente lo son.
+
+Apartado 2: glass.arff
+
+-Analiza el dataset. ¿En cuántas clases se clasifican los ejemplares? ¿Cuántos atributos se utilizan?
+
+En este caso se trata de 214 instancias con 10 atributos.
+
+-Aplica el clustering jerárquico a este conjunto de datos para 7 clusters y comenta los resultados
+obtenidos. ¿Qué clases han quedado mejor clasificadas?
+
+Utilizando el cluster jerárquito hemos obtenido 2 clases repartidas en 99% y 1%, pero con 136 instancias mal clustereadas.
+
+-Discretiza los atributos utilizando un filtro supervisado. ¿Qué clases han quedado mejor clasificadas?
+
+Al utilizar el clusterer filtrado hemos obtenido dos clases, repartidas en 76% y 24% y con 119 instancias mal clustereadas.
+
+-Con los atributos en su estado original, utiliza el algoritmo de clustering EM (Expectation
+Maximization) y compara con los resultados anteriores. ¿Qué clases han quedado mejor
+clasificadas?
+
+Al utilizar el Expectation Maximization, obtenemos dos clases repartidas en un 35% y un 65%, y con 120 mal clustereadas.
+
+-¿Qué método de los tres anteriores te parece más útil para este ejemplo? ¿Por qué? 
+
+La mejor solución para el clustering es el clustering jerárquico porque produce una clasificacion perfecta, ya que la clasificación de orden superior es sobre la propia clase.
+
+-¿Podríamos haber utilizado un algoritmo de clasificación como J48?
+
+No podemos utilizar el algoritmo J48 porque no tenemos una clase en torno a la cual clasificar los cristales. Solo tendríamos horquillas de valores de distintos cristales con sus atributos. No serían clasificables.
