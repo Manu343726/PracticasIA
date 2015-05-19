@@ -1,14 +1,20 @@
 ﻿Cuando se utilizan DCG'S en prolog se utiliza el operador -->
 
 
+
+Gramaticalmente solo está definido un tipo de frase que viene dado por:
+	grupo_accion que de momento es solo añadir/poner una cita/reunion.
+	grupo_quien(N) donde N es la persona con la que ocurrira la cita/reunion
+	grupo_tiempo(D,M,H) con D dia, M mes y H hora de la reunion.
+
 Hay que definir el diccionario: 
 
--He empezado definiendo los dos tipos 
-eventos asertables: Cita y reunión utilizando el aserto es_appointment.
--He definido los meses con el aserto es_mes (nombre, numero, numero de días) pero aun no los he conseguido utilizar.
--He definido preposiciones, determinantes, etc.
+-He definido los meses con el aserto es_mes (nombre, numero de días)y hace una comprobacion de si el mes existe o no.
+
+
+
 
 Tipo de uso: de momento solo reconoce que una gramatica sea válida dentro de nuestras reglas.
-EJEMPLO: frase([anade,cita,con,juan,el,3,de,mayo,a,las,11],[]) devuelve true.
+EJEMPLO: frase([anade,cita,con,juan,el,3,de,mayo,a,las,11],[]) devuelve true y muestra un mensaje bastante redundante.
 
 Hay que contemplar mas casos de gramática valida. Una vez conseguidos procederé a asertar los hechos pedidos por la frase.

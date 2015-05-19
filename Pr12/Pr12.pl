@@ -1,10 +1,28 @@
-frase -->  grupo_accion, grupo_quien(N), grupo_tiempo(D,M,H).
+frase -->  grupo_accion, grupo_quien(N), grupo_tiempo(D,M,H),
+{
+	write('Reunion programada con '),
+	write(N),
+	write(' el dia '),
+	write(D),
+	write(' de '),
+	write(M),
+	write(' a las '),
+	write(H),
+	write('.')
+}.
 
 grupo_accion --> es_anadir ,es_appointment.
 
 grupo_quien(N) --> es_prep, [N].
 
-grupo_tiempo(D,M,H) --> es_det, [D], es_prep, [M], es_hora, [H].
+grupo_tiempo(D,M,H) --> [el], [D], [de], [M], [a,las], [H],
+{
+H>0-1,
+H<24,
+es_mes(M,Daux),
+D>0,
+D=<Daux
+}.
 
 
 % Diccionario
@@ -19,10 +37,6 @@ es_appointment-->[cita].
 es_prep-->[de].
 es_prep-->[con].
 
-es_det-->[el].
-
-es_hora-->[a,las].
-
 es_borrar-->[borra].
 es_borrar-->[quita].
 
@@ -32,15 +46,15 @@ es_consulta-->[cuando].
 
 %Datos
 
-es_mes(enero, 1, 31).
-es_mes(febrero, 2, 28).
-es_mes(marzo, 3, 31).
-es_mes(abril, 4, 30).
-es_mes(mayo, 5, 31).
-es_mes(junio, 6, 30).
-es_mes(julio, 7, 31).
-es_mes(agosto, 8, 31).
-es_mes(septiembre, 9, 30).
-es_mes(octubre, 10, 31).
-es_mes(noviembre, 11, 30).
-es_mes(diciembre, 12, 31).
+es_mes(enero, 31).
+es_mes(febrero, 28).
+es_mes(marzo, 31).
+es_mes(abril, 30).
+es_mes(mayo, 31).
+es_mes(junio, 30).
+es_mes(julio, 31).
+es_mes(agosto, 31).
+es_mes(septiembre, 30).
+es_mes(octubre, 31).
+es_mes(noviembre, 30).
+es_mes(diciembre, 31).
