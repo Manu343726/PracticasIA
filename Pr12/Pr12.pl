@@ -1,43 +1,36 @@
-frase(Salida) -->
-		[A],
-		{	name(A, Cadena),
-			append(AnadidoCad, AppointCad, Cadena),
-			name(Appoint, AppointCad),
-			es_appointment(Appoint),
-			name(Anadido, AnadidoCad),
-			es_anadir(Anadido, Salida)
-		}.
+frase -->  grupo_accion, grupo_quien(N), grupo_tiempo(D,M,H).
 
-% Gramatica
+grupo_accion --> es_anadir ,es_appointment.
 
-consulta:- 	write('Escribe la frase entre corchetes separando palabras con comas'), nl,
-			write('o una lista vacia para parar'), nl,
-			read(F),
-			trata(F).
+grupo_quien(N) --> es_prep, [N].
 
-trata([]):-write('final').
+grupo_tiempo(D,M,H) --> es_det, [D], es_prep, [M], es_hora, [H].
 
-% Tratamiento final
-
-trata(F):-frase(Salida,F,[]),write(Salida),consulta.
-
-% Tratamiento en caso general
-
-%trata(F):-
 
 % Diccionario
 
-es_appointment(reunion).
-es_appointment(cita).
 
-es_anadir(anade, anadida).
-es_anadir(pon, puesta).
+es_anadir-->[anade].
+es_anadir-->[pon].
 
-es_borrar(borra).
-es_borrar(quita).
+es_appointment-->[reunion].
+es_appointment-->[cita].
 
-es_consulta(que).
-es_consulta(cuanto).
+es_prep-->[de].
+es_prep-->[con].
+
+es_det-->[el].
+
+es_hora-->[a,las].
+
+es_borrar-->[borra].
+es_borrar-->[quita].
+
+es_consulta-->[que].
+es_consulta-->[quien].
+es_consulta-->[cuando].
+
+%Datos
 
 es_mes(enero, 1, 31).
 es_mes(febrero, 2, 28).
