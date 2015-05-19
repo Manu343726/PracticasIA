@@ -1,0 +1,9 @@
+Cuando se utilizan DCG'S en prolog se utiliza el operador -->
+Esto añade a la función dos parámetros mas: uno entre corchetes,
+que es una lista (la frase a analizar por ejemplo) y otro vacio.
+
+Hay que definir el diccionario: 
+
+-He empezado definiendo los dos tipos 
+eventos asertables: Cita y reunión utilizando el aserto es_appointment.
+-He definido los meses con el aserto es_mes (nombre, numero, numero de días).
