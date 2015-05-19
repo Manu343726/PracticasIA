@@ -1,20 +1,37 @@
 ﻿Cuando se utilizan DCG'S en prolog se utiliza el operador -->
 
+(x1/x2/x3.../xn) representan los sinónimos dentro de la gramatica de clausulas definidas.
+
+Hay varios grupos sintácticos definidas:
+
+	-grupo_anadir: Añadir/poner una cita/reunion
+	-grupo_borrar: borrar/quitar una cita/reunion
+	-grupo_quien(N): con N //para saber con quien es la reunión
+	-grupo_tiempo(D,M,H): el día, mes, hora / hoy / mañana  //está sobrecargado, no hay que hacer diferencia entre ellos.
+
+Hay dos tipos de frases definidas:
+
+	-grupo_anadir,grupo_quien(N),grupo_tiempo(D,M,H).
+			Esta frase aserta la reunion a la hora estipulada.
+	-grupo_borrar,grupo_quien(N)
+			Esta frase restracta las reuniones con la persona estipulada.
 
 
-Gramaticalmente solo está definido un tipo de frase que viene dado por:
-	grupo_accion que de momento es solo añadir/poner una cita/reunion.
-	grupo_quien(N) donde N es la persona con la que ocurrira la cita/reunion
-	grupo_tiempo(D,M,H) con D dia, M mes y H hora de la reunion.
+Tenemos un pequeño diccionario:
 
-Hay que definir el diccionario: 
+	-es_anadir : lexico para añadir
+	-es_appointment : lexico sobre citas/reuniones
+	-es_prep: preposiciones
+	-es_borrar :lexico para borrar
+	-es_consulta : lexico para consultas //aun no está en uso.
 
--He definido los meses con el aserto es_mes (nombre, numero de días)y hace una comprobacion de si el mes existe o no.
 
-
+Y funalmente un pequeño apartado de datos.
+	
+	-hoy(X,Y): Hoy es el dia X del mes Y. Se actualiza a mano. Se utiliza para cuando decimos 'hoy' o 'mañana'
+	-es_mes(X,Y) : mes X con Y días. deberia tener un Z para saber que numero de mes es.
 
 
 Tipo de uso: de momento solo reconoce que una gramatica sea válida dentro de nuestras reglas.
-EJEMPLO: frase([anade,cita,con,juan,el,3,de,mayo,a,las,11],[]) devuelve true y muestra un mensaje bastante redundante.
-
-Hay que contemplar mas casos de gramática valida. Una vez conseguidos procederé a asertar los hechos pedidos por la frase.
+EJEMPLO: frase([anade,una,cita,con,juan,el,3,de,mayo,a,las,11],[]) devuelve true y muestra un mensaje bastante redundante, asertando el fact:
+	cita(3,mayo,11,_,juan). El espacio en blanco es para la duración de la cita.
