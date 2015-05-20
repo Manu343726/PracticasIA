@@ -8,29 +8,43 @@ Hay varios grupos sintácticos definidas:
 	-grupo_borrar: borrar/quitar una cita/reunion
 	-grupo_quien(N): con N //para saber con quien es la reunión
 	-grupo_tiempo(D,M,H): el día, mes, hora / hoy / mañana  //está sobrecargado, no hay que hacer diferencia entre ellos.
+	-grupo_querry_tiempo : para poder consultar que tengo mañana o fecha especifica.
+	-grupo_querry_persona: para poder consultar a que hora es una cita con alguien.
 
-Hay dos tipos de frases definidas:
+Hay Seis tipos de frases definidas:
 
 	-grupo_anadir,grupo_quien(N),grupo_tiempo(D,M,H).
 			Esta frase aserta la reunion a la hora estipulada.
 	-grupo_borrar,grupo_quien(N)
 			Esta frase restracta las reuniones con la persona estipulada.
-
+	-grupo_borrar,grupo_tiempo(D,M,H).
+			Esta frase retracta la reunion del tiempo dado.
+	-grupo_borrar,[de],grupo_tiempo(D,M,H).
+			Igual que la anterior pero con una gramatica alternativa
+	-grupo_querry_tiempo, grupo_tiempo(D,M,H).
+			//TODO, para dar la lista de citas del momento dado.
+	-grupo_querry_persona, grupo_quien(N).
+			//TODO, para dar a lista de citas con la persona dada
 
 Tenemos un pequeño diccionario:
 
 	-es_anadir : lexico para añadir
 	-es_appointment : lexico sobre citas/reuniones
+	-es_appointments: lo mismo pero en plural.
 	-es_prep: preposiciones
+	-es_prep_temp : preposiciones para preguntas temporales.
 	-es_borrar :lexico para borrar
-	-es_consulta : lexico para consultas //aun no está en uso.
+	-es_consulta_tiempo : lexico para consultas de tiempo.
+	-es_consulta_persona: lexico para consultas de persona.
+	-es_consulta_persona_det: lexico adicional para las consultas de persona.
 
 
 Y funalmente un pequeño apartado de datos.
 	
 	-hoy(X,Y): Hoy es el dia X del mes Y. Se actualiza a mano. Se utiliza para cuando decimos 'hoy' o 'mañana'
 	-es_mes(X,Y) : mes X con Y días. deberia tener un Z para saber que numero de mes es.
-
+	:- dynamic cita/5 : define el dato cita como poseedor de 5 parámetros.
+		Estos son: cita(Dia,Mes,Hora,Duracion,Nombre). Duracion está en desuso de momento.
 
 Tipo de uso: de momento solo reconoce que una gramatica sea válida dentro de nuestras reglas.
 EJEMPLO: frase([anade,una,cita,con,juan,el,3,de,mayo,a,las,11],[]) devuelve true y muestra un mensaje bastante redundante, asertando el fact:
