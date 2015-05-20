@@ -46,6 +46,12 @@ Y funalmente un pequeño apartado de datos.
 	:- dynamic cita/5 : define el dato cita como poseedor de 5 parámetros.
 		Estos son: cita(Dia,Mes,Hora,Duracion,Nombre). Duracion está en desuso de momento.
 
-Tipo de uso: de momento solo reconoce que una gramatica sea válida dentro de nuestras reglas.
-EJEMPLO: frase([anade,una,cita,con,juan,el,3,de,mayo,a,las,11],[]) devuelve true y muestra un mensaje bastante redundante, asertando el fact:
-	cita(3,mayo,11,_,juan). El espacio en blanco es para la duración de la cita.
+Tipo de uso: He añadido el ciclo continuo. Para comenzar el programa, se inserta la querry 'consulta.'
+		-Esto lanza de manera continua la lectura de frases y su parseo hasta que se introduzca una frase vacia.
+		Ejemplos de frases validas.
+			'[anade,una,reunion,con,juan,manana,a,las,12].'
+			'[pon,una,reunion,con,paco,el,15,de,julio,a,las,9].'
+			'[borra,la,cita,con,paco,el,15,de,julio,a,las9].'
+			'[quita,la,cita,de,manana,a,las,12].'
+			'[que,tengo,manana].' Aunque aun no hace nada, la reocnoce como valida.
+			'[cuando,tengo,una,cita,con,juan].' Aun no hace nada, pero la reconoce como valida.
