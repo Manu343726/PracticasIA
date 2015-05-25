@@ -1,6 +1,6 @@
 frase(Salida) -->  grupo_anadir, grupo_quien(N), grupo_tiempo(D,M,H),
 {
-	assert(cita(D,M,H,_,N)),
+	assert(cita(D,M,H,1,N)),
 
 	string_concat('Reunion programada con ', N, Aux1),
 	string_concat(Aux1, ' el dia ', Aux2),
@@ -46,7 +46,8 @@ frase(Salida) --> grupo_borrar, [de], grupo_tiempo(D,M,H),
 
 frase(Salida) --> grupo_querry_tiempo, grupo_tiempo(D,M,H),
 {
-%setof(cita, cita(D,M,H,_,_), Salida)
+escribe(ListaCitas),
+setof((D,M,J,Du,P), cita(D,M,_,_,_), ListaCitas)
 }.
 
 frase(Salida) --> grupo_querry_persona, grupo_quien(N),
@@ -124,8 +125,7 @@ D is A + 1
 grupo_tiempo(D,M,H) --> [manana],
 {
 hoy(A,M),
-D is A + 1,
-H is 8
+D is A + 1
 }.
 
 
@@ -177,3 +177,9 @@ es_mes(septiembre, 30).
 es_mes(octubre, 31).
 es_mes(noviembre, 30).
 es_mes(diciembre, 31).
+
+escribe([]):- write('Fin').
+
+escribe([(D,M,H,D,P)|Resto]):-
+write([cita,el,dia,D,de,M,a,las,H,durante,D,con,P]),
+nl.
