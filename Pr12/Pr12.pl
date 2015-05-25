@@ -46,8 +46,8 @@ frase(Salida) --> grupo_borrar, [de], grupo_tiempo(D,M,H),
 
 frase(Salida) --> grupo_querry_tiempo, grupo_tiempo(D,M,H),
 {
-escribe(ListaCitas),
-setof((D,M,J,Du,P), cita(D,M,_,_,_), ListaCitas)
+setof((D,M,H,Du,P), cita(D,M,H,Du,P), ListaCitas),
+escribe(ListaCitas)
 }.
 
 frase(Salida) --> grupo_querry_persona, grupo_quien(N),
@@ -125,7 +125,8 @@ D is A + 1
 grupo_tiempo(D,M,H) --> [manana],
 {
 hoy(A,M),
-D is A + 1
+D is A + 1,
+M is M
 }.
 
 
@@ -178,8 +179,8 @@ es_mes(octubre, 31).
 es_mes(noviembre, 30).
 es_mes(diciembre, 31).
 
-escribe([]):- write('Fin').
+%escribe([]):- write('Y ya').
 
-escribe([(D,M,H,D,P)|Resto]):-
-write([cita,el,dia,D,de,M,a,las,H,durante,D,con,P]),
+escribe([(D,M,H,Du,P) | Resto]):-
+write([cita,el,dia,D,de,M,a,las,H,durante,Du,con,P]),
 nl.
