@@ -179,8 +179,12 @@ es_mes(octubre, 31).
 es_mes(noviembre, 30).
 es_mes(diciembre, 31).
 
-%escribe([]):- write('Y ya').
+escribe([]):- write('Y ya').
 
 escribe([(D,M,H,Du,P) | Resto]):-
+write([cita,el,dia,D,de,M,a,las,H,durante,Du,con,P]),
+nl.
+
+escribe([(D,M,H,Du,P)]):-
 write([cita,el,dia,D,de,M,a,las,H,durante,Du,con,P]),
 nl.
