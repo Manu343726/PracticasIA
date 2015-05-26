@@ -75,6 +75,7 @@ trata(F):- frase(Salida, F, []), write(Salida),nl, consulta.
 %%%%% Grupo para preguntar por las citas futuras %%%%%
 
 grupo_querry_tiempo--> es_consulta_tiempo, [tengo].
+grupo_querry_tiempo--> es_consulta_tiempo, [hay].
 grupo_querry_tiempo--> es_consulta_tiempo, es_appointments, [tengo].
 
 %%%%% Grupo para preguntar por las citas con alguien %%%%%
@@ -122,7 +123,8 @@ hoy(D,M)
 grupo_tiempo(D,M,H) --> [manana,a,las], [H],
 {
 hoy(A,M),
-D is A + 1
+D is A + 1,
+H is H
 }.
 
 grupo_tiempo(D,M,H) --> [manana],
