@@ -46,7 +46,7 @@ frase(Salida) --> grupo_borrar, [de], grupo_tiempo(D,M,H),
 
 frase(Salida) --> grupo_querry_tiempo, grupo_tiempo(D,M,H),
 {
-setof((D,M,H,Du,P), cita(D,M,H,Du,P), ListaCitas),
+setof((D,M,J,Du,P), cita(D,M,J,Du,P), ListaCitas),
 escribe(ListaCitas)
 }.
 
@@ -182,9 +182,6 @@ es_mes(diciembre, 31).
 escribe([]):- write('Y ya').
 
 escribe([(D,M,H,Du,P) | Resto]):-
-write([cita,el,dia,D,de,M,a,las,H,durante,Du,con,P]),
-nl.
-
-escribe([(D,M,H,Du,P)]):-
-write([cita,el,dia,D,de,M,a,las,H,durante,Du,con,P]),
-nl.
+write([cita,el,dia,D,de,M,a,las,H,durante,Du,horas,con,P]),
+nl,
+escribe(Resto).
