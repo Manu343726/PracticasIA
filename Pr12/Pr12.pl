@@ -46,13 +46,16 @@ frase(Salida) --> grupo_borrar, [de], grupo_tiempo(D,M,H),
 
 frase(Salida) --> grupo_querry_tiempo, grupo_tiempo(D,M,H),
 {
-setof((D,M,J,Du,P), cita(D,M,J,Du,P), ListaCitas),
-escribe(ListaCitas)
+setof((D,M,H,Du,P), cita(D,M,H,Du,P), ListaCitas),
+escribe(ListaCitas),
+string_concat('Y nada mas', '.', Salida)
 }.
 
 frase(Salida) --> grupo_querry_persona, grupo_quien(N),
 {
-%setof(cita, cita(_,_,_,_,N), Salida)
+setof((A,B,C,D,N), cita(A,B,C,D,N), ListaCitas),
+escribe(ListaCitas),
+string_concat('Y nada mas', '.', Salida)
 }.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -179,7 +182,7 @@ es_mes(octubre, 31).
 es_mes(noviembre, 30).
 es_mes(diciembre, 31).
 
-escribe([]):- write('Y ya').
+escribe([]):- write(' ').
 
 escribe([(D,M,H,Du,P) | Resto]):-
 write([cita,el,dia,D,de,M,a,las,H,durante,Du,horas,con,P]),
