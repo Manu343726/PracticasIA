@@ -7,7 +7,7 @@ Hay varios grupos sintácticos definidas:
 	-grupo_anadir: Añadir/poner una cita/reunion
 	-grupo_borrar: borrar/quitar una cita/reunion
 	-grupo_quien(N): con N //para saber con quien es la reunión
-	-grupo_tiempo(D,M,H): el día, mes, hora / hoy / mañana  //está sobrecargado, no hay que hacer diferencia entre ellos.
+	-grupo_tiempo(D,M,H): el día, mes, hora / hoy / mañana  //está sobrecargado, y hay unas cuantas formas de pedir la hora
 	-grupo_querry_tiempo : para poder consultar que tengo mañana o fecha especifica.
 	-grupo_querry_persona: para poder consultar a que hora es una cita con alguien.
 
@@ -22,10 +22,9 @@ Hay Seis tipos de frases definidas:
 	-grupo_borrar,[de],grupo_tiempo(D,M,H).
 			Igual que la anterior pero con una gramatica alternativa
 	-grupo_querry_tiempo, grupo_tiempo(D,M,H).
-			//TODO, para dar la lista de citas del momento dado.
+			Una querry temporal que devuelve las citas dentro del parametro de tiempo dado.
 	-grupo_querry_persona, grupo_quien(N).
-			//TODO, para dar a lista de citas con la persona dada
-
+			Una querry personal que devuelve las citas con la persona dada.
 Tenemos un pequeño diccionario:
 
 	-es_anadir : lexico para añadir
@@ -42,7 +41,7 @@ Tenemos un pequeño diccionario:
 Y funalmente un pequeño apartado de datos.
 	
 	-hoy(X,Y): Hoy es el dia X del mes Y. Se actualiza a mano. Se utiliza para cuando decimos 'hoy' o 'mañana'
-	-es_mes(X,Y) : mes X con Y días. deberia tener un Z para saber que numero de mes es.
+	-es_mes(X,Y,Z) : mes X, numero Y del año con Z días.
 	:- dynamic cita/5 : define el dato cita como poseedor de 5 parámetros.
 		Estos son: cita(Dia,Mes,Hora,Duracion,Nombre). Duracion está en desuso de momento.
 
@@ -55,3 +54,4 @@ Tipo de uso: He añadido el ciclo continuo. Para comenzar el programa, se insert
 			'[quita,la,cita,de,manana,a,las,12].'
 			'[que,tengo,manana].' Aunque aun no hace nada, la reocnoce como valida.
 			'[cuando,tengo,una,cita,con,juan].' Aun no hace nada, pero la reconoce como valida.
+			'[]'. Termina el programa. Si no se hace de esta manera entra en bucle.
