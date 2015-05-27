@@ -50,32 +50,37 @@ frase(Salida) --> grupo_borrar, [de], grupo_tiempo(D,M,H),
 
 frase(Salida) --> grupo_querry_tiempo, grupo_tiempo(D,M,H),
 {
-setof((D,M,H,Du,P), cita(D,M,H,Du,P), ListaCitas),
-nl,
-escribe(ListaCitas),
-string_concat('', '', Salida);
-nl,
-string_concat('No tiene ninguna cita programada el ', D, Aux1),
-es_mes(Mes, M, _),
-string_concat(Aux1, ' de ', Aux2),
-string_concat(Aux2, Mes, Salida),
-var(H); string_concat('No tiene ninguna cita programada el ', D, Aux1),
-es_mes(Mes, M, _),
-string_concat(Aux1, ' de ', Aux2),
-string_concat(Aux2, Mes, Aux3),
-string_concat(Aux3, ' a las ', Aux4),
-string_concat(Aux4, H, Salida)
+	setof((D,M,H,Du,P), cita(D,M,H,Du,P), ListaCitas),
+	nl,
+	escribe(ListaCitas),
+	string_concat('', '', Salida);
+	nl,
+	string_concat('No tiene ninguna cita programada el ', D, Aux1),
+	es_mes(Mes, M, _),
+	string_concat(Aux1, ' de ', Aux2),
+	string_concat(Aux2, Mes, Salida),
+	var(H); string_concat('No tiene ninguna cita programada el ', D, Aux1),
+	es_mes(Mes, M, _),
+	string_concat(Aux1, ' de ', Aux2),
+	string_concat(Aux2, Mes, Aux3),
+	string_concat(Aux3, ' a las ', Aux4),
+	string_concat(Aux4, H, Salida)
 
 }.
 
 frase(Salida) --> grupo_querry_persona, grupo_quien(N),
 {
-setof((A,B,C,D,N), cita(A,B,C,D,N), ListaCitas),
-nl,
-escribe(ListaCitas),
-string_concat('', '', Salida);
-nl,
-string_concat('Lo sentimos, pero usted no tiene ninguna cita programada con ', N, Salida)
+	setof((A,B,C,D,N), cita(A,B,C,D,N), ListaCitas),
+	nl,
+	escribe(ListaCitas),
+	string_concat('', '', Salida);
+	nl,
+	string_concat('Lo sentimos, pero usted no tiene ninguna cita programada con ', N, Salida)
+}.
+
+frase(Salida) --> [ayuda],
+{
+
 }.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -91,7 +96,8 @@ read(F),
 trata(F).
 
 trata([]):- write('final').
-trata(F):- frase(Salida, F, []), write(Salida),nl,nl, consultap; nl, write('Error de sintaxis, 
+trata(F):- frase(Salida, F, []), write(Salida),nl,nl, 
+	consultap; nl, write('Error de sintaxis, 
 	pruebe de nuevo'),nl,nl,consultap,!.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -102,11 +108,14 @@ trata(F):- frase(Salida, F, []), write(Salida),nl,nl, consultap; nl, write('Erro
 grupo_querry_tiempo--> es_consulta_tiempo, [tengo].
 grupo_querry_tiempo--> es_consulta_tiempo, [hay].
 grupo_querry_tiempo--> es_consulta_tiempo, es_appointments, [tengo].
+grupo_querry_tiempo--> es_consulta_general, [las], es_appointments.
 
 %%%%% Grupo para preguntar por las citas con alguien %%%%%
 
-grupo_querry_persona--> es_consulta_persona, [tengo], es_consulta_persona_det,
-es_appointment.
+grupo_querry_persona--> es_consulta_persona, [tengo], 
+	es_consulta_persona_det,es_appointment.
+
+grupo_querry_persona--> es_consulta_persona, [vere].
 
 grupo_querry_persona--> es_consulta_tiempo, [tengo].
 
@@ -129,11 +138,11 @@ grupo_quien(N) --> es_prep, [N].
 
 grupo_tiempo(D,Mes,H) --> es_prep_temp, [D], [de], [M], [a,las], [H],
 {
-H>0-1,
-H<24,
-es_mes(M,Mes,Daux),
-D>0,
-D=<Daux
+	H>0-1,
+	H<24,
+	es_mes(M,Mes,Daux),
+	D>0,
+	D=<Daux
 }.
 
 
@@ -141,30 +150,37 @@ D=<Daux
 
 grupo_tiempo(D,M,H) --> [hoy,a,las], [H],
 {
-hoy(D,M)
+	hoy(D,M)
 }.
 
 %%%%%% Grupo temporal para este mes.
 
 grupo_tiempo(D,M,H) --> [el,dia], [D], [a,las], [H],
 {
-hoy(_,M)
+	hoy(_,M)
+}.
+
+%%%%%% Grupo temporal para un dia determinado.
+
+grupo_tiempo(D,M,_H) --> [del,dia], [D],
+{
+	hoy(_,M)
 }.
 
 %%%%%% Grupos temporales para mañana.
 
 grupo_tiempo(D,M,H) --> [manana,a,las], [H],
 {
-hoy(A,M),
-D is A + 1,
-H is H
+	hoy(A,M),
+	D is A + 1,
+	H is H
 }.
 
 grupo_tiempo(D,M,_H) --> [manana],
 {
-hoy(A,M),
-D is A + 1,
-M is M
+	hoy(A,M),
+	D is A + 1,
+	M is M
 }.
 
 
@@ -190,11 +206,14 @@ es_prep_temp-->[del].
 
 es_prep-->[de].
 es_prep-->[con].
+es_prep-->[a].
 
 es_borrar-->[borra,la].
 es_borrar-->[quita,la].
 
 es_consulta_tiempo-->[que].
+
+es_consulta_general-->[dime].
 
 es_consulta_persona-->[cuando].
 
@@ -204,7 +223,6 @@ es_consulta_persona_det-->[la].
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%% DATOS %%%%%%%%%%%%%
 :- dynamic cita/5.
-
 
 hoy(19,5).
 
