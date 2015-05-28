@@ -1,6 +1,8 @@
 frase(Salida) -->  grupo_anadir, grupo_quien(N), grupo_tiempo(D,M,H),
 {
+	retract(ultimaCita(_,_,_,_)),
 	assert(cita(D,M,H,1,N)),
+	assert(ultimaCita(D,M,H,1)),
 	nl,
 	es_mes(Mes, M, _),
 	string_concat('Reunion programada con ', N, Aux1),
@@ -50,7 +52,9 @@ frase(Salida) --> grupo_borrar, [de], grupo_tiempo(D,M,H),
 
 frase(Salida) --> grupo_querry_tiempo, grupo_tiempo(D,M,H),
 {
+	retract(ultimaCita(_,_,_,_)),
 	setof((D,M,H,Du,P), cita(D,M,H,Du,P), ListaCitas),
+	assert(ultimaCita(D,M,H,2)),
 	nl,
 	escribe(ListaCitas),
 	string_concat('', '', Salida);
@@ -78,15 +82,28 @@ frase(Salida) --> grupo_querry_persona, grupo_quien(N),
 	string_concat('Lo sentimos, pero usted no tiene ninguna cita programada con ', N, Salida)
 }.
 
-frase(Salida) --> [ayuda],
+frase(Salida) --> [y], grupo_quien(N), grupo_hora(H),
 {
-
+	ultimaCita(D,M,_,1),
+	assert(cita(D,M,H,1,N)),
+	retract(ultimaCita(_,_,_,_)),
+	assert(ultimaCita(D,M,H,1)),
+	es_mes(Mes, M, _),
+	nl,
+	string_concat('Reunion programada con ', N, Aux1),
+	string_concat(Aux1, ' el dia ', Aux2),
+	string_concat(Aux2, D, Aux3),
+	string_concat(Aux3, ' de ', Aux4),
+	string_concat(Aux4, Mes, Aux5),
+	string_concat(Aux5, ' a las ', Aux6),
+	string_concat(Aux6, H, Aux7),
+	string_concat(Aux7, '.', Salida)
 }.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%% GRAMATICAS %%%%%%%%%%%
 
-consulta:- nl, write('Escribe frase entre corchetes separando palabras con comas '), nl,
+consulta:- nl, assert(ultimaCita(1,1,1,0)), write('Escribe frase entre corchetes separando palabras con comas '), nl,
 write('o lista vacia para parar '), nl, nl,
 read(F),
 trata(F).
@@ -133,6 +150,10 @@ grupo_borrar --> es_borrar, es_appointment.
 
 grupo_quien(N) --> es_prep, [N].
 
+%%%%% Grupo temporal para una hora dada.
+
+grupo_hora(H) --> [a,las],[H].
+
 
 %%%%%% Grupo temporal para dar una fecha específica.
 
@@ -144,7 +165,6 @@ grupo_tiempo(D,Mes,H) --> es_prep_temp, [D], [de], [M], [a,las], [H],
 	D>0,
 	D=<Daux
 }.
-
 
 %%%%%% Grupo temporal para hoy.
 
@@ -223,6 +243,7 @@ es_consulta_persona_det-->[la].
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%% DATOS %%%%%%%%%%%%%
 :- dynamic cita/5.
+:- dynamic ultimaCita/4.
 
 hoy(19,5).
 
