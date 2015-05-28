@@ -52,9 +52,9 @@ frase(Salida) --> grupo_borrar, [de], grupo_tiempo(D,M,H),
 
 frase(Salida) --> grupo_querry_tiempo, grupo_tiempo(D,M,H),
 {
-	retract(ultimaCita(_,_,_,_)),
+%	retract(ultimaCita(_,_,_,_)),
 	setof((D,M,H,Du,P), cita(D,M,H,Du,P), ListaCitas),
-	assert(ultimaCita(D,M,H,2)),
+%	assert(ultimaCita(D,M,H,2)),
 	nl,
 	escribe(ListaCitas),
 	string_concat('', '', Salida);
@@ -185,6 +185,13 @@ grupo_tiempo(D,M,H) --> [el,dia], [D], [a,las], [H],
 grupo_tiempo(D,M,_H) --> [del,dia], [D],
 {
 	hoy(_,M)
+}.
+
+%%%%% Grupo temporal para un dia/mes determinado.
+
+grupo_tiempo(D,Mes,_H) --> [el], [D], [de], [M],
+{
+	es_mes(M,Mes,_)
 }.
 
 %%%%%% Grupos temporales para mañana.
