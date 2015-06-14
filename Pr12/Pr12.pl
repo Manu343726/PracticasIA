@@ -1,5 +1,3 @@
-
-% <Añade cita> <Con quien> <Cuando>
 frase(Salida) -->  grupo_anadir, grupo_quien(N), grupo_tiempo(D,M,H),
 {
 	retract(ultimaCita(_,_,_,_)),
@@ -18,7 +16,6 @@ frase(Salida) -->  grupo_anadir, grupo_quien(N), grupo_tiempo(D,M,H),
 
 }.
 
-% <Borra cita> <Con quien>
 frase(Salida) -->  grupo_borrar, grupo_quien(N),
 {
 	retract(cita(_,_,_,_,N)),
@@ -27,12 +24,9 @@ frase(Salida) -->  grupo_borrar, grupo_quien(N),
 	string_concat(Aux1, ' ha sido cancelada.', Salida)
 }.
 
-% <Borra cita> <Cuando>
 frase(Salida) --> grupo_borrar, grupo_tiempo(D,M,H),
 {
-	retract(ultimaCita(_,_,_,_)),
 	retract(cita(D,M,H,_,_)),
-	assert(ultimaCita(D,M,H,2)),
 	nl,
 	es_mes(Mes, M, _),
 	string_concat('Su cita del ', D, Aux1),
@@ -43,7 +37,6 @@ frase(Salida) --> grupo_borrar, grupo_tiempo(D,M,H),
 	string_concat(Aux5, ' ha sido cancelada', Salida)
 }.
 
-%<Borra cita > <de> <mañana/hoy> 
 frase(Salida) --> grupo_borrar, [de], grupo_tiempo(D,M,H),
 {
 	retract(cita(D,M,H,_,_)),
@@ -57,12 +50,11 @@ frase(Salida) --> grupo_borrar, [de], grupo_tiempo(D,M,H),
 	string_concat(Aux5, ' ha sido cancelada', Salida)
 }.
 
-%<Querrie de citas> <Cuando>
 frase(Salida) --> grupo_querry_tiempo, grupo_tiempo(D,M,H),
 {
-	retract(ultimaCita(_,_,_,_)),
+%	retract(ultimaCita(_,_,_,_)),
 	setof((D,M,H,Du,P), cita(D,M,H,Du,P), ListaCitas),
-	assert(ultimaCita(D,M,H,3)),
+%	assert(ultimaCita(D,M,H,2)),
 	nl,
 	escribe(ListaCitas),
 	string_concat('', '', Salida);
@@ -80,7 +72,6 @@ frase(Salida) --> grupo_querry_tiempo, grupo_tiempo(D,M,H),
 
 }.
 
-%<Querrie de citas> <Con quien>
 frase(Salida) --> grupo_querry_persona, grupo_quien(N),
 {
 	setof((A,B,C,D,N), cita(A,B,C,D,N), ListaCitas),
@@ -91,7 +82,6 @@ frase(Salida) --> grupo_querry_persona, grupo_quien(N),
 	string_concat('Lo sentimos, pero usted no tiene ninguna cita programada con ', N, Salida)
 }.
 
-% <y> <Con quien> <Cuando> // Querry anidada
 frase(Salida) --> [y], grupo_quien(N), grupo_hora(H),
 {
 	ultimaCita(D,M,_,1),
@@ -110,30 +100,6 @@ frase(Salida) --> [y], grupo_quien(N), grupo_hora(H),
 	string_concat(Aux7, '.', Salida)
 }.
 
-% <y> <Cuando (hora) > // Querry anidada.
-frase(Salida) --> [y], grupo_hora(H),
-{
-	ultimaCita(D,M,_,3),
-	setof((D,M,H,Du,P), cita(D,M,H,Du,P), ListaCitas),
-	nl,
-	escribe(ListaCitas),
-	string_concat('', '', Salida);
-	nl,
-	string_concat('No tiene ninguna cita programada el ', _D, Aux1),
-	es_mes(Mes, _M, _),
-	string_concat(Aux1, ' de ', Aux2),
-	string_concat(Aux2, Mes, Salida),
-	var(H); string_concat('No tiene ninguna cita programada el ', _D, Aux1),
-	es_mes(Mes, _M, _),
-	string_concat(Aux1, ' de ', Aux2),
-	string_concat(Aux2, Mes, Aux3),
-	string_concat(Aux3, ' a las ', Aux4),
-	string_concat(Aux4, H, Salida)
-
-}.
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%% GRAMATICAS %%%%%%%%%%%
 
@@ -150,8 +116,6 @@ trata([]):- write('final').
 trata(F):- frase(Salida, F, []), write(Salida),nl,nl, 
 	consultap; nl, write('Error de sintaxis, 
 	pruebe de nuevo'),nl,nl,consultap,!.
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%% GRUPOS SINTACTICOS %%%%%%
