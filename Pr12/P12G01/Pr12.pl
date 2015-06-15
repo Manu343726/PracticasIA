@@ -1,10 +1,3 @@
-%%%%%%%%%%%%%%%% Práctica 12 %%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Pablo Mac-Veigh
-%%% Manuel Sánchez
-%%% Grupo 01
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 
 % <Añade cita> <Con quien> <Cuando>
 frase(Salida) -->  grupo_anadir, grupo_quien(N), grupo_tiempo(D,M,H),
